@@ -1,0 +1,66 @@
+clases:
+    inventario.
+    jugador.
+    enemigo.
+    arma.
+    boss final
+
+arma
+{
+    int tipo;
+    int dmg;
+    String AtaqueEspecial;
+}
+
+enemigo
+{
+    String nombre;
+    int hp;
+    int defensa;
+    int dmg;
+}
+
+jugador 
+{
+    int hp;
+    int defensa;
+    ClaseArma arma;
+    ClaseInventario;
+}
+ boss final
+{
+    int hp;
+    int defensa;
+    ClaseArma arma;
+    ClaseInventario;
+}
+
+inventario
+{
+    int pociones_curacion;
+    int pociones_defensa;
+    int pociones_ataque;
+}
+
+Formato lucha:
+Lucha por turnos.
+Eliges si atacar o curarte
+Tiras un dado de 20. 
+{
+    Si sacas mas de la defensa del enemigo/tu defensa
+    {
+        tiras un dado del daño maximo que tengas y con eso haces daño. Dependiendo del tipo de arma que tengas tienes una consecuencia u otra.
+    }
+    Si no sacas mas de la defensa del enemigo/tu defensa
+    {
+        No haces daño/no te hacen daño
+    }
+    Si sacas un 18 o mas
+    {
+        Ataque definitivo
+    }
+    Si sacas un 1
+    {
+        Pifia y te quitan daño
+    }
+}
