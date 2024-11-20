@@ -18,6 +18,54 @@ public class inventario
         System.out.println("------------------------------------------");
 
     }
+
+    public static int switchPotis(jugador player, int eleccion)
+    {
+        switch (eleccion) {
+            case 1:
+                if (player.myInventario.pociones_ataque <= 0)
+                {
+                    System.out.println("No tienes esa poción. Elige otra.");
+                    eleccion = 0;
+                }
+                else
+                {
+                    player.myInventario.pociones_ataque--;
+                    player.myArma.dmgActual = player.myArma.dmgActual + 3;
+                }
+                break;
+            case 2:
+                if (player.myInventario.pociones_defensa <= 0)
+                {
+                    System.out.println("No tienes esa poción. Elige otra.");
+                    eleccion = 0;
+                }
+                else
+                {
+                    player.myInventario.pociones_defensa--;
+                    player.defensaActual = player.defensaActual + 2;
+
+                }
+                    break;
+            default:
+                if (player.myInventario.pociones_curativas <= 0)
+                {
+                    System.out.println("No tienes esa poción. Elige otra.");
+                    eleccion = 0;
+                }
+                else
+                {
+                    player.myInventario.pociones_curativas--;
+                    player.hp = player.hp + 10;
+                    if (player.hp > player.maxHp)
+                    {
+                        player.hp = player.maxHp;
+                    }
+                }
+                break;
+        }
+        return eleccion;
+    }
     public static void gestionPociones(jugador player)
     {
         int eleccion;
@@ -31,49 +79,7 @@ public class inventario
             System.out.println("Que poción quieres usar??");
             elegirPoti(player.myInventario);
             eleccion = files.Main.gestionNumero(teclado);
-            switch (eleccion) {
-                case 1:
-                    if (player.myInventario.pociones_ataque <= 0)
-                    {
-                        System.out.println("No tienes esa poción. Elige otra.");
-                        eleccion = 0;
-                    }
-                    else
-                    {
-                        player.myInventario.pociones_ataque--;
-                        player.myArma.dmgActual = player.myArma.dmgActual + 3;
-                    }
-                    break;
-                case 2:
-                    if (player.myInventario.pociones_defensa <= 0)
-                    {
-                        System.out.println("No tienes esa poción. Elige otra.");
-                        eleccion = 0;
-                    }
-                    else
-                    {
-                        player.myInventario.pociones_defensa--;
-                        player.defensaActual = player.defensaActual + 2;
-
-                    }
-                        break;
-                default:
-                    if (player.myInventario.pociones_curativas <= 0)
-                    {
-                        System.out.println("No tienes esa poción. Elige otra.");
-                        eleccion = 0;
-                    }
-                    else
-                    {
-                        player.myInventario.pociones_curativas--;
-                        player.hp = player.hp + 10;
-                        if (player.hp > player.maxHp)
-                        {
-                            player.hp = player.maxHp;
-                        }
-                    }
-                    break;
-            }
+            switchPotis(player, eleccion);
         }
     }
 
