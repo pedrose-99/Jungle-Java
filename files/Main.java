@@ -18,7 +18,10 @@ public class Main
         opcion = teclado.next();
         try {
             eleccion = Integer.parseInt(opcion);
-        } catch (NumberFormatException nfe) {
+        } 
+        catch (NumberFormatException nfe) 
+        {
+            System.out.println("Eleccion incorrecta!!!");
             return (0); 
         }
         return eleccion;
@@ -46,6 +49,7 @@ public class Main
         }
         return (eleccion);
     }
+
     public static void main(String[] args) 
     {
         String black="\033[30m"; 
@@ -58,15 +62,17 @@ public class Main
         String white="\033[37m";
         //System.out.println(black+ "textoooooo " + white);
         
-        inventario myInventario = new inventario(0, 0,0);
+        inventario myInventario = new inventario(1, 0,0);
         Scanner teclado = new Scanner(System.in);
         arma myArma;
         int eleccion;
+        jugador player;
     
         eleccion = eleccionCamino(teclado);
         myArma = new arma(eleccion);
         myArma.imprimirEstadisticas(myArma);
         myInventario.printInventario(myInventario);
-
+        player = files.jugador.setJugador(eleccion, myInventario, myArma);
+        files.combate.simularCombate(2, player);
     }
 }

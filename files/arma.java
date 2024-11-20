@@ -13,17 +13,20 @@ public class arma
         {
             case 1:
                 tipo = eleccion;
-                dmg = 20;
-                AtaqueEspecial = 25;
+                dmg = 12;
+                dmgActual = 12;
+                AtaqueEspecial = 18;
                 break;
             case 2:
                 tipo = eleccion;
                 dmg = 10;
+                dmgActual = 10;
                 AtaqueEspecial = 15;
                 break;
             default:
                 tipo = eleccion;
                 dmg = 15;
+                dmgActual = 15;
                 AtaqueEspecial = 20;
                 break;
         }                
