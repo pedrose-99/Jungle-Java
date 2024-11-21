@@ -1,5 +1,6 @@
 package files;
 
-public class bossfinal {
-    
+public class bossfinal 
+{
+
 }

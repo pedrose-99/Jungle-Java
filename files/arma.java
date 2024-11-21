@@ -31,26 +31,5 @@ public class arma
                 break;
         }                
     }
-
-    public static void imprimirEstadisticas(arma myArma)
-    {
-        switch (myArma.tipo) {
-            case 1:
-                System.out.println("------------------------------------------");
-                System.out.println("------------------Mago--------------------");
-                break;
-            case 2:
-                System.out.println("------------------------------------------");
-                System.out.println("-----------------Guerrero------------------");
-                break;
-            default:
-                System.out.println("------------------------------------------");
-                System.out.println("-----------------Arquero------------------");
-                break;
-        }
-        System.out.println("- Daño base: " + myArma.dmg);
-        System.out.println("- Ataque especial: "+ myArma.AtaqueEspecial);
-        System.out.println("------------------------------------------");
-    }
 }
 

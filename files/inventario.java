@@ -8,16 +8,6 @@ public class inventario
     int pociones_defensa;
     int numPociones;
 
-    public static void elegirPoti(inventario myInventario)
-    {
-        System.out.println("------------------------------------------");
-        System.out.println("Que poción quieres usar??");
-        System.out.println("1. Poción de ataque. Ganas 3 de ataque");
-        System.out.println("2. Poción de defensa. Ganas 2 de defensa");
-        System.out.println("3- Pocion de vida. Te curas 10 de hp");
-        System.out.println("------------------------------------------");
-
-    }
 
     public static int switchPotis(jugador player, int eleccion)
     {
@@ -25,7 +15,7 @@ public class inventario
             case 1:
                 if (player.myInventario.pociones_ataque <= 0)
                 {
-                    System.out.println("No tienes esa poción. Elige otra.");
+                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -37,7 +27,7 @@ public class inventario
             case 2:
                 if (player.myInventario.pociones_defensa <= 0)
                 {
-                    System.out.println("No tienes esa poción. Elige otra.");
+                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -50,7 +40,7 @@ public class inventario
             default:
                 if (player.myInventario.pociones_curativas <= 0)
                 {
-                    System.out.println("No tienes esa poción. Elige otra.");
+                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -73,11 +63,11 @@ public class inventario
 
         eleccion = 0;
         teclado = new Scanner(System.in);
-        printInventario(player.myInventario);
+        files.printCositas.printInventario(player.myInventario);
         while (eleccion != 1 && eleccion != 2 && eleccion != 3)
         {
-            System.out.println("Que poción quieres usar??");
-            elegirPoti(player.myInventario);
+            files.printCositas.textoEfectoEscritura("Que poción quieres usar??");
+            files.printCositas.elegirPoti(player.myInventario);
             eleccion = files.Main.gestionNumero(teclado);
             eleccion = switchPotis(player, eleccion);
         }
@@ -99,13 +89,4 @@ public class inventario
         myInventario.numPociones = myInventario.pociones_curativas + myInventario.pociones_defensa + myInventario.pociones_ataque;
     }
 
-    public static void printInventario(inventario myInventario)
-    {
-        System.out.println("------------------------------------------");
-        System.out.println("---------Aquí esta tu inventario----------");
-        System.out.printf("Tienes %d pociones curativas %n", myInventario.pociones_curativas);
-        System.out.printf("Tienes %d pociones de ataque %n", myInventario.pociones_ataque);
-        System.out.printf("Tienes %d pociones defensivas %n", myInventario.pociones_defensa);
-        System.out.println("------------------------------------------");
-    }
 }

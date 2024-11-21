@@ -10,16 +10,6 @@ public class jugador
     arma myArma;
     int dificultad;
 
-    public static void printStats(jugador player)
-    {
-        System.out.println("------------------------------------------");
-        System.out.println("-------Aquí estan tus estadisticas--------");
-        System.out.printf("Tienes %d/%d %n", player.hp, player.maxHp);
-        System.out.printf("Tienes %d de defensa %n", player.defensaActual);
-        System.out.printf("Tienes %d de ataque %n", player.myArma.dmgActual);
-        System.out.println("------------------------------------------");
-    }
-
     public jugador(int vida, int defense, inventario myInventary, arma myWeapon, int dificil)
     {
         maxHp = vida;

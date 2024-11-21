@@ -40,7 +40,7 @@ public class enemigo
             case "leon":
                 enemy = new enemigo(nombre, 30, 10, 9);
                 break ;
-            case "mono":
+            case "babuino":
                 enemy = new enemigo(nombre, 25, 6, 12);
                 break ;
             case "gorila":
@@ -59,12 +59,4 @@ public class enemigo
         return enemy;
     }
 
-    public static void imprimirEnemigo(enemigo myEnemy)
-    {
-        System.out.println("------------------------------------------");
-        System.out.println("Enemigo "+ myEnemy.nombre+" ha aparecido.");
-        System.out.println("Tiene " + myEnemy.hp + " de vida.");
-        System.out.println("Tiene " + myEnemy.defensa + " de defensa.");
-        System.out.println("------------------------------------------");
-    }
 }
