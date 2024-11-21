@@ -15,6 +15,16 @@ public class enemigo
         dmg = dano;
     }
 
+    public static enemigo[] generacionEnemigos(int numEnemigos, String nombre)
+    {
+        enemigo[] enemigos = new enemigo[numEnemigos];
+        for(int i = 0; i < numEnemigos; i++)
+        {
+            enemigos[i] = setEnemigo(nombre);
+        }
+        return (enemigos);
+    }
+
     public static enemigo setEnemigo(String nombre)
     {
         enemigo enemy;

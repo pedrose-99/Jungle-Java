@@ -13,7 +13,7 @@ public class inventario
         System.out.println("------------------------------------------");
         System.out.println("Que poción quieres usar??");
         System.out.println("1. Poción de ataque. Ganas 3 de ataque");
-        System.out.println("2. Pociçon de defensa. Ganas 2 de defensa");
+        System.out.println("2. Poción de defensa. Ganas 2 de defensa");
         System.out.println("3- Pocion de vida. Te curas 10 de hp");
         System.out.println("------------------------------------------");
 
@@ -79,7 +79,7 @@ public class inventario
             System.out.println("Que poción quieres usar??");
             elegirPoti(player.myInventario);
             eleccion = files.Main.gestionNumero(teclado);
-            switchPotis(player, eleccion);
+            eleccion = switchPotis(player, eleccion);
         }
     }
 

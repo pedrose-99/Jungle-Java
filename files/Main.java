@@ -50,6 +50,21 @@ public class Main
         return (eleccion);
     }
 
+    public static int setDificultad(Scanner teclado)
+    {
+        int dificil;
+
+        dificil = 0;
+        System.out.println("------------------------------------------");
+        while (dificil != 1 && dificil != 2 && dificil != 3)
+        {
+            System.out.print("Seleccione la dificultad entre 1, 2 y 3: ");
+            dificil = gestionNumero(teclado);
+            System.out.println("------------------------------------------");
+        }
+        System.out.println("La dificultad seleccionado es: " + dificil);
+        return (dificil);
+    }
     public static void main(String[] args) 
     {
         String black="\033[30m"; 
@@ -67,12 +82,14 @@ public class Main
         arma myArma;
         int eleccion;
         jugador player;
+        int dificil;
     
+        dificil = setDificultad(teclado);
         eleccion = eleccionCamino(teclado);
         myArma = new arma(eleccion);
         myArma.imprimirEstadisticas(myArma);
         myInventario.printInventario(myInventario);
-        player = files.jugador.setJugador(eleccion, myInventario, myArma);
-        files.combate.simularCombate(2, player);
+        player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
+        files.combate.simularCombate((2 * player.dificultad), "pepito", player);
     }
 }
