@@ -75,7 +75,6 @@ public class Ahorcado
         {
             System.out.println("Has perdido y has sido ahorcado. La palabra era: " + adivinanza);
         }
-        teclado.close();
     }
 }
 
