@@ -66,6 +66,7 @@ public class inventario
         files.printCositas.printInventario(player.myInventario);
         while (eleccion != 1 && eleccion != 2 && eleccion != 3)
         {
+            files.printCositas.printSeparador();
             files.printCositas.textoEfectoEscritura("Que poción quieres usar??");
             files.printCositas.elegirPoti(player.myInventario);
             eleccion = files.Main.gestionNumero(teclado);

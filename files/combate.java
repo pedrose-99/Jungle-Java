@@ -3,11 +3,10 @@ import java.util.Scanner;
 
 public class combate 
 {
-    public static void arqueroLucha(int dado, jugador player, enemigo[] enemigos)
+    public static int enemigoCorrecto(enemigo[] enemigos)
     {
         int i;
         boolean enemigoCorrecto;
-        int dano;
 
         i = 0;
         enemigoCorrecto = false;
@@ -22,6 +21,25 @@ public class combate
                 i++;
             }
         }
+        return (i);
+    }
+
+    public static void checkVida(int vida)
+    {
+        if (vida <= 0)
+        {
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.red+"Enemigo Muerto!!!!!");
+            files.printCositas.printSeparador();
+        }
+    }
+
+    public static void arqueroLucha(int dado, jugador player, enemigo[] enemigos)
+    {
+        int i;
+        int dano;
+
+        i = enemigoCorrecto(enemigos);
         if (dado >= 18)
         {
             files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial. Pegas 2 veces extra!!");
@@ -29,111 +47,104 @@ public class combate
             enemigos[i].hp = enemigos[i].hp - dano;
             dano = tirarDado(player.myArma.AtaqueEspecial);
             enemigos[i].hp = enemigos[i].hp - dano;
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
             files.printCositas.textoEfectoEscritura("Ataque extra!!!!");
-            enemigoCorrecto = false;
-            while (!enemigoCorrecto)
-            {
-                if (enemigos[i].hp > 0)
-                {
-                    enemigoCorrecto = true;
-                }
-                else
-                {
-                    i++;
-                }
-            }
+            i = enemigoCorrecto(enemigos);
             dano = tirarDado(player.myArma.AtaqueEspecial);
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
             enemigos[i].hp = enemigos[i].hp - dano;
             dano = tirarDado(player.myArma.AtaqueEspecial);
             enemigos[i].hp = enemigos[i].hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
             enemigos[i].hp = enemigos[i].hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
             dano = tirarDado(player.myArma.dmg);
             enemigos[i].hp = enemigos[i].hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
         }
     }
 
     public static void magiaLucha(int dado, jugador player, enemigo[] enemigos)
     {
         int i;
-        boolean enemigoCorrecto;
         int dano;
 
-        i = 0;
-        enemigoCorrecto = false;
-        while (!enemigoCorrecto)
-        {
-            if (enemigos[i].hp > 0)
-            {
-                enemigoCorrecto = true;
-            }
-            else
-            {
-                i++;
-            }
-        }
+        i = enemigoCorrecto(enemigos);
         if (dado >= 18)
         {
             files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial y te subes la defensa!!!");
             enemigos[i].hp = enemigos[i].hp - player.myArma.AtaqueEspecial;
             player.defensaActual = player.defensaActual + 2;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + player.myArma.AtaqueEspecial+" de daño");
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
             for (int j = 0; j < enemigos.length; j++)
             {
                 enemigos[j].hp = enemigos[j].hp - 4;
             }
-            files.printCositas.textoEfectoEscritura("Has hecho 4 de daño en area a todos!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 4 de daño en area a todos!!");
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
             enemigos[i].hp = enemigos[i].hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
             for (int j = 0; j < enemigos.length; j++)
             {
                 enemigos[j].hp = enemigos[j].hp - 2;
             }
-            files.printCositas.textoEfectoEscritura("Has hecho 2 de daño en area a todos!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 2 de daño en area a todos!!");
         }
     }
 
     public static void destruccionLucha(int dado, jugador player, enemigo[] enemigos)
     {
         int i;
-        boolean enemigoCorrecto;
         int dano;
 
-        i = 0;
-        enemigoCorrecto = false;
-        while (!enemigoCorrecto)
+        i = enemigoCorrecto(enemigos);
+        if (dado >= 15)
         {
-            if (enemigos[i].hp > 0)
-            {
-                enemigoCorrecto = true;
-            }
-            else
-            {
-                i++;
-            }
-        }
-        if (dado >= 18)
-        {
-            files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial y te curas todo el daño!!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow+"Has hecho critico!!!! Usas tu ataque especial y te curas todo el daño!!!");
             enemigos[i].hp = enemigos[i].hp - player.myArma.AtaqueEspecial;
             player.hp = player.hp + player.myArma.AtaqueEspecial;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " +player.myArma.AtaqueEspecial+" de daño");
             if (player.hp > player.maxHp)
             {
                 player.hp = player.maxHp;
             }
-            files.printCositas.textoEfectoEscritura("Te has curado "+ player.myArma.AtaqueEspecial);
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]); 
+            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Te has curado "+ player.myArma.AtaqueEspecial);
+            files.printCositas.textoEfectoEscritura("Tu vida es "+ player.hp+ "/" + player.maxHp);
+            for (int j = 0; j < enemigos.length; j++)
+            {
+                enemigos[j].hp = enemigos[j].hp - 4;
+            }
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 4 de daño en area a todos!!");
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
             enemigos[i].hp = enemigos[i].hp - dano;
             player.hp = player.hp - 2;
-            files.printCositas.textoEfectoEscritura("Te has hecho 2 de daño de retroceso!!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            checkVida(enemigos[i].hp);
+            files.printCositas.imprimirEnemigo(enemigos[i]);
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Te has hecho 2 de daño de retroceso!!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Tu vida es "+ player.hp+ "/" + player.maxHp);
+
         }
     }
     public static void jugadorAtaca(jugador player, enemigo[] enemigos)
@@ -144,6 +155,8 @@ public class combate
         dado = tirarDado(20);
         if (dado >= enemigos[0].defensa)
         {
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + enemigos[0].defensa);
+            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Superaste la defensa!!"+ files.printCositas.white);
             switch (player.myArma.tipo)
             {
                 case 1:
@@ -159,7 +172,7 @@ public class combate
         }
         else
         {
-            files.printCositas.textoEfectoEscritura("La defensa del enemigo es de " + enemigos[0].defensa + ". Fallaste!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + enemigos[0].defensa + ". Fallaste!!");
         }
     }
 
@@ -181,7 +194,7 @@ public class combate
                 else
                 {
                     files.printCositas.printSeparador();
-                    files.printCositas.textoEfectoEscritura("No tienes pociones disponibles!!!");
+                    files.printCositas.textoEfectoEscritura(files.printCositas.red + "No tienes pociones disponibles!!!");
                     files.printCositas.printSeparador();
                 }
                 break ;
@@ -199,7 +212,7 @@ public class combate
         int num;
 
         num = (int) (Math.random() * maximoDado) + 1;
-        files.printCositas.textoEfectoEscritura("Ha sacado " + num + " de " + maximoDado);
+        files.printCositas.textoEfectoEscritura(files.printCositas.white + "Ha sacado " + num + " de " + maximoDado);
         return (num);
     }
 
@@ -209,24 +222,27 @@ public class combate
         int dano;
 
         files.printCositas.printSeparador();
-        files.printCositas.textoEfectoEscritura("Turno Enemigo, te pegan " + enemigos.length+ " enemigos de nombre " + enemigos[0].nombre);
+        files.printCositas.textoEfectoEscritura(files.printCositas.red +"----------------Turno Enemigo---------------" + files.printCositas.white);
+        files.printCositas.printSeparador();
         for (int i = 0; i < enemigos.length; i++)
         {
             if (enemigos[i].hp > 0)
             {
                 files.printCositas.printSeparador();
-                files.printCositas.textoEfectoEscritura("Tu enemigo lanza un dado para intentar romper tu defensa" );
+                files.printCositas.textoEfectoEscritura(files.printCositas.red + enemigos[i].nombre +" lanza un dado para intentar romper tu defensa" );
                 romperDefensa = tirarDado(20);
-                files.printCositas.textoEfectoEscritura("Tu defensa es de: " + player.defensaActual);
+                files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa es de " + player.defensaActual);
                 if (player.defensaActual <= romperDefensa)
                 {
-                    files.printCositas.textoEfectoEscritura("Han roto tu defensa!");
+                    files.printCositas.textoEfectoEscritura(files.printCositas.red +"Han roto tu defensa!");
                     dano = tirarDado(enemigos[i].dmg);
                     player.hp = player.hp - dano;
+                    files.printCositas.textoEfectoEscritura(files.printCositas.red +"Te han quitado " + dano+ " de vida!");
+                    files.printCositas.textoEfectoEscritura(files.printCositas.green +"Te queda " + player.hp+ "/" + player.maxHp);
                 }
                 else
                 {
-                    files.printCositas.textoEfectoEscritura("Has esquivado el ataque!");
+                    files.printCositas.textoEfectoEscritura(files.printCositas.green+"Has esquivado el ataque!");
                 }
             }
         }
@@ -261,27 +277,29 @@ public class combate
         
         teclado = new Scanner(System.in);
         files.printCositas.printSeparador();
-        files.printCositas.textoEfectoEscritura("Bienvenido a la fase de combate!!!!");
+        files.printCositas.textoEfectoEscritura(files.printCositas.green+"Bienvenido a la fase de combate!!!!");
+        files.printCositas.printSeparador();
+        files.printCositas.imprimirEnemigos(enemigos);
         while (player.hp > 0 && !enemigosDerrotados)
         {
             tuTurno = true;
             while (tuTurno)
             {
                 files.printCositas.menuCombate();
-                System.out.print(files.printCositas.blue);
+                System.out.print(files.printCositas.white +"Elegiste la opción: ");
                 eleccion = files.Main.gestionNumero(teclado);
                 while (eleccion != 1 && eleccion != 2 && eleccion != 3)
                 {
+                    files.printCositas.textoEfectoEscritura("La opción es incorrecta!!!");
+                    files.printCositas.menuCombate();
+                    System.out.print(files.printCositas.white +"Elegiste la opción: ");
                     eleccion = files.Main.gestionNumero(teclado);
                 }
                 tuTurno = gestionTurno(player, eleccion, enemigos);
             }
             turnoEnemigos(enemigos, player);
             enemigosDerrotados = checkEnemigos(enemigos);
-            for (int i = 0; i < enemigos.length; i++)
-            {
-                files.printCositas.imprimirEnemigo(enemigos[i]);
-            }
+            files.printCositas.imprimirEnemigos(enemigos);
         }
         if (player.hp <= 0)
         {

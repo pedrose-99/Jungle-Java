@@ -9,13 +9,15 @@ public class Main
         int eleccion;
         String opcion;
 
+        eleccion = 0;
         opcion = teclado.next();
         try {
             eleccion = Integer.parseInt(opcion);
         } 
         catch (NumberFormatException nfe) 
         {
-            files.printCositas.textoEfectoEscritura("Eleccion incorrecta!!!");
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Eleccion incorrecta!!!"+ files.printCositas.white);
             return (0); 
         }
         return eleccion;
@@ -45,12 +47,18 @@ public class Main
         int dificil;
 
         dificil = 0;
-        files.printCositas.printSeparador();
         while (dificil != 1 && dificil != 2 && dificil != 3)
         {
-            System.out.print("Seleccione la dificultad entre 1, 2 y 3: ");
+            files.printCositas.printSeparador();
+            System.out.print("Seleccione la dificultad entre "+ files.printCositas.yellow+"1 "+files.printCositas.blue+ "2 " +files.printCositas.red+ "3: "+ files.printCositas.white);
             dificil = gestionNumero(teclado);
             files.printCositas.printSeparador();
+            if (dificil != 1 && dificil != 2 && dificil != 3)
+            {
+                files.printCositas.printSeparador();
+                files.printCositas.textoEfectoEscritura(files.printCositas.red + "Esa dificultad no existe!!!.");
+                files.printCositas.printSeparador();
+            }
         }
         files.printCositas.textoEfectoEscritura("La dificultad seleccionado es: " + dificil);
         return (dificil);
@@ -64,12 +72,15 @@ public class Main
         jugador player;
         int dificil;
     
+        files.printCositas.bienvenida();
         dificil = setDificultad(teclado);
         eleccion = eleccionCamino(teclado);
         myArma = new arma(eleccion);
         files.printCositas.imprimirEstadisticas(myArma);
-        files.printCositas.printInventario(myInventario);
         player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
-        files.combate.simularCombate((2 * player.dificultad), "pepito", player);
+        files.printCositas.printStats(player);
+        files.printCositas.printInventario(myInventario);
+        //files.Ahorcado.ahorcado("Silvia");
+        files.combate.simularCombate((2 * player.dificultad), "aveCria", player);
     }
 }

@@ -64,3 +64,5 @@ Tiras un dado de 20.
         Pifia y te quitan daño
     }
 }
+
+
