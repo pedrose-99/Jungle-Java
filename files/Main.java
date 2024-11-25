@@ -87,10 +87,9 @@ public class Main
             default:
                 break;
         }
-        myArma = new arma(eleccion);
-        files.printCositas.imprimirEstadisticas(myArma);
-        files.printCositas.printInventario(myInventario);
-        files.Ahorcado.ahorcado("Silvia");
-        files.combate.simularCombate((2 * player.dificultad), "aveCria", player);
+      //  files.printCositas.imprimirEstadisticas(myArma);
+    //    files.printCositas.printInventario(myInventario);
+    //    files.Ahorcado.ahorcado("Silvia");
+    //    files.combate.simularCombate((2 * player.dificultad), "aveCria", player);
     }
 }

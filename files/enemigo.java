@@ -49,8 +49,11 @@ public class enemigo
             case "serpiente":
                 enemy = new enemigo(nombre, 20, 9, 13);
                 break ;
-            case "oso":
-                enemy = new enemigo(nombre, 40, 10, 11);
+            case "jaguar":
+                enemy = new enemigo(nombre, 40, 10, 13);
+                break ;
+            case "jabali":
+                enemy = new enemigo(nombre, 60, 14, 14);
                 break ;
             default:
                 enemy = new enemigo(nombre, 30, 7, 9);
