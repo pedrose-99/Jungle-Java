@@ -43,7 +43,6 @@ public class Main
         return (eleccion);
     }
 
-    }
     public static int setDificultad(Scanner teclado)
     {
         int dificil;
