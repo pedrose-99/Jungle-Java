@@ -1,6 +1,7 @@
 package files;
-import java.util.Scanner;
 
+import java.util.Scanner;
+ 
 public class Main 
 {
 
@@ -21,7 +22,7 @@ public class Main
         return eleccion;
     }
 
-    public static int eleccionCamino(Scanner teclado)
+    public static int elegirCamino(Scanner teclado)
     {
         int eleccion;
 
@@ -40,6 +41,7 @@ public class Main
         return (eleccion);
     }
 
+    }
     public static int setDificultad(Scanner teclado)
     {
         int dificil;
@@ -65,11 +67,22 @@ public class Main
         int dificil;
     
         dificil = setDificultad(teclado);
-        eleccion = eleccionCamino(teclado);
+        eleccion = elegirCamino(teclado);
+        myArma = new arma(eleccion);
+        player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
+        switch (eleccion) {
+            case 1:
+                files.caminoMagia.caminoMago(player, dificil);
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
         myArma = new arma(eleccion);
         files.printCositas.imprimirEstadisticas(myArma);
         files.printCositas.printInventario(myInventario);
-        player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
-        files.combate.simularCombate((2 * player.dificultad), "pepito", player);
+
+        //files.combate.simularCombate((2 * player.dificultad), "pepito", player);
     }
 }
