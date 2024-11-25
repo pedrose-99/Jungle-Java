@@ -80,7 +80,7 @@ public class Main
         player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
         files.printCositas.printStats(player);
         files.printCositas.printInventario(myInventario);
-        files.Ahorcado.ahorcado("Silvia");
+        files.Ahorcado.ahorcado("prueba");
         files.combate.simularCombate((2 * player.dificultad), "aveCria", player);
     }
 }
