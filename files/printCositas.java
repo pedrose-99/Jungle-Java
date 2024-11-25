@@ -23,7 +23,7 @@ public class printCositas
         Scanner teclado = new Scanner(System.in);
         for(String linea : texto){
             teclado.nextLine();
-            files.printCositas.textoEfectoEscritura(linea);
+            textoEfectoEscritura(linea);
         }
         teclado.close();
     }
@@ -42,76 +42,90 @@ public class printCositas
 
     public static void menuCombate()
     {
-        files.printCositas.textoEfectoEscritura(green +"----------------Es tu turno---------------" + files.printCositas.blue);
-        files.printCositas.textoEfectoEscritura("Que quieres hacer?");
-        files.printCositas.textoEfectoEscritura("1. Tirar dado y atacar");
-        files.printCositas.textoEfectoEscritura("2. Usar poción de ayuda");
-        files.printCositas.textoEfectoEscritura("3. Mirar tus estadisticas y tu inventario" + yellow);
+        printSeparador();
+        textoEfectoEscritura(green +"----------------Es tu turno---------------" + white);
+        printSeparador();
+        textoEfectoEscritura("¿Que quieres hacer?");
+        textoEfectoEscritura(white + "1. " +blue +" Tirar dado y atacar");
+        textoEfectoEscritura(white + "2. " +cyan +" Usar poción de ayuda");
+        textoEfectoEscritura(white + "3. " + purple +" Mirar tus estadisticas y tu inventario" + yellow);
     }
 
     public static void bienvenida()
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura("Bienvenido al templo");
+        printSeparador();
+        textoEfectoEscritura(green+"Bienvenido al templo");
         printSeparador();
     }
     
     public static void printElegirCamino()
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura("Que camino eliges:");
-        files.printCositas.textoEfectoEscritura("1. Camino de la magia");
-        files.printCositas.textoEfectoEscritura("2. Camino de la destrucción");
-        files.printCositas.textoEfectoEscritura("3. Camino de la arqueria");
+        textoEfectoEscritura("Que camino eliges:");
+        textoEfectoEscritura("1."+ red +" Camino de la magia");
+        textoEfectoEscritura(white +"2."+ blue+ " Camino de la destrucción");
+        textoEfectoEscritura(white + "3." +purple+" Camino de la arqueria"+ white);
     }
 
     public static void imprimirEstadisticas(arma myArma)
     {
+        printSeparador();
         switch (myArma.tipo) {
             case 1:
-                printSeparador();
-                files.printCositas.textoEfectoEscritura("------------------Mago--------------------");
+                textoEfectoEscritura(red +"------------------Mago--------------------");
                 break;
             case 2:
-                printSeparador();
-                files.printCositas.textoEfectoEscritura("-----------------Guerrero------------------");
+                textoEfectoEscritura(blue +"-----------------Guerrero------------------");
                 break;
             default:
-                printSeparador();
-                files.printCositas.textoEfectoEscritura("-----------------Arquero------------------");
+                textoEfectoEscritura(purple +"-----------------Arquero------------------");
                 break;
         }
-        files.printCositas.textoEfectoEscritura("- Daño base: " + myArma.dmg);
-        files.printCositas.textoEfectoEscritura("- Ataque especial: "+ myArma.AtaqueEspecial);
         printSeparador();
+
+    }
+
+    public static void imprimirEnemigos(enemigo[] enemigos)
+    {
+        for (int i = 0; i < enemigos.length; i++)
+        {
+            if (enemigos[i].hp > 0)
+            {
+                files.printCositas.imprimirEnemigo(enemigos[i]);
+            }
+        }
     }
 
     public static void imprimirEnemigo(enemigo myEnemy)
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura("Enemigo "+ myEnemy.nombre+" ha aparecido.");
-        files.printCositas.textoEfectoEscritura("Tiene " + myEnemy.hp + " de vida.");
-        files.printCositas.textoEfectoEscritura("Tiene " + myEnemy.defensa + " de defensa.");
+        textoEfectoEscritura(red+ "Enemigo "+ myEnemy.nombre);
+        printSeparador();
+        textoEfectoEscritura(red +"Tiene " + myEnemy.hp + " de vida.");
+        textoEfectoEscritura(yellow + "Tiene " + myEnemy.defensa + " de defensa.");
+        textoEfectoEscritura(blue +"Tiene " + myEnemy.dmg + " de ataque.");
         printSeparador();
     }
+
 
     public static void printStats(jugador player)
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura("-------Aquí estan tus estadisticas--------");
-        System.out.printf("Tienes %d/%d %n", player.hp, player.maxHp);
-        System.out.printf("Tienes %d de defensa %n", player.defensaActual);
-        System.out.printf("Tienes %d de ataque %n", player.myArma.dmgActual);
+        textoEfectoEscritura(green +"-------Aquí estan tus estadisticas--------");
+        printSeparador();
+        System.out.printf(red + "Tienes %d/%d %n", player.hp, player.maxHp);
+        System.out.printf(yellow + "Tienes %d de defensa %n", player.defensaActual);
+        System.out.printf(blue +"Tienes %d de ataque %n", player.myArma.dmgActual);
         printSeparador();
     }
 
     public static void elegirPoti(inventario myInventario)
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura("Que poción quieres usar??");
-        files.printCositas.textoEfectoEscritura("1. Poción de ataque. Ganas 3 de ataque");
-        files.printCositas.textoEfectoEscritura("2. Poción de defensa. Ganas 2 de defensa");
-        files.printCositas.textoEfectoEscritura("3- Pocion de vida. Te curas 10 de hp");
+        textoEfectoEscritura("1."+blue + " Poción de ataque. Ganas 3 de ataque");
+        textoEfectoEscritura(white+"2."+ yellow+ " Poción de defensa. Ganas 2 de defensa");
+        textoEfectoEscritura(white + "3."+ red+" Pocion de vida. Te curas 10 de hp");
         printSeparador();
 
     }
@@ -119,10 +133,11 @@ public class printCositas
     public static void printInventario(inventario myInventario)
     {
         printSeparador();
-        files.printCositas.textoEfectoEscritura(cyan + "---------Aquí esta tu inventario----------");
-        System.out.printf("Tienes %d pociones curativas %n", myInventario.pociones_curativas);
-        System.out.printf("Tienes %d pociones de ataque %n", myInventario.pociones_ataque);
-        System.out.printf("Tienes %d pociones defensivas %n", myInventario.pociones_defensa);
+        textoEfectoEscritura(green + "---------Aquí esta tu inventario----------");
+        printSeparador();
+        textoEfectoEscritura(red +"Tienes "+myInventario.pociones_curativas+ red+" pociones curativas");
+        textoEfectoEscritura(blue + "Tienes " +myInventario.pociones_ataque + blue +" pociones de ataque");
+        textoEfectoEscritura(yellow +"Tienes "+  myInventario.pociones_defensa + yellow + " pociones defensivas ");
         printSeparador();
     }
 }
