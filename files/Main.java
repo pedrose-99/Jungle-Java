@@ -31,7 +31,6 @@ public class Main
         int eleccion;
         String opcion;
 
-        eleccion = 0;
         opcion = teclado.next();
         try {
             eleccion = Integer.parseInt(opcion);
@@ -108,6 +107,7 @@ public class Main
             default:
                 break;
         }
+        files.Ahorcado.acertijoMonedas();
       //  files.printCositas.imprimirEstadisticas(myArma);
     //    files.printCositas.printInventario(myInventario);
     //    files.Ahorcado.ahorcado("Silvia");
