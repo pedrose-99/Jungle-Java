@@ -1,7 +1,7 @@
 package files;
 import java.util.Scanner;
 
-public class camino2
+public class caminoDestruccion
 {
     
 }

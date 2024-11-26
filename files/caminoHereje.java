@@ -1,7 +1,6 @@
 package files;
 import java.util.Scanner;
 
-public class camino3
+public class caminoHereje
 {
-
 }

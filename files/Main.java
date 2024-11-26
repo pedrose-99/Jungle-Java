@@ -4,6 +4,27 @@ import java.util.Scanner;
  
 public class Main 
 {
+    public static int elegir(String eleccion1, String eleccion2, Scanner teclado)
+    {
+        int eleccion;
+
+        eleccion = 0;
+        while (eleccion != 1 && eleccion != 2)
+        {
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura("¿Que camino eliges?");
+            files.printCositas.textoEfectoEscritura("1- " + eleccion1);
+            files.printCositas.textoEfectoEscritura("2- " + eleccion2);
+            System.out.print("Elegiste el camino: ");
+            eleccion = files.Main.gestionNumero(teclado);
+            files.printCositas.printSeparador();
+            if (eleccion != 1 && eleccion != 2)
+            {
+                files.printCositas.textoEfectoEscritura("Ese camino no existe.");
+            }
+        }
+        return eleccion;
+    }
 
     public static int gestionNumero(Scanner teclado)
     {

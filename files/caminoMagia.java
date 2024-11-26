@@ -3,27 +3,6 @@ import java.util.Scanner;
 
 public class caminoMagia
 {
-    public static int elegir(String eleccion1, String eleccion2, Scanner teclado)
-    {
-        int eleccion;
-
-        eleccion = 0;
-        while (eleccion != 1 && eleccion != 2)
-        {
-            files.printCositas.printSeparador();
-            files.printCositas.textoEfectoEscritura("¿Que camino eliges?");
-            files.printCositas.textoEfectoEscritura("1- " + eleccion1);
-            files.printCositas.textoEfectoEscritura("2- " + eleccion2);
-            System.out.print("Elegiste el camino: ");
-            eleccion = files.Main.gestionNumero(teclado);
-            files.printCositas.printSeparador();
-            if (eleccion != 1 && eleccion != 2)
-            {
-                files.printCositas.textoEfectoEscritura("Ese camino no existe.");
-            }
-        }
-        return eleccion;
-    }
 
     public static void finalMagia(jugador player, int dificultad)
     {
@@ -55,7 +34,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura(" Apareces en una mazmorra en la jungla, no ves nada pero consigues encender un mechero que llevabas encima. Al mirar detenidamente ves sobre un pedestal una varita, al tocarla empiezas a notar una extraña sensación, aún así decides guardarla.\r\n" + //
                         "\r\n" + //
                         "Crees que te has vuelto loco ya que ves dos túneles idénticos, piensas que uno de ellos puede ser tu salida para poder proseguir con la búsqueda de la reliquia perdida de Yax-Balam, pero antes de poder tomar una decisión aparece un babuino y nos indica que debemos tomar uno de los caminos o nos enfrentaremos a una muerte segura.");
-        eleccion= elegir("Camino izquierda", "Camino derecha", teclado);
+        eleccion= files.Main.elegir("Camino izquierda", "Camino derecha", teclado);
         //camino izquierda
         if (eleccion == 1)
         {
@@ -64,7 +43,7 @@ public class caminoMagia
             files.printCositas.textoEfectoEscritura("Tras una ardua batalla consigues deshacerte de la vil criatura. Notas que tus movimientos son más lentos, estás empezando a tener hipotermia, le quitas la piel al gorila para hacerte un abrigo. Miras a tu alrededor y ves que ante ti se han abierto dos escaleras tras las estatuas, una que sube, y la otra que baja.");
             //Subir defensa + cofre aleatorio(Crear esta funcion) + subir de nivel.
             
-            eleccion = elegir("Escalera que sube", "Escalera que baja", teclado);
+            eleccion = files.Main.elegir("Escalera que sube", "Escalera que baja", teclado);
             //Escalera que sube
             if (eleccion == 1)
             {
@@ -75,7 +54,7 @@ public class caminoMagia
                 //Subir nivel etc
                 files.printCositas.textoEfectoEscritura("Tras sufrir varios ataques del jaguar consigues derrotarlo, este llevaba al cuello una llave dorada, es probable que esa llave haya parado varios de tus hechizos, la recoges y empiezas a buscar una puerta en la que puedas encajarla, bajas las escaleras corriendo e intentas buscar una cerradura.\r\n" + //
                                         "En una de las estatuas visualizas un agujero donde podría encajar, pero cuando vas a meter la llave se abre una grieta en la pared.");
-                eleccion = elegir("Grieta en la pared", "Cerradura", teclado);
+                eleccion = files.Main.elegir("Grieta en la pared", "Cerradura", teclado);
                 //Grieta en la pared
                 if (eleccion == 1)
                 {
@@ -116,7 +95,7 @@ public class caminoMagia
                 files.printCositas.textoEfectoEscritura("Das tu respuesta sin pensarlo dos veces: ¡El fuego! y entras por la puerta, al fondo ves un cofre, lo abres y consigues una mejora para tu varita.            \r\n" + //
                                         "Vuelves a estar en la sala anterior, pero las estatuas están comenzando a flotar ya que la sala ha empezado a inundarse una vez has entrado.\r\n" + //
                                         "");
-                eleccion = elegir("Buceo", "Nadar", teclado);
+                eleccion = files.Main.elegir("Buceo", "Nadar", teclado);
                 //buceo
                 if (eleccion == 1)
                 {
@@ -155,7 +134,7 @@ public class caminoMagia
             files.Ahorcado.ahorcado("LaMontana");
             files.printCositas.textoEfectoEscritura("El cofre se abre solo y arroja su contenido, encuentras una empuñadura para tu varita, una poción de vida y 200 monedas de oro. Tras recoger las recompensas continúas por el pasadizo ayudándote del mechero para ver en la oscuridad, de pronto notas un temblor en el suelo y al echar la vista atrás ves una marabunta de serpientes que reptan hacia ti. Sales corriendo y no ves el acantilado delante tuya que da a una poza subterránea , caes inevitablemente…. \r\n" + //
                                 "Tras subir a la superficie del agua te das cuenta de que no hay una salida fácil.");
-            eleccion = elegir("Agarrarte", "Bucear", teclado);
+            eleccion = files.Main.elegir("Agarrarte", "Bucear", teclado);
             //Agarrarte
             if (eleccion == 1)
             {
@@ -164,7 +143,7 @@ public class caminoMagia
                                         "En el suelo encuentras una antorcha apagada e intentas encenderla con tu mechero, pero al haber caído al agua, el mechero se ha mojado y ya no enciende, recitas varias veces un conjuro para hacer luz y tras varios intentos lo consigues, al hacerse la luz ves un enjambre de serpientes, el mismo que había provocado que cayeras a la poza.\r\n" + //
                                         "Necesitas buscar una solución.\r\n" + //
                                         "");
-            eleccion = elegir("Luchar", "Trepar", teclado);                            
+            eleccion = files.Main.elegir("Luchar", "Trepar", teclado);                            
                 if (eleccion == 1)
                 {
                     files.printCositas.textoEfectoEscritura("Empuñas tu varita y te decides a lanzar un hechizo de fuego para deshacerte de las serpientes, a simple vista cuentas miles de ellas, lanzas tu hechizo y consigues acabar con bastantes, pero no es suficiente. \r\n" + //
@@ -196,7 +175,7 @@ public class caminoMagia
                                         "Sigues el pasadizo hasta que te empieza a faltar el aire, encuentras un lugar de descanso para poder seguir tu camino. Al avanzar comienzas a visualizar luz, sigues tu recorrido a toda prisa y consigues salir a la superficie, ante ti, encuentras una sala llena de vegetación, escuchas pájaros y piensas que has llegado a la cámara secreta de Yax-Balam. Sin embargo, de pronto aparecen dos babuinos que buscan acabar contigo y así evitar que continúes tu búsqueda.");
                 files.combate.simularCombate(2*dificultad, "babuino", player);
                 files.printCositas.textoEfectoEscritura("Una vez muertos ambos babuinos necesitas recuperar fuerzas e hidratarte, encuentras unas bayas que crecen de un arbusto y al fondo visualizas una especie de jabalí.");
-                eleccion = elegir("Luchar", "Trepar", teclado);
+                eleccion = files.Main.elegir("Luchar", "Trepar", teclado);
                 if (eleccion == 1)
                 {
                     files.printCositas.textoEfectoEscritura("Necesitas plantear bien tu estrategia ya que estás cansado, decides pelear contra el jabalí. Le llamas desde la distancia y carga contra ti, el jabalí pasa cerca de ti pero no impacta, es el momento de que lances tu ataque, consigues herirle y os metéis en una lucha encarnizada.");
