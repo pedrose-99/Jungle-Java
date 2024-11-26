@@ -7,8 +7,13 @@ public class caminoHereje
     
     public static void finalHereje(jugador player, int dificultad)
     {
-
+        files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo “ Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?”");
+        files.Ahorcado.ahorcado("UnSecreto");
+        files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam, se abalanza contra ti portando su mítica vestimenta de guerra, consigue alcanzarte con su lanza pero te revuelves y consigues zafarte, el rey manda a sus esbirros que han salido de la nada a atacarte, luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya. Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar el sagrado arco del jaguar y lanzar una flecha que le haga descansar en paz. Coges el arco y , notas como poco a poco se va cargando de una energía azul y brillante, lanzas una flecha se ve claramente que es un disparo certero hiriendo de gravedad a Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie. Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias… Solo hay una manera de saberlo…\r\n" + //
+                        "");
+        //Enemigo final hacerlo
     }
+
     public static void caminoArco(jugador player , int dificultad)
     {
         int eleccion;
@@ -45,6 +50,58 @@ public class caminoHereje
                                 "");
 
             files.combate.simularCombate(1*dificultad, "Guarlock", player);
+            files.printCositas.textoEfectoEscritura("Al ver cómo el oro bajo tus pies comienza a ondular como si estuviera vivo, decides no arriesgarte. Con el carcaj bien asegurado a tu espalda, corres hacia la puerta de piedra que acaba de abrirse al otro extremo de la sala. Sin embargo, cuando apenas das unos pasos, el oro comienza a reunirse en un solo punto, derritiéndose y moldeándose como si tuviera voluntad propia. Frente a tus ojos, una criatura monstruosa toma forma: un ser humanoide gigantesco compuesto enteramente de monedas fundidas. Su cuerpo brilla con un resplandor dorado, y su rostro carece de ojos, salvo por dos cuencas vacías de las que emana un humo oscuro. Cada paso que da hace temblar la sala, y un sonido metálico, como el eco de miles de monedas cayendo, llena el aire.\r\n" + //
+                                "");
+            eleccion = files.Main.elegir("Sepultar criatura", "Profecia", teclado);
+            //Sepultar criatura
+            if (eleccion == 1)
+            {
+                files.printCositas.textoEfectoEscritura("La criatura de oro no para de atacarnos intentamos lanzarle todas las flechas posibles pero sin éxito ya que las flechas no consiguen penetrar en el material , no paramos de esquivar todas las lanzas que nos va tirando nos cuesta esquivarlas van demasiado rapido entonces al ver el techo de la sala se nos ocurre una idea tirar la pared para sepultarlo y acabar con el aplastarlo con todo encima , entonces empezamos a tirar las flechas a las rocas de arriba pero lo curioso es que no utilizamos las flechas que tenemos sino disparando las lanzas que nos esta tirando la criatura de oro , cogemos una disparamos pero tenemos que estar en constante movimiento no es facil cogerlas ya que la criatura no nos deja mucho margen de maniobra entre cada recarga de la criatura para hacer una lanza volvemos con nuestro arco a lanzar otra lanza con el arco así sucesivamente despues de muchos intentos el techo empieza a agrietarse esta a punto de caer solo queda un solo golpe pero en un descuido nos atrapa con una lanza clavada en el cuello de la camisa viene hacia nostros pero antes de que venga y buscando el momento perfecto alzamos los brazos como podemos quitando la lanza del cuello de la camisa poniendola en el arco y por fin destruyendo el techo cayendo las rocas encima de la criatura.\r\n" + //
+                                        "");
+                finalHereje(player, dificultad);
+            }
+            //Profecia
+            else
+            {
+                files.printCositas.textoEfectoEscritura("Al Salir corriendo de la camara entramos a una nueva sala a una pequeña subcámara rodeada de pinturas al analizarlo mas de cerca podemos observar que relatan los acontecimientos e historias más importantes del reinado de Yax-Balam también al mirar arriba podemos observar que el techo hay inscripciones y pinturas de su viaje al más allá tras su muerte pero lo que si te llama la atención es una pequeña inscripción con un acertijo dentro apenas se puede apreciar pero conseguimos leer : En el tiempo de los abuelos del maíz, cuando el jaguar duerme bajo el cielo sin fin, hay un canto de plumas que el viento no puede oír. Si encuentras el sendero donde tres sombras se tocan, hallarás el rostro de Kinich, guardado en un espejo de obsidiana. Un acertijo difícil pero no nos supone un gran reto ya que con un trozo de roca pintamos en el suelo algunas claves y conseguimos resolverlo el acertijo se refiere a un cenote( una poza subterránea sagrada) al mediodía.\r\n" + //
+                                        "\r\n" + //
+                                        "Tras resolver el acertijo inscrito en la subcámara, el aire parece cargarse de una vibración antigua. La sala se ilumina tenuemente con la luz que se filtra por las grietas en el techo, donde las sombras danzan sobre las paredes cubiertas con las historias de Yax-Balam. Mientras observas las pinturas que relatan la vida y muerte del gran rey, algo te llama la atención en la pared más alejada: una imagen del rey atravesando un umbral hacia el más allá, acompañado por un resplandor dorado. El acertijo ha sido resuelto, y en ese instante, comprendes que lo que has buscado ha estado a tu alcance todo el tiempo. El cenote, un lugar sagrado bajo la luz del sol del mediodía, es la clave que conecta los mundos, y es allí donde la verdadera revelación aguarda. Pero el templo tiene un poder extraño, y antes de que puedas hacer algún movimiento, el suelo comienza a temblar. Las rocas se mueven ligeramente, como si la propia estructura estuviera reaccionando a tu descubrimiento. El aire se hace denso, y una voz etérea parece surgir de las paredes, un eco de los antiguos guardianes. En el fondo de la sala, junto a una de las piedras donde descansan las reliquias del rey, una grieta comienza a abrirse, revelando una pequeña cámara oculta. La grieta se agranda poco a poco hasta permitirte el paso, y en su interior, el aire está impregnado con un aroma dulce y pesado, como si fuera el alma misma de la tierra. Dentro, en el centro de la cámara, encuentras una piedra pulida de obsidiana que refleja la luz débilmente. Al acercarte, notas que la superficie de la piedra tiene tallados más símbolos y una imagen de Kinich, el dios del sol, claramente representado. Es un espejo de obsidiana, exactamente como lo describía el acertijo, y está brillando suavemente con una luz que parece provenir de su interior.\r\n" + //
+                                        "\r\n" + //
+                                        "Sin dudarlo dos veces lo tocas llevándote dentro del espejo donde encuentras a alkukkan el dragon alado emplumado tienes dos opciones :");
+                eleccion = files.Main.elegir("Luchar alkukulkan", "Huir del espejo", teclado);
+                //Alkuku
+                if (eleccion == 1)
+                {
+                    files.combate.simularCombate(dificultad * 1, "Alkukulkan", player);
+                    files.printCositas.textoEfectoEscritura("Decides enfrentarte a él, armado solo con tu arco es una ardua batalla el dragón dorado alza sus alas y pone una posición dominante con un grito de ira al cielo luchas contra el lanzado tus mejores ataques pero los desvía uno tras otro vas fallando sin éxito de poder derrotarlo entonces tras esquivar los ataques de el dragón emplumado tu arco parece emitir un brillo coges una flecha y te dispones a disparar la flecha al dispararla coge mas y mas velocidad prendiendo una luz azul por toda la flecha que lo atraviesa cayendo el dragón como un árbol al suelo.\r\n" + //
+                                                "");
+                    eleccion = files.Main.elegir("Kakamora", "Boss Final", teclado);
+                    //kakamora
+                    if (eleccion == 1)
+                    {
+                        files.printCositas.textoEfectoEscritura("Tras regresar al templo y mirar el espejo vibrante, notas que las runas en las paredes comienzan a brillar. Un sonido profundo, como un eco en las entrañas del templo, llena el aire. De repente, una puerta oculta se desliza hacia un lado, revelando un pasadizo oscuro y angosto. La curiosidad te consume, y decides avanzar. Al entrar, te encuentras en una sala circular iluminada por antorchas de fuego azul. En el centro, una mesa de piedra tiene grabado un acertijo rodeado por pequeños guerreros de oro con máscaras: los Kakamora. En la mesa, el acertijo dice: \"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?\" Los Kakamora te observan, esperando tu respuesta. Sabes que responder correctamente al acertijo podría ser la clave para avanzar… pero fallar podría significar enfrentarte a la furia de los Kakamora. Con cuidado, piensas en las palabras del acertijo. \"Abran mis alas para cruzar el cielo... si me fuerzas, dejas mi canto en silencio.\" Tras unos momentos de reflexión, murmuras la respuesta: —\"Un ave.\" Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.\r\n" + //
+                                                        "");
+                                                        files.printCositas.textoEfectoEscritura("el acertijo dice: \\\"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?");
+                        files.Ahorcado.ahorcado("Unave");
+                        files.printCositas.textoEfectoEscritura("Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.");
+                        finalHereje(player, dificultad);
+                    }
+                    //Boss final
+                    else
+                    {
+                        finalHereje(player, dificultad);
+                    }
+                }
+                //huir del espejo
+                else
+                {
+                    files.printCositas.textoEfectoEscritura("Al tocar el espejo, un remolino de energía te envuelve, y por un instante, todo se oscurece. Cuando abres los ojos, te encuentras cara a cara con el dragón emplumado, Alkukkan, cuya figura es aún más imponente bajo la tenue luz que se filtra desde las grietas del templo. Su mirada ardiente se clava en ti, y sus plumas brillan con un destello místico. Sientes el peso de su presencia, pero también notas que el espejo sigue detrás de ti, vibrando como si quisiera llamarte de regreso. Tienes una oportunidad. Sin pensarlo demasiado, retrocedes rápidamente hacia el espejo, tocándolo de nuevo con ambas manos. En un instante, la energía mágica del espejo te devuelve al templo exterior. Escuchas el rugido del dragón amortiguarse, como si quedara atrapado en ese otro mundo. El templo está en silencio, aunque aún puedes sentir la poderosa presencia de Alkukkan resonando en las piedras. Miras tus manos, todavía temblorosas, y te das cuenta de que la batalla no ha terminado; el dragón sigue vigilando desde el espejo.");
+                    finalHereje(player, dificultad);
+                }
+
+            }
+
+
         }
     }   
 }

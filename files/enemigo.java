@@ -55,6 +55,9 @@ public class enemigo
             case "jabali":
                 enemy = new enemigo(nombre, 60, 14, 14);
                 break ;
+            case "Guarlock":
+                enemy = new enemigo(nombre, 80, 12, 10);
+                break;
             //case "MagoFinal":
             //  jugador = new bossFinal();
             default:
