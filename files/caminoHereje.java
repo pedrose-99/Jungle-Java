@@ -3,4 +3,5 @@ import java.util.Scanner;
 
 public class caminoHereje
 {
+    
 }
