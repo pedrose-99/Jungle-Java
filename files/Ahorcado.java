@@ -78,3 +78,36 @@ public class Ahorcado
     }
 }
 
+
+/*
+ * Ahorcado silvia:
+ * tienes una lista de palabras deshordenadas:
+ * 1. Blanco
+ * 2. c
+ * 3. Paloma
+ * 4. Negro
+ * 5. S
+ * 6. Cuervo
+ * 7. Paisan
+ * 8. Rojo
+ * 9. R
+ * 10. Amarillo
+ * 11 E
+ * 12 Anguila
+ * 
+ * solucion:
+ * Negro blanco amarillo rojo
+ * e s k c
+ * cuervo paloma aguila faisan
+ * 
+ * No mueres, te manda el resultado;
+ * 
+ * Tienes que escribir los numeros en una matriz.
+ * _ _ _ _
+ * _ _ _ _
+ * _ _ _ _
+ * Se rellena
+ * negro _ _ _ 
+ * _ _ _ _
+ * _ _ _ _
+ */
