@@ -82,12 +82,12 @@ public class Ahorcado
         eleccion = 0;
         while (eleccion <= 0 || eleccion >= 13)
         {
-            files.printCositas.textoEfectoEscritura("1. Blanco \n 2. C \n 3. Paloma \n 4. Negro \n 5. Paisan \n 6. S \n 7. Cuervo \n 8. Rojo \n 9. R \n 10. E \n 11. Amarillo \n 12. Aguila \n");
-            System.out.println("Cual va en la posicion " + x + y);
+            files.printCositas.textoEfectoEscritura(" 1. Blanco \n 2. C \n 3. Paloma \n 4. Negro \n 5. Faisán \n 6. S \n 7. Cuervo \n 8. Rojo \n 9. K \n 10. E \n 11. Amarillo \n 12. Águila \n");
+            System.out.println("Cual va en la posición " + x +" "+ y);
             eleccion = files.Main.gestionNumero(teclado);
             if (eleccion <= 0 || eleccion >= 13)
             {
-                files.printCositas.textoEfectoEscritura("Numero incorrecto!!");
+                files.printCositas.textoEfectoEscritura("Número incorrecto!!");
             }
         }
         return eleccion;
@@ -170,16 +170,183 @@ public class Ahorcado
             {
                 System.out.println("Posicion incorrecta");
                 intentos--;
+                System.out.println("Te quedan " + intentos + " intentos");
             }
         }
+        System.out.println("Vuelves a empezar!!!");
+        files.printCositas.printSeparador();
+        acertijoMonedas();
+    }
+    public static void acertijoEstatua()
+    {
+        int intentos;
+        Scanner teclado;
+
+        intentos = 2;
+        teclado = new Scanner(System.in);
+        files.printCositas.textoEfectoEscritura("El extraño pasadizo llega a su fin y te sitúas en una sala completamente vacía con algo cubierto en una gran manta en el centro. Te mata la curiosidad y lo destapas. Es una estatua humanoide a la que le faltan los dientes y las uñas, tiene agujeros en sus dos lóbulos y en la izquierda de su labio inferior y, además, tiene la mano extendida. Los extraños cofres que has conseguido anteriormente ya tienen sentido, pero hay un problema, solo tienes un diente, una uña y un pendiente. No sabes para qué sirve la tela vieja. Llevas buscando media hora los demás elementos del puzzle pero no hay manera, la sala está totalmente vacía.\r\n" + //
+                          "\r\n" + //
+                          "Desesperado, comienzas a buscar respuestas en los objetos y en las paredes que puedan tener relación con el acertijo. Te tumbas en el suelo a inspeccionar el techo, es alto. Estabas a punto de quedarte dormido, pero entre tus párpados a punto de cerrarse ves algo extraño en el techo. Te levantas y sacas de tu mochila tus prismáticos:…”Riqueza”…”3”…”necesidad”…”el cuarto”…”más afilado”…”abajo”…”derecha”…”2 maneras”...”utilidad”...”10”...”derecha”…. Apuntas lo leído en tu libreta y te acercas a la estatua. Puede que estés cansado, pero tu mente está más activa que nunca, al fin y al cabo te fascinan los acertijos.");
+        //primero resolvemos el pendiente. 2 intentos.
+        while (intentos > 0)
+        {
+            files.printCositas.textoEfectoEscritura("Lóbulo (1) _              Lóbulo (2) _");
+            files.printCositas.textoEfectoEscritura("             Labio (3) _");
+            int eleccion;
+            eleccion = 0;
+            while (eleccion == 0)
+            {
+                System.out.println("¿En que posición colocas el pendiente? ");
+                eleccion = files.Main.gestionNumero(teclado);
+                if (eleccion <= 0 || eleccion >= 4)
+                {
+                    files.printCositas.textoEfectoEscritura("Número incorrecto!!");
+                }
+            }
+            if (eleccion == 3)
+            {
+                files.printCositas.textoEfectoEscritura("Has puesto el pendiente en el labio, correcto");
+                break ;
+            }
+            else
+            {
+                intentos--;
+                files.printCositas.textoEfectoEscritura("No es la posición correcta. Inténtalo de nuevo.");
+                if (intentos == 0)
+                {
+                    files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelve a intentarlo.");
+                    acertijoEstatua();
+                }
+            }
+        }
+        files.printCositas.textoEfectoEscritura("Comienzas con el pendiente que simboliza la riqueza, cuentas de arriba a abajo. Uno, dos… tres. Pones el pendiente en el agujero del labio.");
+        intentos = 3;
+        while (intentos > 0)
+        {
+            files.printCositas.textoEfectoEscritura("1_ 2_");
+            files.printCositas.textoEfectoEscritura("3_ 4_");
+            int eleccion;
+            eleccion = 0;
+            while (eleccion == 0)
+            {
+                System.out.println("¿En que posición colocas el diente? ");
+                eleccion = files.Main.gestionNumero(teclado);
+                if (eleccion <= 0 || eleccion >= 5)
+                {
+                    files.printCositas.textoEfectoEscritura("Número incorrecto!!");
+                }
+            }
+            if (eleccion == 1)
+            {
+                files.printCositas.textoEfectoEscritura("Has puesto el diente arriba a la izquierda, correcto");
+                break ;
+            }
+            else
+            {
+                intentos--;
+                files.printCositas.textoEfectoEscritura("No es la posición correcta. Inténtalo de nuevo.");
+                if (intentos == 0)
+                {
+                    files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelves a empezar.");
+                    acertijoEstatua();
+                }
+            }
+        }
+        files.printCositas.textoEfectoEscritura("Necesidad… te quedan un diente y una uña. Relacionas diente con comer, comer es necesario. El cuarto más afilado, abajo, derecha, 2 maneras. Es un colmillo, sin duda. Cualquiera pensaría que abajo a la derecha es donde debe situarlo, pero este tipo de enigmas no suelen ser tan sencillos, y hay un texto que no debes pasar por alto, “2 maneras”.\r\n" + //
+                        "\r\n" + //
+                        "Comienzas a contar desde el cuarto colmillo a la derecha de la boca: 1,2(abajo); 3,4(arriba)… Hay otra forma: 1,3(abajo); 2,4(arriba). Definitivamente debes situarlo en la posición más alta a la izquierda. La tela te estorba y tu mochila está hasta arriba, decides dejarla en la mano de la estatua mientras sigues con el acertijo.");
+        intentos = 9;
+        while (intentos > 0)
+        {
+            files.printCositas.textoEfectoEscritura("1_ 2_ 3_ 4_ 5_ 6_ 7_ 8_ 9_ 10_");
+            int eleccion;
+            eleccion = 0;
+            while (eleccion == 0)
+            {
+                System.out.println("¿En que posición colocas la uña? ");
+                eleccion = files.Main.gestionNumero(teclado);
+                if (eleccion <= 0 || eleccion >= 11)
+                {
+                    files.printCositas.textoEfectoEscritura("Número incorrecto!!");
+                }
+            }
+            if (eleccion == 1)
+            {
+                files.printCositas.textoEfectoEscritura("Has puesto la uña en el meñique de la mano izquierda, correcto.");
+                break ;
+            }
+            else
+            {
+                intentos--;
+                files.printCositas.textoEfectoEscritura("No es la posición correcta. Inténtalo de nuevo.");
+                if (intentos == 0)
+                {
+                    files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelves a empezar");
+                    acertijoEstatua();
+                }
+            }
+        }
+        files.printCositas.textoEfectoEscritura("La uña debe pertenecer a “utilidad”, ya que una de las partes más útiles de nuestro cuerpo son las manos y la uña que tienes en tu mano no es lo suficientemente grande para pertenecer al pie. Las manos de la estatua suman 10 dedos en total, a eso se refiere el 10. Usando el mismo razonamiento que con los dientes, comienzas a contar desde la derecha y sitúas la uña en el meñique izquierdo.");
+        files.printCositas.textoEfectoEscritura("La inmensa pared detrás de la estatua se abre ante ti. Corres hacia la salida pero te vuelves a por la tela que por poco dejas atrás. No llega a pasar un segundo cuando la enorme pared se cierra de golpe en frente tuya. Intentas situar un objeto alternativo a la tela en la mano de la estatua, pero no funciona. Sin embargo, pones la tela de nuevo y… está abierta.");
         
+    }
+    public static void acertijoPilares()
+    {
+        int intentos;
+        Scanner teclado;
+        int i;
+        char letra;
+        String solucion = "KAUIL";
+        char[] resolver = new char[5];
+
+        for (int j = 0; j < 5; j++)
+        {
+            resolver[j] = '_';
+        }
+        intentos = 3;
+        i = 0;
+        teclado = new Scanner(System.in);
+        while (intentos > 0)
+        {
+            files.printCositas.textoEfectoEscritura("I K U L A");
+            files.printCositas.textoEfectoEscritura("Ordena las letras.");
+            for (int j = 0; j < 5; j++)
+            {
+                System.out.print(resolver[j]);
+            }
+            System.out.println("");
+            files.printCositas.textoEfectoEscritura("¿Qué letra va en la posición " + (i + 1) + "?");
+            letra = teclado.next().charAt(0);
+            if(letra >='a' && letra <= 'z')
+            {
+                letra = Character.toUpperCase(letra);
+            }
+            if (letra == solucion.charAt(i))
+            {
+                resolver[i] = letra;
+                i++;
+            }
+            else
+            {
+                files.printCositas.textoEfectoEscritura("Posición incorrecta");
+                intentos--;
+                files.printCositas.textoEfectoEscritura("Te quedan " + intentos + " intentos");
+            }
+            if (i == resolver.length)
+            {
+                files.printCositas.textoEfectoEscritura("Has ganado!");
+                return ;
+            }
+        }
+        files.printCositas.textoEfectoEscritura("Has perdido. Vuelves a empezar");
+        acertijoPilares();
     }
 }
 
 
 /*
  * Ahorcado silvia:
- * tienes una lista de palabras deshordenadas:
+ * tienes una lista de palabras desordenadas:
  * 1. Blanco
  * 2. c
  * 3. Paloma
@@ -193,10 +360,10 @@ public class Ahorcado
  * 11 E
  * 12 Anguila
  * 
- * solucion:
+ * solución:
  * Negro blanco amarillo rojo
  * e s k c
- * cuervo paloma aguila faisan
+ * cuervo paloma aguila faisán
  * 
  * No mueres, te manda el resultado;
  * 

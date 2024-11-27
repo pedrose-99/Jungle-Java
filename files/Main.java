@@ -103,12 +103,15 @@ public class Main
                 files.caminoMagia.caminoMago(player, dificil);
                 break;
             case 2:
+                files.caminoDestruccion.Destruccion(player, dificil);
                 break;
             default:
                 break;
         }
-        files.Ahorcado.acertijoMonedas();
-      //  files.printCositas.imprimirEstadisticas(myArma);
+       // files.Ahorcado.acertijoMonedas();
+       //files.Ahorcado.acertijoEstatua();
+      //files.Ahorcado.acertijoPilares();
+       //  files.printCositas.imprimirEstadisticas(myArma);
     //    files.printCositas.printInventario(myInventario);
     //    files.Ahorcado.ahorcado("Silvia");
     //    files.combate.simularCombate((2 * player.dificultad), "aveCria", player);

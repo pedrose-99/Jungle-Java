@@ -40,8 +40,8 @@ public class enemigo
             case "leon":
                 enemy = new enemigo(nombre, 30, 10, 9);
                 break ;
-            case "babuino":
-                enemy = new enemigo(nombre, 25, 6, 12);
+            case "bicho":
+                enemy = new enemigo(nombre, 15, 6, 3);
                 break ;
             case "gorila":
                 enemy = new enemigo(nombre, 35, 10, 10);
@@ -57,6 +57,12 @@ public class enemigo
                 break ;
             case "Guarlock":
                 enemy = new enemigo(nombre, 80, 12, 10);
+                break;
+            case "lagarto":
+                enemy = new enemigo(nombre, 15, 6, 10);
+                break;
+            case "mambaNegra":
+                enemy = new enemigo(nombre, 25, 12, 10);
                 break;
             //case "MagoFinal":
             //  jugador = new bossFinal();
