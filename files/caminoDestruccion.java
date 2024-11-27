@@ -45,7 +45,7 @@ public class caminoDestruccion
                 files.printCositas.textoEfectoEscritura("Encuentras grabado un acertijo escrito en lengua Maya, por suerte, ya aprendiste este idioma en tus años como estudiante de arqueología. Tras traducir el texto entiendes que te están planteando un enigma que enuncia: “¿Qué es aquello tan frágil que cuando se dice su nombre lo rompe?”\r\n" + //
                                         "\r\n" + //
                                         "A la derecha del enunciado hay una superficie saliente con arena, y encima de esta lo que parece un grifo. Confundido, sigues buscando textos en la pesada puerta. Tras largos minutos de búsqueda desvelas un escrito tras unas ramas: “Traza en la arena, desvela el mensaje. Por cada respuesta se borrará el lienzo”.\r\n");
-                files.Ahorcado.ahorcado("silencio");
+                files.Ahorcado.ahorcado("silencio", player);
                                         
                                        files.printCositas.textoEfectoEscritura("Habiendo leído esta información comienzas a trazar la respuesta al acertijo en la arena: ”S”,”I”,”L”,”E”.... Cada letra que escribes se acompaña de un chorro de arena cayendo sobre ella. Finalmente escribes “silencio”. Esta vez el grifo ha escupido otra moneda, esta es blanca y tiene la letra “S” grabada.\r\n" + //
                                         "\r\n" + //
@@ -99,7 +99,7 @@ public class caminoDestruccion
                                                                         "Las posicionas de modo que la moneda negra esté entre “negro” y “cuervo\", la blanca entre “blanco” y “paloma”, la amarilla entre “amarillo” y “águila” y la roja entre “rojo” y “faisán”. Sin embargo, aún no sabes el orden correcto. Inspeccionas el pedestal y encuentras un mensaje:\r\n" + //
                                                                         "\r\n" + //
                                                                         "\"Se juntaron los dos primeros, se compenetran perfectamente, viven en armonía e indiferencia. Sin embargo, algo debe destacar, es desnatural tal entendimiento y normalidad en este lugar. Vino el cuarto, destacando sobre los demás, ambos primero y segundo están ahora opacados por su esplendor y belleza. Por último, llegó el tercero. No era tan llamativo como el cuarto, de hecho, era realmente parecido a los dos primeros, pero su gran tamaño creó una necesidad de poder sobre él. Este era imponente y sometió a los demás de manera no tan sofisticada y pacífica como el cuarto. Devoró al segundo como muestra de poder y creó de este lugar un sitio injusto\".");
-                                    files.Ahorcado.acertijoMonedas();
+                                    files.Ahorcado.acertijoMonedas(player);
                                 files.printCositas.textoEfectoEscritura("Has resuelto el acertijo pero…¿Qué quieren decir las letras?. El tablero se da la vuelta mostrando el siguiente mensaje: “Chaac, cuatro colores le representan, los cuatro puntos cardinales simbolizan cada uno. Ek Xib, de color negro, representado por un cuervo; Sac Xib, de color blanco, simbolizado por la paloma; Kan Xib, amarillo, encarnado por el águila; Y, por último, Chac Xib, de color rojo, personificado por el faisán. Tomas notas de la información fascinado. La puerta se ha abierto y ahora puedes seguir avanzando por el sendero.");
                                 FinalDestruccion(player, dificultad, false);
                             }
@@ -124,7 +124,7 @@ public class caminoDestruccion
                                     files.printCositas.textoEfectoEscritura("Corres hacia el pasadizo huyendo de tantos insectos como puedes, el pasadizo es oscuro pero tropiezas con un objeto pesado. Enciendes el mechero que llevas en el bolsillo y examinas el objeto. Se trata de un cofre un tanto extraño, tiene unas formas curvas que crean un relieve parecido a unos tentáculos y tiene un color entre verdoso y morado, tampoco presenta ningún reflejo o brillo.\r\n" + //
                                                                                 "\r\n" + //
                                                                                 "Al abrirlo solo ves una tela vieja de color rojo con un estampado de triángulos. Sigues por el pasadizo y tropiezas con otros tres cofres, cada uno más extraño que el anterior. Un pendiente común y oxidado, un diente de oro viejo…una...uña? Guardas todo lo encontrado en caso de que te sea de utilidad más tarde.");
-                                    files.Ahorcado.acertijoEstatua();
+                                    files.Ahorcado.acertijoEstatua(player);
                                     FinalDestruccion(player, dificultad, false);
                                 }  
                                 //Insectos
@@ -137,7 +137,7 @@ public class caminoDestruccion
                                                                                 "Queda algún que otro gusano o araña por la sala. Ves un escarabajo a lo lejos y, cuando te acercas a pisarlo, cae detrás tuya una cajita de madera con un medallón realmente pesado que parece muy valioso. No ves otra salida que no sea el pasadizo cubierto de enredaderas, entonces, te adentras en él.\r\n" + //
                                                                                 "\r\n" + //
                                                                                 "El pasadizo es oscuro pero tropiezas con un objeto pesado. Enciendes el mechero que llevas en el bolsillo y examinas el objeto. Se trata de un cofre un tanto extraño, tiene unas formas curvas que crean un relieve parecido a unos tentáculos y tiene un color entre verdoso y morado, tampoco presenta ningún reflejo o brillo. Al abrirlo solo ves una tela vieja de color rojo con un estampado de triángulos. Sigues por el pasadizo y tropiezas con otros tres cofres, cada uno más extraño que el anterior. Un pendiente común y oxidado, un diente de oro viejo…una...uña? Guardas todo lo encontrado en caso de que te sea de utilidad más tarde.");
-                                    files.Ahorcado.acertijoEstatua();
+                                    files.Ahorcado.acertijoEstatua(player);
                                     FinalDestruccion(player, dificultad, true);
                                 }                                     
                             }
@@ -186,7 +186,7 @@ public class caminoDestruccion
                                                         "\r\n" + //
                                                         "Buscando pistas descubres una puerta tras la mesa. La abres y ves un abundante fuego que te hace retroceder instantáneamente. La sala donde te encuentras está conectada a la anterior habitación invadida por las llamas. Esto te ayuda a resolver el acertijo. Sin embargo, debes fundir un objeto metálico que tengas en propiedad. La mesa tiene una forma circular y el objeto tiene que ser suficientemente grande para cubrirla de metal fundido.");
                         files.printCositas.textoEfectoEscritura("¿Qué objeto pondrás sobre la mesa?");
-                        files.Ahorcado.ahorcado("moneda");
+                        files.Ahorcado.ahorcado("moneda", player);
                         files.printCositas.textoEfectoEscritura("Dudoso, coges la moneda que recogiste junto a tu mandoble, ahora necesitas acercarlo al fuego sin quemarte la mano. Avistas a tu lado unos huesos apilados, coges uno de ellos y pones la moneda en él. Con precaución, lo acercas al fuego. Pones la moneda caliente en la mesa y en cuestión de minutos ves la moneda totalmente fundida. Te preguntas si la moneda realmente servía para eso, pero otra puerta se ha abierto ante ti, debes continuar. Mientras caminas te preguntas qué relación puede tener la moneda con la prueba superada, finalmente, recuerdas el diseño de la moneda y miras detrás tuya. Encima de la puerta está escrito “calcinar”, la moneda tenía la letra “C” en ella, lo que disipa tus dudas. Continúas tu camino tranquilamente.");
                         FinalDestruccion(player, dificultad, false);
                     }
@@ -203,7 +203,7 @@ public class caminoDestruccion
                     if (eleccion == 1)
                     {
                         files.printCositas.textoEfectoEscritura("Apareces en una sala rocosa con cinco grandes pilares, en frente tuya se encuentran cinco rocas con una letra grabada cada una. En los pilares que tienes delante, 5 espacios.");
-                        files.Ahorcado.acertijoPilares();
+                        files.Ahorcado.acertijoPilares(player);
                         files.printCositas.textoEfectoEscritura("Ordenas las letras en tu mente y, sin pensarlo, las introduces de forma que en la pared se vea “KAUIL”, el nombre del Dios en el que esta ruta está basada.\r\n" + //
                                                         "La puerta se abre ante ti y continuas tu camino.");
                         FinalDestruccion(player, dificultad, false);

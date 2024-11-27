@@ -2,13 +2,11 @@ package files;
 import java.util.Scanner;
 
 public class caminoHereje
-{
-    
-    
+{   
     public static void finalHereje(jugador player, int dificultad)
     {
         files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo “ Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?”");
-        files.Ahorcado.ahorcado("UnSecreto");
+        files.Ahorcado.ahorcado("UnSecreto", player);
         files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam, se abalanza contra ti portando su mítica vestimenta de guerra, consigue alcanzarte con su lanza pero te revuelves y consigues zafarte, el rey manda a sus esbirros que han salido de la nada a atacarte, luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya. Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar el sagrado arco del jaguar y lanzar una flecha que le haga descansar en paz. Coges el arco y , notas como poco a poco se va cargando de una energía azul y brillante, lanzas una flecha se ve claramente que es un disparo certero hiriendo de gravedad a Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie. Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias… Solo hay una manera de saberlo…\r\n" + //
                         "");
         //Enemigo final hacerlo
@@ -23,7 +21,7 @@ public class caminoHereje
                         "\r\n" + //
                         "Frente a ti, una figura encadenada yace en posición agónica. Su carne ha comenzado a descomponerse, dejando al descubierto fragmentos de hueso. Sin embargo, lo más perturbador es la inscripción en la pared: escrita con letras temblorosas y burdas, como si el autor hubiera estado al borde de la muerte. La frase, trazada con sangre seca, reza:");
         files.printCositas.textoEfectoEscritura("Por la noche sube, por la mañana baja. Si de aquí quieres salir, la respiración a media noche deberás aguantar.");
-        files.Ahorcado.ahorcado("Secreto");
+        files.Ahorcado.ahorcado("Secreto", player);
         files.printCositas.textoEfectoEscritura("Debes decidir si hacer caso al acertijo que reza la piedra ensangrentada, subes junto a la marea por las paredes del pozo y al salir del mismo encontrarás una sala plagada de oro con un carcaj lleno de flechas indígenas, que te aumentarán el daño Sigues el acertijo de la piedra ensangrentada, tomando cada palabra como una clave. Mientras el agua sube, trepas con cuidado por las paredes del pozo, usando las grietas y salientes para impulsarte. El agua helada roza tus piernas, y por un momento sientes que el ascenso será imposible. Sin embargo, un instinto inexplicable te impulsa hacia arriba, hasta que encuentras una abertura en lo alto. Con un esfuerzo final, te impulsas al interior de un corredor de piedra que desemboca en una sala majestuosa.\r\n" + //
                         "\r\n" + //
                         "\r\n" + //
@@ -82,7 +80,7 @@ public class caminoHereje
                         files.printCositas.textoEfectoEscritura("Tras regresar al templo y mirar el espejo vibrante, notas que las runas en las paredes comienzan a brillar. Un sonido profundo, como un eco en las entrañas del templo, llena el aire. De repente, una puerta oculta se desliza hacia un lado, revelando un pasadizo oscuro y angosto. La curiosidad te consume, y decides avanzar. Al entrar, te encuentras en una sala circular iluminada por antorchas de fuego azul. En el centro, una mesa de piedra tiene grabado un acertijo rodeado por pequeños guerreros de oro con máscaras: los Kakamora. En la mesa, el acertijo dice: \"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?\" Los Kakamora te observan, esperando tu respuesta. Sabes que responder correctamente al acertijo podría ser la clave para avanzar… pero fallar podría significar enfrentarte a la furia de los Kakamora. Con cuidado, piensas en las palabras del acertijo. \"Abran mis alas para cruzar el cielo... si me fuerzas, dejas mi canto en silencio.\" Tras unos momentos de reflexión, murmuras la respuesta: —\"Un ave.\" Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.\r\n" + //
                                                         "");
                                                         files.printCositas.textoEfectoEscritura("el acertijo dice: \\\"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?");
-                        files.Ahorcado.ahorcado("Unave");
+                        files.Ahorcado.ahorcado("Unave", player);
                         files.printCositas.textoEfectoEscritura("Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.");
                         finalHereje(player, dificultad);
                     }
@@ -100,8 +98,6 @@ public class caminoHereje
                 }
 
             }
-
-
         }
     }   
 }

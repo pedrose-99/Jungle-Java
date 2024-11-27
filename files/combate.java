@@ -34,116 +34,80 @@ public class combate
         }
     }
 
-    public static void arqueroBoss(int dado, jugador player, enemigo[] enemigos)
+    public static void arqueroBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int i;
         int dano;
 
-        i = enemigoCorrecto(enemigos);
         if (dado >= 18)
         {
-            files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial. Pegas 2 veces extra!!");
+            files.printCositas.textoEfectoEscritura("Jefe Final Yax-Balam  ha hecho crítico!!!! Usa su ataque especial. Pegas 1 vez extra!!");
             dano = tirarDado(player.myArma.AtaqueEspecial);
-            enemigos[i].hp = enemigos[i].hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
+            player.hp = player.hp - dano;
             dano = tirarDado(player.myArma.AtaqueEspecial);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
+            player.hp = player.hp - dano;
             files.printCositas.textoEfectoEscritura("Ataque extra!!!!");
-            i = enemigoCorrecto(enemigos);
             dano = tirarDado(player.myArma.AtaqueEspecial);
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
-            enemigos[i].hp = enemigos[i].hp - dano;
-            dano = tirarDado(player.myArma.AtaqueEspecial);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
+            player.hp = player.hp - dano;
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            player.hp = player.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
             dano = tirarDado(player.myArma.dmg);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
+            player.hp = player.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
         }
     }
 
-    public static void magiaBoss(int dado, jugador player, enemigo[] enemigos)
+    public static void magiaBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int i;
         int dano;
 
-        i = enemigoCorrecto(enemigos);
         if (dado >= 18)
         {
-            files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial y te subes la defensa!!!");
-            enemigos[i].hp = enemigos[i].hp - player.myArma.AtaqueEspecial;
-            player.defensaActual = player.defensaActual + 2;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + player.myArma.AtaqueEspecial+" de daño");
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
-            for (int j = 0; j < enemigos.length; j++)
-            {
-                enemigos[j].hp = enemigos[j].hp - 4;
-            }
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 4 de daño en area a todos!!");
+            files.printCositas.textoEfectoEscritura("Jefe Final Yax-Balam Ha hecho critico!!!! Usa su ataque especial y se sube la defensa!!!");
+            player.hp = player.hp - player.myArma.AtaqueEspecial;
+            jefeFinal.defensa = jefeFinal.defensa + 1;
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + player.myArma.AtaqueEspecial+" de daño");
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
-            for (int j = 0; j < enemigos.length; j++)
-            {
-                enemigos[j].hp = enemigos[j].hp - 2;
-            }
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 2 de daño en area a todos!!");
+            player.hp = player.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Ha hecho " + dano+" de daño");
         }
     }
 
-    public static void destruccionBoss(int dado, jugador player, enemigo[] enemigos)
+    public static void destruccionBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int i;
         int dano;
 
-        i = enemigoCorrecto(enemigos);
         if (dado >= 15)
         {
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow+"Has hecho critico!!!! Usas tu ataque especial y te curas todo el daño!!!");
-            enemigos[i].hp = enemigos[i].hp - player.myArma.AtaqueEspecial;
-            player.hp = player.hp + player.myArma.AtaqueEspecial;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " +player.myArma.AtaqueEspecial+" de daño");
-            if (player.hp > player.maxHp)
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow+"Jefe Final Yax-Balam Ha hecho critico!!!! Usas su ataque especial y se cura!!!");
+            player.hp = player.hp - player.myArma.AtaqueEspecial;
+            jefeFinal.hp = jefeFinal.hp + 5;
+            if (jefeFinal.hp > jefeFinal.hpMax)
             {
-                player.hp = player.maxHp;
+                jefeFinal.hp = jefeFinal.hpMax;
             }
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]); 
-            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Te has curado "+ player.myArma.AtaqueEspecial);
-            files.printCositas.textoEfectoEscritura("Tu vida es "+ player.hp+ "/" + player.maxHp);
-            for (int j = 0; j < enemigos.length; j++)
-            {
-                enemigos[j].hp = enemigos[j].hp - 4;
-            }
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 4 de daño en area a todos!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " +player.myArma.AtaqueEspecial+" de daño");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red+"Se ha curado 5 de vida");
+            files.printCositas.printJefeFinal(jefeFinal);
         }
         else
         {
             dano = tirarDado(player.myArma.dmg);
-            enemigos[i].hp = enemigos[i].hp - dano;
-            player.hp = player.hp - 2;
-            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
-            checkVida(enemigos[i].hp);
-            files.printCositas.imprimirEnemigo(enemigos[i]);
-            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Te has hecho 2 de daño de retroceso!!!");
-            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Tu vida es "+ player.hp+ "/" + player.maxHp);
+            player.hp = player.hp - dano;
+            jefeFinal.hp = jefeFinal.hp - 2;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Ha hecho " + dano+" de daño");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"se ha hecho 1 de daño de retroceso!!!");
 
         }
     }
@@ -263,6 +227,97 @@ public class combate
         }
     }
 
+    public static void arqueroLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    {
+        int i;
+        int dano;
+
+        if (dado >= 18)
+        {
+            files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial. Pegas 2 veces extra!!");
+            dano = tirarDado(player.myArma.AtaqueEspecial);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            dano = tirarDado(player.myArma.AtaqueEspecial);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            files.printCositas.textoEfectoEscritura("Ataque extra!!!!");
+            dano = tirarDado(player.myArma.AtaqueEspecial);
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            jefeFinal.hp = jefeFinal.hp - dano;
+            dano = tirarDado(player.myArma.AtaqueEspecial);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            files.printCositas.printJefeFinal(jefeFinal);
+        }
+        else
+        {
+            dano = tirarDado(player.myArma.dmg);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            dano = tirarDado(player.myArma.dmg);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            files.printCositas.printJefeFinal(jefeFinal);
+        }
+    }
+
+    public static void magiaLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    {
+        int i;
+        int dano;
+
+        if (dado >= 18)
+        {
+            files.printCositas.textoEfectoEscritura("Has hecho critico!!!! Usas tu ataque especial y te subes la defensa!!!");
+            jefeFinal.hp = jefeFinal.hp- player.myArma.AtaqueEspecial;
+            player.defensaActual = player.defensaActual + 2;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + player.myArma.AtaqueEspecial+" de daño");
+            files.printCositas.printJefeFinal(jefeFinal);
+
+        }
+        else
+        {
+            dano = tirarDado(player.myArma.dmg);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            files.printCositas.printJefeFinal(jefeFinal);
+
+
+        }
+    }
+
+    public static void destruccionLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    {
+        int i;
+        int dano;
+
+        if (dado >= 15)
+        {
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow+"Has hecho critico!!!! Usas tu ataque especial y te curas todo el daño!!!");
+            jefeFinal.hp = jefeFinal.hp- player.myArma.AtaqueEspecial;
+            player.hp = player.hp + player.myArma.AtaqueEspecial;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " +player.myArma.AtaqueEspecial+" de daño");
+            if (player.hp > player.maxHp)
+            {
+                player.hp = player.maxHp;
+            }
+            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Te has curado "+ player.myArma.AtaqueEspecial);
+            files.printCositas.textoEfectoEscritura("Tu vida es "+ player.hp+ "/" + player.maxHp);
+            files.printCositas.printJefeFinal(jefeFinal);
+
+        }
+        else
+        {
+            dano = tirarDado(player.myArma.dmg);
+            jefeFinal.hp = jefeFinal.hp - dano;
+            player.hp = player.hp - 2;
+            files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho " + dano+" de daño");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Te has hecho 2 de daño de retroceso!!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.green+"Tu vida es "+ player.hp+ "/" + player.maxHp);
+            files.printCositas.printJefeFinal(jefeFinal);
+
+        }
+    }
+
     public static void jugadorAtaca(jugador player, enemigo[] enemigos)
     {
         int dado;
@@ -298,7 +353,6 @@ public class combate
         switch (eleccion)
         {
             case 1:
-                //atacar
                 jugadorAtaca(player, enemigos);
                 break;
             case 2:
@@ -383,6 +437,155 @@ public class combate
         return false;
     }
 
+    public static void resetearStats(jugador player)
+    {
+        player.defensaActual = player.defensa;
+        player.myArma.dmgActual = player.myArma.dmg;
+    }
+
+    public static void subirDeNivel(jugador player)
+    {
+        files.printCositas.printSeparador();
+        files.printCositas.textoEfectoEscritura("Has subido de nivel! Tu defensa incrementa en 1, tu ataque en 2 y tu vida en 10!!");
+        player.defensa = player.defensa + 1;
+        player.defensaActual = player.defensa;
+        player.maxHp = player.maxHp + 10;
+        player.hp = player.hp + 10;
+        player.myArma.dmg = player.myArma.dmg + 2;
+        player.myArma.dmgActual = player.myArma.dmg;
+        files.printCositas.printSeparador();
+        files.printCositas.printStats(player);
+    }
+
+    public static void curarteTrasCombate(jugador player, Scanner teclado)
+    {
+        int eleccion = 0;
+
+        files.printCositas.printSeparador();
+        if (player.myInventario.pociones_curativas > 0)
+        {
+            files.printCositas.printStats(player);
+            System.out.println("¿Cuantas pociones quieres usar?");
+            System.out.print(files.printCositas.white +"Elegiste la opción: ");
+            eleccion = files.Main.gestionPotis(teclado);
+            while (eleccion > player.myInventario.pociones_curativas || eleccion == -1)
+            {
+                files.printCositas.textoEfectoEscritura("La opción es incorrecta!!!");
+                System.out.print(files.printCositas.white +"Elegiste la opción: ");
+                eleccion = files.Main.gestionPotis(teclado);
+            }
+        }
+        else
+        {
+            files.printCositas.textoEfectoEscritura("No tienes pociones curativas. No te puedes curar despues del combate!!");
+            return ;
+        }
+        if (eleccion == 0)
+        {
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.green + "Decidiste no curarte. Prosigues tu camino.");
+            files.printCositas.printSeparador();
+        }
+        else
+        {
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.red + "Decidiste usar " + eleccion + " pociones. Te curas " + (eleccion * 10) + " de vida");
+            player.hp = player.hp + (eleccion * 10);
+            if (player.hp > player.maxHp)
+            {
+                player.hp = player.maxHp;
+            }
+            player.myInventario.pociones_curativas =  player.myInventario.pociones_curativas - eleccion;
+            files.printCositas.printSeparador();
+            files.printCositas.printStats(player);
+            files.printCositas.printInventario(player.myInventario);
+        }
+    }
+
+
+    public static boolean gestionTurnoFinal(jugador player, int eleccion, bossfinal jefeFinal)
+    {
+        boolean tuTurno = false;
+        switch (eleccion)
+        {
+            case 1:
+                jugadorAtacaJefeFinal(player, jefeFinal);
+                break;
+            case 2:
+                if (player.myInventario.numPociones > 0)
+                {
+                    files.inventario.gestionPociones(player);
+                    files.printCositas.printStats(player);
+                }
+                else
+                {
+                    files.printCositas.printSeparador();
+                    files.printCositas.textoEfectoEscritura(files.printCositas.red + "No tienes pociones disponibles!!!");
+                    files.printCositas.printSeparador();
+                }
+                break ;
+            default:
+                files.printCositas.printStats(player);
+                files.printCositas.printInventario(player.myInventario);
+                tuTurno = true;
+                break ;
+        }
+        return tuTurno;
+    }
+
+    public static boolean combateFinal(jugador player, int dificultad)
+    {
+        Scanner teclado;
+        int eleccion;
+        boolean tuTurno;
+        boolean enemigosDerrotados = false;
+        bossfinal jefeFinal;
+        
+        teclado = new Scanner(System.in);
+        jefeFinal = files.bossfinal.setBossfinal(player.myArma.tipo, dificultad);
+        files.printCositas.printSeparador();
+        files.printCositas.textoEfectoEscritura(files.printCositas.green+"Bienvenido a la fase de combate!!!!");
+        files.printCositas.printSeparador();
+        files.printCositas.printJefeFinal(jefeFinal);
+        while (player.hp > 0 && !enemigosDerrotados)
+        {
+            tuTurno = true;
+            while (tuTurno)
+            {
+                files.printCositas.menuCombate();
+                System.out.print(files.printCositas.white +"Elegiste la opción: ");
+                eleccion = files.Main.gestionNumero(teclado);
+                while (eleccion != 1 && eleccion != 2 && eleccion != 3)
+                {
+                    files.printCositas.textoEfectoEscritura("La opción es incorrecta!!!");
+                    files.printCositas.menuCombate();
+                    System.out.print(files.printCositas.white +"Elegiste la opción: ");
+                    eleccion = files.Main.gestionNumero(teclado);
+                }
+                tuTurno = gestionTurnoFinal(player, eleccion, jefeFinal);
+            }
+            if (jefeFinal.hp < 0)
+            {
+                enemigosDerrotados = true;
+            }
+            else
+            {
+                jugadorAtacaJefeFinal(jefeFinal, player);
+                files.printCositas.printJefeFinal(jefeFinal);
+
+            }
+        }
+        if (player.hp <= 0)
+        {
+            files.printCositas.textoEfectoEscritura("Has muerto!!!");
+            return (false);
+        }
+        files.printCositas.textoEfectoEscritura(files.printCositas.green + "Has acabado con el enemigo final!!");
+
+        return (true);
+    }    
+    }
+    
     public static boolean simularCombate(int numEnemigos, String nombreEnemigo, jugador player)
     {
         Scanner teclado;
@@ -413,16 +616,23 @@ public class combate
                 }
                 tuTurno = gestionTurno(player, eleccion, enemigos);
             }
-            turnoEnemigos(enemigos, player);
             enemigosDerrotados = checkEnemigos(enemigos);
-            files.printCositas.imprimirEnemigos(enemigos);
+            if (!enemigosDerrotados)
+            {
+                turnoEnemigos(enemigos, player);
+                files.printCositas.imprimirEnemigos(enemigos);
+            }
         }
         if (player.hp <= 0)
         {
             files.printCositas.textoEfectoEscritura("Has muerto!!!");
-            return (true);
+            return (false);
         }
-        files.printCositas.textoEfectoEscritura("Has acabado con todos los enemigos!!");
-        return (false);
+        files.printCositas.textoEfectoEscritura(files.printCositas.green + "Has acabado con todos los enemigos!!");
+        resetearStats(player);
+        subirDeNivel(player);
+        files.inventario.abrirCofre(player);
+        curarteTrasCombate(player, teclado);
+        return (true);
     }    
 }

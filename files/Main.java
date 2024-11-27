@@ -44,6 +44,23 @@ public class Main
         return eleccion;
     }
 
+    public static int gestionPotis(Scanner teclado)
+    {
+        int eleccion;
+        String opcion;
+
+        opcion = teclado.next();
+        try {
+            eleccion = Integer.parseInt(opcion);
+        } 
+        catch (NumberFormatException nfe) 
+        {
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Eleccion incorrecta!!!"+ files.printCositas.white);
+            return (-1); 
+        }
+        return eleccion;
+    }
     public static int elegirCamino(Scanner teclado)
     {
         int eleccion;
@@ -106,14 +123,8 @@ public class Main
                 files.caminoDestruccion.Destruccion(player, dificil);
                 break;
             default:
+                files.caminoHereje.caminoArco(player, dificil);
                 break;
         }
-       // files.Ahorcado.acertijoMonedas();
-       //files.Ahorcado.acertijoEstatua();
-      //files.Ahorcado.acertijoPilares();
-       //  files.printCositas.imprimirEstadisticas(myArma);
-    //    files.printCositas.printInventario(myInventario);
-    //    files.Ahorcado.ahorcado("Silvia");
-    //    files.combate.simularCombate((2 * player.dificultad), "aveCria", player);
     }
 }

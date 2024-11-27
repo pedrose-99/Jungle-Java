@@ -82,6 +82,26 @@ public class inventario
         numPociones = atack_potion + defense_potion + heal_potion;
     }
 
+    public static void abrirCofre(jugador player)
+    {
+        int pociones_curativas;
+        int pociones_ataque;
+        int pociones_defensa;
+
+        files.printCositas.printSeparador();
+        files.printCositas.textoEfectoEscritura(files.printCositas.green + "Enhorabuena!!! Has encontrado un cofre!!!");
+        pociones_curativas = files.combate.tirarDado(5);
+        files.printCositas.textoEfectoEscritura(files.printCositas.red + "Has encontrado " + pociones_curativas + " curativas!!");
+        pociones_ataque = files.combate.tirarDado(5);
+        files.printCositas.textoEfectoEscritura(files.printCositas.blue + "Has encontrado " + pociones_ataque + " de ataque!!");
+        pociones_defensa = files.combate.tirarDado(5);
+        files.printCositas.textoEfectoEscritura(files.printCositas.yellow + "Has encontrado " + pociones_defensa + " de defensa!!");
+        actualizaInventario(player.myInventario, pociones_ataque, pociones_defensa, pociones_curativas);
+        files.printCositas.printInventario(player.myInventario);
+        files.printCositas.printSeparador();
+
+    }
+
     public static void actualizaInventario(inventario myInventario,int atack_potion, int defense_potion, int heal_potion)
     {
         myInventario.pociones_ataque = myInventario.pociones_ataque + atack_potion;

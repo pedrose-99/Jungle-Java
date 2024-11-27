@@ -135,9 +135,21 @@ public class printCositas
         printSeparador();
         textoEfectoEscritura(green + "---------Aquí esta tu inventario----------");
         printSeparador();
-        textoEfectoEscritura(red +"Tienes "+myInventario.pociones_curativas+ red+" pociones curativas");
         textoEfectoEscritura(blue + "Tienes " +myInventario.pociones_ataque + blue +" pociones de ataque");
         textoEfectoEscritura(yellow +"Tienes "+  myInventario.pociones_defensa + yellow + " pociones defensivas ");
+        textoEfectoEscritura(red +"Tienes "+myInventario.pociones_curativas+ red+" pociones curativas");
+        printSeparador();
+    }
+
+    //Yax-Balam armas: anillo de las bestias, baston de las fieras y arco del juaguar
+    public static void printJefeFinal(bossfinal jefeFinal)
+    {
+        printSeparador();
+        textoEfectoEscritura(red+ "Jefe Final Yax-Balam ");
+        printSeparador();
+        textoEfectoEscritura(red +"Tiene " + jefeFinal.hp + " de vida.");
+        textoEfectoEscritura(yellow + "Tiene " + jefeFinal.defensa + " de defensa.");
+        textoEfectoEscritura(blue +"Tiene " + jefeFinal.myArma.dmg + " de ataque.");
         printSeparador();
     }
 }

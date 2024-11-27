@@ -9,7 +9,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza:");
         files.printCositas.textoEfectoEscritura("“Aquí yacen los restos del primer rey de los mayas Yax-Balam” Seguido de un acertijo ");
         files.printCositas.textoEfectoEscritura("Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?");
-        files.Ahorcado.ahorcado("UnSecreto");
+        files.Ahorcado.ahorcado("UnSecreto", player);
         files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. \r\n" + //
                         "Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam. \r\n" + //
                         "");
@@ -77,7 +77,7 @@ public class caminoMagia
                                                 "Ahora, tu varita puede lanzar hechizos con mayor precisión y potencia. Con esta nueva mejora, te sientes más preparado para enfrentar los desafíos que te esperan. Al fondo de la caverna ves una puerta, en el suelo hay un texto escrito:\r\n" + //
                                                 "");
                     files.printCositas.textoEfectoEscritura("Canta sin tener voz, puede volar sin alas, sin tener dientes muerde y sin boca puede hablar.");
-                    Ahorcado.ahorcado("ElViento");
+                    Ahorcado.ahorcado("ElViento", player);
                     //SUBIR ATAQUE
                     files.printCositas.textoEfectoEscritura("El viento suspiras... Te sientes preparado la puerta se abre ante ti sin hacer ningún tipo de ruido, entras sin pensarlo.");
                     //PASAR a la final
@@ -90,7 +90,7 @@ public class caminoMagia
                 files.printCositas.textoEfectoEscritura("Mientras bajas las escaleras sientes una sensación de paz, tu cuerpo se relaja mientras piensas en lo que te ha llevado hasta ese momento. Ya llevas un rato bajando esas escaleras interminables y empiezas a pensar si has llegado a avanzar algo, esa sensación de paz abandona tu cuerpo de golpe, ahora estás en tensión, esta maldita cueva te está volviendo loco y necesitas salir.\r\n" + //
                                         "Comienzas a correr subiendo las escaleras pero para tu sorpresa lo que antes estaba abierto ahora es una puerta, esta puerta tiene un texto escrito que dice lo siguiente:\r\n");
                 files.printCositas.textoEfectoEscritura("Dame comida y viviré. Dame agua y moriré. ¿Qué soy?");
-                files.Ahorcado.ahorcado("ElFuego");
+                files.Ahorcado.ahorcado("ElFuego", player);
                                         //subes nivel etc
                 files.printCositas.textoEfectoEscritura("Das tu respuesta sin pensarlo dos veces: ¡El fuego! y entras por la puerta, al fondo ves un cofre, lo abres y consigues una mejora para tu varita.            \r\n" + //
                                         "Vuelves a estar en la sala anterior, pero las estatuas están comenzando a flotar ya que la sala ha empezado a inundarse una vez has entrado.\r\n" + //
@@ -103,7 +103,7 @@ public class caminoMagia
                                             "\r\n" + //
                                             "Te sumerges raudamente mientras notas como el agua inunda tus pulmones, comienzas a ver una luz, llegas a una sala que desprende una luz radiante, desde el interior escuchas una voz:");
                     files.printCositas.textoEfectoEscritura("Puede devorar todas las cosas: plantas, bestias, flores y aves. Roe el hierro y muerde acero, mata reyes, arruina ciudades y puede derribar las altas montañas");
-                    Ahorcado.ahorcado("ElTiempo");
+                    Ahorcado.ahorcado("ElTiempo", player);
                     //Subir nivel
                     files.printCositas.textoEfectoEscritura("Comienzas a pensar que los ángeles te reclaman para darte muerte, respondes suspirando: “El tiempo”. \r\n" + //
                                             "La luz desaparece dejando ante ti un altar, un mango de hueso está posado sobre este, al lado, una nota que decides leer:");
@@ -131,7 +131,7 @@ public class caminoMagia
         {
             files.printCositas.textoEfectoEscritura("Tras caminar durante un buen rato accedes a una caverna en la que encuentras un cofre maldito, debes resolver un acertijo para acceder al contenido del mismo, el acertijo reza:");
             files.printCositas.textoEfectoEscritura("Las raíces no se pueden ver y son más altas que un árbol. Arriba, muy arriba sube; sin embargo, nunca crece."            );
-            files.Ahorcado.ahorcado("LaMontana");
+            files.Ahorcado.ahorcado("LaMontana", player);
             files.printCositas.textoEfectoEscritura("El cofre se abre solo y arroja su contenido, encuentras una empuñadura para tu varita, una poción de vida y 200 monedas de oro. Tras recoger las recompensas continúas por el pasadizo ayudándote del mechero para ver en la oscuridad, de pronto notas un temblor en el suelo y al echar la vista atrás ves una marabunta de serpientes que reptan hacia ti. Sales corriendo y no ves el acantilado delante tuya que da a una poza subterránea , caes inevitablemente…. \r\n" + //
                                 "Tras subir a la superficie del agua te das cuenta de que no hay una salida fácil.");
             eleccion = files.Main.elegir("Agarrarte", "Bucear", teclado);
@@ -161,7 +161,7 @@ public class caminoMagia
                                             "\r\n" + //
                                             "Consigues subir a las piedras y comienzas a recordar todo lo que te ha llevado hasta ese momento, justo cuando estás perdiendo la esperanza ves un texto en la pared que reza:");
                     files.printCositas.textoEfectoEscritura("¿Qué va arriba y abajo pero nunca, nunca se mueve?");
-                    files.Ahorcado.ahorcado("UnaEscalera");
+                    files.Ahorcado.ahorcado("UnaEscalera", player);
                     files.printCositas.textoEfectoEscritura("Comienzas a darle vueltas al acertijo, “una escalera”, gritas, ¿esto en que me va a ayudar?, te dices a ti mismo, estás frustrado, pero ante ti se abren unos escalones de piedra que decides seguir, estás emocionado. \r\n" + //
                                         "Has conseguido salir de ese embrollo.");
                                     //Pasar al FINAL
@@ -189,7 +189,7 @@ public class caminoMagia
                 {
                     files.printCositas.textoEfectoEscritura("Estás tan cansado que necesitas consumir un alimento fácil que no te suponga hacer un gran esfuerzo, te tomas las bayas sin dejar ni una en el arbusto. Tras descansar un poco ves una puerta que se ilumina con los rayos de luz solar que se cuelan por la grieta natural que hay en el techo. Al fijarte en la puerta descubres que un texto reposa sobre el marco de la misma:");
                     files.printCositas.textoEfectoEscritura("No se puede ver ni se puede sentir, este ocupa todos los espacios vacíos. No se puede oler ni se puede oír, está detrás de los astros, y está al pie de las colinas, llega primero y se queda; mata risas y acaba vidas.");
-                    files.Ahorcado.ahorcado("LaOscuridad");
+                    files.Ahorcado.ahorcado("LaOscuridad", player);
                     files.printCositas.textoEfectoEscritura("Tras razonarlo te das cuenta de que es un acertijo y crees saber la respuesta, la oscuridad respondes titubeando");
                     files.printCositas.textoEfectoEscritura("La puerta se abre ante ti, cruzas la puerta...");
                         // Pasar al Final

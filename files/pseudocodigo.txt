@@ -66,3 +66,12 @@ Tiras un dado de 20.
 }
 
 
+Tengo que:
+hacer boses finales
+colocar bien las letras de todos los caminos + colores
+resetear estadisticas al final de cada combate //hecho
+Subir de nivel //hecho 
+Sistema de cofres //hecho
+Batalla final
+//
+poner que despues del combate puedas usar pociones curativas; //hecho

@@ -19,7 +19,7 @@ public class Ahorcado
         }
         return aux;
     }
-    public static void ahorcado(String adivinanza) 
+    public static void ahorcado(String adivinanza, jugador player) 
     {
         Scanner teclado = new Scanner(System.in);
         adivinanza = transformarString(adivinanza);
@@ -69,7 +69,11 @@ public class Ahorcado
         }
         if (juegoTerminado) 
         {
-            System.out.println("Enhorabuena, has salvado tu vida... por ahora: " + adivinanza);
+            System.out.println("Enhorabuena, has salvado tu vida... por ahora: ");
+            files.combate.resetearStats(player);
+            files.combate.subirDeNivel(player);
+            files.inventario.abrirCofre(player);
+            files.combate.curarteTrasCombate(player, teclado);
         } 
         else 
         {
@@ -103,7 +107,7 @@ public class Ahorcado
             System.out.println();
         }
     }
-    public static void acertijoMonedas()
+    public static void acertijoMonedas(jugador player)
     {
         String[][] solucion = new String[3][4];
         String[][] rellenar = new String[3][4];
@@ -153,6 +157,10 @@ public class Ahorcado
             if (x == 3)
             {
                 System.out.println("Ganaste");
+                files.combate.resetearStats(player);
+                files.combate.subirDeNivel(player);
+                files.inventario.abrirCofre(player);
+                files.combate.curarteTrasCombate(player, teclado);
                 return ;
             }
             eleccion = eleccionMoneda(teclado, x, y);
@@ -175,9 +183,9 @@ public class Ahorcado
         }
         System.out.println("Vuelves a empezar!!!");
         files.printCositas.printSeparador();
-        acertijoMonedas();
+        acertijoMonedas(player);
     }
-    public static void acertijoEstatua()
+    public static void acertijoEstatua(jugador player)
     {
         int intentos;
         Scanner teclado;
@@ -215,7 +223,7 @@ public class Ahorcado
                 if (intentos == 0)
                 {
                     files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelve a intentarlo.");
-                    acertijoEstatua();
+                    acertijoEstatua(player);
                 }
             }
         }
@@ -248,7 +256,7 @@ public class Ahorcado
                 if (intentos == 0)
                 {
                     files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelves a empezar.");
-                    acertijoEstatua();
+                    acertijoEstatua(player);
                 }
             }
         }
@@ -282,15 +290,19 @@ public class Ahorcado
                 if (intentos == 0)
                 {
                     files.printCositas.textoEfectoEscritura("Has perdido!!! Vuelves a empezar");
-                    acertijoEstatua();
+                    acertijoEstatua(player);
                 }
             }
         }
         files.printCositas.textoEfectoEscritura("La uña debe pertenecer a “utilidad”, ya que una de las partes más útiles de nuestro cuerpo son las manos y la uña que tienes en tu mano no es lo suficientemente grande para pertenecer al pie. Las manos de la estatua suman 10 dedos en total, a eso se refiere el 10. Usando el mismo razonamiento que con los dientes, comienzas a contar desde la derecha y sitúas la uña en el meñique izquierdo.");
         files.printCositas.textoEfectoEscritura("La inmensa pared detrás de la estatua se abre ante ti. Corres hacia la salida pero te vuelves a por la tela que por poco dejas atrás. No llega a pasar un segundo cuando la enorme pared se cierra de golpe en frente tuya. Intentas situar un objeto alternativo a la tela en la mano de la estatua, pero no funciona. Sin embargo, pones la tela de nuevo y… está abierta.");
+        files.combate.resetearStats(player);
+        files.combate.subirDeNivel(player);
+        files.inventario.abrirCofre(player);
+        files.combate.curarteTrasCombate(player, teclado);
         
     }
-    public static void acertijoPilares()
+    public static void acertijoPilares(jugador player)
     {
         int intentos;
         Scanner teclado;
@@ -335,44 +347,14 @@ public class Ahorcado
             if (i == resolver.length)
             {
                 files.printCositas.textoEfectoEscritura("Has ganado!");
+                files.combate.resetearStats(player);
+                files.combate.subirDeNivel(player);
+                files.inventario.abrirCofre(player);
+                files.combate.curarteTrasCombate(player, teclado);
                 return ;
             }
         }
         files.printCositas.textoEfectoEscritura("Has perdido. Vuelves a empezar");
-        acertijoPilares();
+        acertijoPilares(player);
     }
 }
-
-
-/*
- * Ahorcado silvia:
- * tienes una lista de palabras desordenadas:
- * 1. Blanco
- * 2. c
- * 3. Paloma
- * 4. Negro
- * 5. S
- * 6. Cuervo
- * 7. Paisan
- * 8. Rojo
- * 9. R
- * 10. Amarillo
- * 11 E
- * 12 Anguila
- * 
- * solución:
- * Negro blanco amarillo rojo
- * e s k c
- * cuervo paloma aguila faisán
- * 
- * No mueres, te manda el resultado;
- * 
- * Tienes que escribir los numeros en una matriz.
- * _ _ _ _
- * _ _ _ _
- * _ _ _ _
- * Se rellena
- * negro _ _ _ 
- * _ _ _ _
- * _ _ _ _
- */

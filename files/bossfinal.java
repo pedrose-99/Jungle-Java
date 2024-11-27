@@ -3,19 +3,22 @@ package files;
 public class bossfinal 
 {
     int hp;
+    int hpMax;
     int defensa;
     arma myArma;
 
     public bossfinal(int vida, int defense, arma myWeapon, int dificil)
     {
-        hp = vida + dificil;
+        hp = vida + (dificil * 10);
+        hpMax = hp;
         defensa = defense + dificil;
         myArma = myWeapon;
     }
 
-    public static bossfinal setBossfinal(int eleccion,  arma myArma, int dificil)
+    public static bossfinal setBossfinal(int eleccion, int dificil)
     {
         bossfinal finalBoss;
+        arma myArma = new arma(eleccion);
 
         switch (eleccion)
         {
@@ -31,5 +34,4 @@ public class bossfinal
         }
         return finalBoss;
     }
-
 }
