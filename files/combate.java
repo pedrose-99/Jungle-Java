@@ -502,6 +502,63 @@ public class combate
         }
     }
 
+    public static void jugadorAtacaJefeFinal(jugador player, bossfinal jefeFinal)
+    {
+        int dado;
+
+        files.printCositas.textoEfectoEscritura("Atacas!!");
+        dado = tirarDado(20);
+        if (dado >= jefeFinal.defensa)
+        {
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + jefeFinal.defensa);
+            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Superaste la defensa!!"+ files.printCositas.white);
+            switch (player.myArma.tipo)
+            {
+                case 1:
+                    magiaLuchaFinal(dado, player, jefeFinal);
+                    break;
+                case 2:
+                    destruccionLuchaFinal(dado, player, jefeFinal);                    
+                    break ;
+                default:
+                    arqueroLuchaFinal(dado, player, jefeFinal);
+                    break ;
+            }
+        }
+        else
+        {
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + jefeFinal.defensa + ". Fallaste!!");
+        }
+    }
+
+    public static void jefeFinalAtaca(jugador player, bossfinal jefeFinal)
+    {
+        int dado;
+
+        files.printCositas.textoEfectoEscritura("El Jefe Final Ataca!!");
+        dado = tirarDado(20);
+        if (dado >= player.defensa)
+        {
+            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa  es de " + player.defensa);
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Superó la defensa!!"+ files.printCositas.white);
+            switch (player.myArma.tipo)
+            {
+                case 1:
+                    magiaBoss(dado, player, jefeFinal);
+                    break;
+                case 2:
+                    destruccionBoss(dado, player, jefeFinal);                   
+                    break ;
+                default:
+                    arqueroBoss(dado, player, jefeFinal);
+                    break ;
+            }
+        }
+        else
+        {
+            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Tu defensa es de " + player.defensa + ". El jefe final falló!!");
+        }
+    }
 
     public static boolean gestionTurnoFinal(jugador player, int eleccion, bossfinal jefeFinal)
     {
@@ -570,7 +627,7 @@ public class combate
             }
             else
             {
-                jugadorAtacaJefeFinal(jefeFinal, player);
+                jefeFinalAtaca(player, jefeFinal);
                 files.printCositas.printJefeFinal(jefeFinal);
 
             }
@@ -583,7 +640,6 @@ public class combate
         files.printCositas.textoEfectoEscritura(files.printCositas.green + "Has acabado con el enemigo final!!");
 
         return (true);
-    }    
     }
     
     public static boolean simularCombate(int numEnemigos, String nombreEnemigo, jugador player)
