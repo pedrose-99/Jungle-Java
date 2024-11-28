@@ -27,6 +27,7 @@ jugador
     ClaseArma arma;
     ClaseInventario;
 }
+
  boss final
 {
     int hp;
@@ -59,19 +60,9 @@ Tiras un dado de 20.
     {
         Ataque definitivo
     }
-    Si sacas un 1
-    {
-        Pifia y te quitan daño
-    }
 }
 
-
 Tengo que:
-hacer boses finales
 colocar bien las letras de todos los caminos + colores
-resetear estadisticas al final de cada combate //hecho
-Subir de nivel //hecho 
-Sistema de cofres //hecho
-Batalla final
-//
-poner que despues del combate puedas usar pociones curativas; //hecho
+arreglar que si no tienes potis que no te cmabie de turno
+Quitar a los acertijos los prefijos y poner un espacio entre letras

@@ -537,9 +537,9 @@ public class combate
 
         files.printCositas.textoEfectoEscritura("El Jefe Final Ataca!!");
         dado = tirarDado(20);
-        if (dado >= player.defensa)
+        if (dado >= player.defensaActual)
         {
-            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa  es de " + player.defensa);
+            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa  es de " + player.defensaActual);
             files.printCositas.textoEfectoEscritura(files.printCositas.red +"Superó la defensa!!"+ files.printCositas.white);
             switch (player.myArma.tipo)
             {
@@ -556,7 +556,7 @@ public class combate
         }
         else
         {
-            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Tu defensa es de " + player.defensa + ". El jefe final falló!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa es de " + player.defensaActual + ". El jefe final falló!!");
         }
     }
 
@@ -633,12 +633,15 @@ public class combate
             }
         }
         if (player.hp <= 0)
-        {
-            files.printCositas.textoEfectoEscritura("Has muerto!!!");
+        {        
+            files.printCositas.printSeparador();
+            files.printCositas.textoEfectoEscritura(files.printCositas.red+"Has muerto!!!");
+            files.printCositas.printSeparador();
             return (false);
         }
+        files.printCositas.printSeparador();
         files.printCositas.textoEfectoEscritura(files.printCositas.green + "Has acabado con el enemigo final!!");
-
+        files.printCositas.printSeparador();
         return (true);
     }
     
@@ -681,7 +684,7 @@ public class combate
         }
         if (player.hp <= 0)
         {
-            files.printCositas.textoEfectoEscritura("Has muerto!!!");
+            files.printCositas.textoEfectoEscritura(files.printCositas.red+"Has muerto!!!");
             return (false);
         }
         files.printCositas.textoEfectoEscritura(files.printCositas.green + "Has acabado con todos los enemigos!!");

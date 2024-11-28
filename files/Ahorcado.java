@@ -19,7 +19,7 @@ public class Ahorcado
         }
         return aux;
     }
-    public static void ahorcado(String adivinanza, jugador player) 
+    public static boolean ahorcado(String adivinanza, jugador player) 
     {
         Scanner teclado = new Scanner(System.in);
         adivinanza = transformarString(adivinanza);
@@ -33,8 +33,10 @@ public class Ahorcado
 
         while (intentos > 0 && !juegoTerminado) 
         {
-            System.out.println("Palabra: " + String.valueOf(adivinadas));
-            System.out.println("Intentos restantes: " + intentos);
+            files.printCositas.printSeparador();
+            System.out.println("Palabra: " +files.printCositas.green +String.valueOf(adivinadas)+ files.printCositas.white);
+            System.out.println(files.printCositas.red +"Intentos restantes: " + intentos);
+            files.printCositas.printSeparador();
             System.out.print("Introduce una letra: ");
             char letra = teclado.next().charAt(0);
             if(letra >='a' && letra <= 'z')
@@ -69,17 +71,24 @@ public class Ahorcado
         }
         if (juegoTerminado) 
         {
-            System.out.println("Enhorabuena, has salvado tu vida... por ahora: ");
+            files.printCositas.printSeparador();
+            System.out.println(files.printCositas.green +"Enhorabuena, has salvado tu vida... por ahora: "+ files.printCositas.white);
+            files.printCositas.printSeparador();
             files.combate.resetearStats(player);
             files.combate.subirDeNivel(player);
             files.inventario.abrirCofre(player);
             files.combate.curarteTrasCombate(player, teclado);
+            return true;
         } 
         else 
         {
-            System.out.println("Has perdido y has sido ahorcado. La palabra era: " + adivinanza);
+            files.printCositas.printSeparador();
+            System.out.println(files.printCositas.red + "Has perdido y has sido ahorcado. La palabra era: " + adivinanza);
+            files.printCositas.printSeparador();
+            return false;
         }
     }
+
     public static int eleccionMoneda(Scanner teclado, int x, int y)
     {
         int eleccion;
@@ -195,7 +204,6 @@ public class Ahorcado
         files.printCositas.textoEfectoEscritura("El extraño pasadizo llega a su fin y te sitúas en una sala completamente vacía con algo cubierto en una gran manta en el centro. Te mata la curiosidad y lo destapas. Es una estatua humanoide a la que le faltan los dientes y las uñas, tiene agujeros en sus dos lóbulos y en la izquierda de su labio inferior y, además, tiene la mano extendida. Los extraños cofres que has conseguido anteriormente ya tienen sentido, pero hay un problema, solo tienes un diente, una uña y un pendiente. No sabes para qué sirve la tela vieja. Llevas buscando media hora los demás elementos del puzzle pero no hay manera, la sala está totalmente vacía.\r\n" + //
                           "\r\n" + //
                           "Desesperado, comienzas a buscar respuestas en los objetos y en las paredes que puedan tener relación con el acertijo. Te tumbas en el suelo a inspeccionar el techo, es alto. Estabas a punto de quedarte dormido, pero entre tus párpados a punto de cerrarse ves algo extraño en el techo. Te levantas y sacas de tu mochila tus prismáticos:…”Riqueza”…”3”…”necesidad”…”el cuarto”…”más afilado”…”abajo”…”derecha”…”2 maneras”...”utilidad”...”10”...”derecha”…. Apuntas lo leído en tu libreta y te acercas a la estatua. Puede que estés cansado, pero tu mente está más activa que nunca, al fin y al cabo te fascinan los acertijos.");
-        //primero resolvemos el pendiente. 2 intentos.
         while (intentos > 0)
         {
             files.printCositas.textoEfectoEscritura("Lóbulo (1) _              Lóbulo (2) _");

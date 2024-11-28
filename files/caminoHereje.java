@@ -5,23 +5,65 @@ public class caminoHereje
 {   
     public static void finalHereje(jugador player, int dificultad)
     {
-        files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo “ Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?”");
-        files.Ahorcado.ahorcado("UnSecreto", player);
-        files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam, se abalanza contra ti portando su mítica vestimenta de guerra, consigue alcanzarte con su lanza pero te revuelves y consigues zafarte, el rey manda a sus esbirros que han salido de la nada a atacarte, luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya. Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar el sagrado arco del jaguar y lanzar una flecha que le haga descansar en paz. Coges el arco y , notas como poco a poco se va cargando de una energía azul y brillante, lanzas una flecha se ve claramente que es un disparo certero hiriendo de gravedad a Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie. Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias… Solo hay una manera de saberlo…\r\n" + //
+        files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo Cuatro paredes y un altar,\n" + //
+                        "la vida o la muerte te pueden dar.\n" + //
+                        "Tres símbolos debes hallar,\n" + //
+                        "y en el orden correcto colocar.\n" + //
+                        "Busca en la luz, la sombra y el suelo,\n" + //
+                        "y haz tu elección para romper el duelo.");
+        files.Ahorcado.ahorcado("enigma", player);
+        files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Enigma. Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam, se abalanza contra ti portando su mítica vestimenta de guerra, consigue alcanzarte con su lanza pero te revuelves y consigues zafarte, el rey manda a sus esbirros que han salido de la nada a atacarte, luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya.") ;
+        files.combate.combateFinal(player, dificultad);
+        files.printCositas.textoEfectoEscritura("Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar el sagrado arco del jaguar y lanzar una flecha que le haga descansar en paz. Coges el arco y , notas como poco a poco se va cargando de una energía azul y brillante, lanzas una flecha se ve claramente que es un disparo certero hiriendo de gravedad a Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie. Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias… Solo hay una manera de saberlo…\r\n" + //
                         "");
-        //Enemigo final hacerlo
+    }
+
+    public static boolean explorar(jugador player, int dificultad, boolean siguesVivo)
+    {
+        files.printCositas.textoEfectoEscritura("Decides observar con detenimiento las paredes de la cámara. Están cubiertas de glifos mayas que cuentan la historia de un antiguo ritual: un guerrero fue enviado a un pozo sagrado para enfrentar pruebas de vida y muerte. Solo aquellos que demuestren fuerza y sabiduría pueden acceder al \"Camino del Cielo\", un sendero que promete llevar a un poder más allá de lo humano. Sin embargo, una advertencia destaca entre los grabados: \"No toques lo que no es tuyo, o el oro será tu perdición.\" En ese momento, un sonido profundo y reverberante llena la sala. El pedestal donde estaba el carcaj comienza a hundirse lentamente en el suelo, mientras una puerta de piedra se abre al otro extremo de la cámara.\r\n" + //
+                                "\r\n" + //
+                                "Las monedas se mueven como si una fuerza invisible las empujara hacia una esquina de la sala, donde forman un pequeño montón y entre ellas empiezan a apilarse. De repente, ese montón se transforma. El oro se funde, dando paso a una figura extraña hecha de oro maya. Una voz surge de su interior y dice: “Has adquirido el carcaj. Ahora demuestra si eres digno de él”. Tu corazón se acelera.\r\n" + //
+                                "");
+
+        siguesVivo = files.combate.simularCombate(1*dificultad, "Guarlock", player);
+        if (!siguesVivo)
+        {
+            return siguesVivo;
+        }
+        files.printCositas.textoEfectoEscritura("Al ver cómo el oro bajo tus pies comienza a ondular como si estuviera vivo, decides no arriesgarte. Con el carcaj bien asegurado a tu espalda, corres hacia la puerta de piedra que acaba de abrirse al otro extremo de la sala. Sin embargo, cuando apenas das unos pasos, el oro comienza a reunirse en un solo punto, derritiéndose y moldeándose como si tuviera voluntad propia. Frente a tus ojos, una criatura monstruosa toma forma: un ser humanoide gigantesco compuesto enteramente de monedas fundidas. Su cuerpo brilla con un resplandor dorado, y su rostro carece de ojos, salvo por dos cuencas vacías de las que emana un humo oscuro. Cada paso que da hace temblar la sala, y un sonido metálico, como el eco de miles de monedas cayendo, llena el aire.\r\n" + //
+                                "");
+        return siguesVivo;
+    }
+
+    public static boolean kakamora(jugador player, int dificultad, boolean siguesVivo)
+    {
+        files.printCositas.textoEfectoEscritura("Tras regresar al templo y mirar el espejo vibrante, notas que las runas en las paredes comienzan a brillar. Un sonido profundo, como un eco en las entrañas del templo, llena el aire. De repente, una puerta oculta se desliza hacia un lado, revelando un pasadizo oscuro y angosto. La curiosidad te consume, y decides avanzar. Al entrar, te encuentras en una sala circular iluminada por antorchas de fuego azul. En el centro, una mesa de piedra tiene grabado un acertijo rodeado por pequeños guerreros de oro con máscaras: los Kakamora. En la mesa, el acertijo dice: \"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?\" Los Kakamora te observan, esperando tu respuesta. Sabes que responder correctamente al acertijo podría ser la clave para avanzar… pero fallar podría significar enfrentarte a la furia de los Kakamora. Con cuidado, piensas en las palabras del acertijo. \"Abran mis alas para cruzar el cielo... si me fuerzas, dejas mi canto en silencio.\" Tras unos momentos de reflexión, murmuras la respuesta: —\"Un ave.\" Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.\r\n" + //
+                                                        "");
+                                                        files.printCositas.textoEfectoEscritura("el acertijo dice: \\\"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?");
+        siguesVivo = files.Ahorcado.ahorcado("Unave", player);
+        if (!siguesVivo)
+        {
+            return siguesVivo;
+        }
+        files.printCositas.textoEfectoEscritura("Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.");
+        return siguesVivo;
     }
 
     public static void caminoArco(jugador player , int dificultad)
     {
         int eleccion;
         Scanner teclado;
+        boolean siguesVivo = true;
+
         teclado = new Scanner(System.in);
         files.printCositas.textoEfectoEscritura("Despiertas en un pozo húmedo y oscuro, apenas iluminado por un tenue resplandor que se filtra desde una grieta en el techo. El aire está cargado de humedad, y un hedor metálico a sangre y moho te invade al respirar. Las paredes de piedra están frías al tacto, y el sonido del agua goteando reverbera, intensificando la sensación de aislamiento.\r\n" + //
                         "\r\n" + //
                         "Frente a ti, una figura encadenada yace en posición agónica. Su carne ha comenzado a descomponerse, dejando al descubierto fragmentos de hueso. Sin embargo, lo más perturbador es la inscripción en la pared: escrita con letras temblorosas y burdas, como si el autor hubiera estado al borde de la muerte. La frase, trazada con sangre seca, reza:");
-        files.printCositas.textoEfectoEscritura("Por la noche sube, por la mañana baja. Si de aquí quieres salir, la respiración a media noche deberás aguantar.");
-        files.Ahorcado.ahorcado("Secreto", player);
+        files.printCositas.textoEfectoEscritura("No es sangre lo que corre en mis venas,\n" + //
+                        "pero si dejo de latir, todo termina.\n" + //
+                        "Oscuro y duro como la noche,\n" + //
+                        "mi fuerza vive, pero a un precio alto");
+        files.Ahorcado.ahorcado("obsidiana", player);
         files.printCositas.textoEfectoEscritura("Debes decidir si hacer caso al acertijo que reza la piedra ensangrentada, subes junto a la marea por las paredes del pozo y al salir del mismo encontrarás una sala plagada de oro con un carcaj lleno de flechas indígenas, que te aumentarán el daño Sigues el acertijo de la piedra ensangrentada, tomando cada palabra como una clave. Mientras el agua sube, trepas con cuidado por las paredes del pozo, usando las grietas y salientes para impulsarte. El agua helada roza tus piernas, y por un momento sientes que el ascenso será imposible. Sin embargo, un instinto inexplicable te impulsa hacia arriba, hasta que encuentras una abertura en lo alto. Con un esfuerzo final, te impulsas al interior de un corredor de piedra que desemboca en una sala majestuosa.\r\n" + //
                         "\r\n" + //
                         "\r\n" + //
@@ -42,14 +84,11 @@ public class caminoHereje
         //explorar
         else
         {
-            files.printCositas.textoEfectoEscritura("Decides observar con detenimiento las paredes de la cámara. Están cubiertas de glifos mayas que cuentan la historia de un antiguo ritual: un guerrero fue enviado a un pozo sagrado para enfrentar pruebas de vida y muerte. Solo aquellos que demuestren fuerza y sabiduría pueden acceder al \"Camino del Cielo\", un sendero que promete llevar a un poder más allá de lo humano. Sin embargo, una advertencia destaca entre los grabados: \"No toques lo que no es tuyo, o el oro será tu perdición.\" En ese momento, un sonido profundo y reverberante llena la sala. El pedestal donde estaba el carcaj comienza a hundirse lentamente en el suelo, mientras una puerta de piedra se abre al otro extremo de la cámara.\r\n" + //
-                                "\r\n" + //
-                                "Las monedas se mueven como si una fuerza invisible las empujara hacia una esquina de la sala, donde forman un pequeño montón y entre ellas empiezan a apilarse. De repente, ese montón se transforma. El oro se funde, dando paso a una figura extraña hecha de oro maya. Una voz surge de su interior y dice: “Has adquirido el carcaj. Ahora demuestra si eres digno de él”. Tu corazón se acelera.\r\n" + //
-                                "");
-
-            files.combate.simularCombate(1*dificultad, "Guarlock", player);
-            files.printCositas.textoEfectoEscritura("Al ver cómo el oro bajo tus pies comienza a ondular como si estuviera vivo, decides no arriesgarte. Con el carcaj bien asegurado a tu espalda, corres hacia la puerta de piedra que acaba de abrirse al otro extremo de la sala. Sin embargo, cuando apenas das unos pasos, el oro comienza a reunirse en un solo punto, derritiéndose y moldeándose como si tuviera voluntad propia. Frente a tus ojos, una criatura monstruosa toma forma: un ser humanoide gigantesco compuesto enteramente de monedas fundidas. Su cuerpo brilla con un resplandor dorado, y su rostro carece de ojos, salvo por dos cuencas vacías de las que emana un humo oscuro. Cada paso que da hace temblar la sala, y un sonido metálico, como el eco de miles de monedas cayendo, llena el aire.\r\n" + //
-                                "");
+            siguesVivo = explorar(player, dificultad, siguesVivo);
+            if (!siguesVivo)
+            {
+                return ;
+            }
             eleccion = files.Main.elegir("Sepultar criatura", "Profecia", teclado);
             //Sepultar criatura
             if (eleccion == 1)
@@ -70,18 +109,22 @@ public class caminoHereje
                 //Alkuku
                 if (eleccion == 1)
                 {
-                    files.combate.simularCombate(dificultad * 1, "Alkukulkan", player);
+                    siguesVivo = files.combate.simularCombate(dificultad * 1, "Alkukulkan", player);
+                    if (!siguesVivo)
+                    {
+                        return ;
+                    }
                     files.printCositas.textoEfectoEscritura("Decides enfrentarte a él, armado solo con tu arco es una ardua batalla el dragón dorado alza sus alas y pone una posición dominante con un grito de ira al cielo luchas contra el lanzado tus mejores ataques pero los desvía uno tras otro vas fallando sin éxito de poder derrotarlo entonces tras esquivar los ataques de el dragón emplumado tu arco parece emitir un brillo coges una flecha y te dispones a disparar la flecha al dispararla coge mas y mas velocidad prendiendo una luz azul por toda la flecha que lo atraviesa cayendo el dragón como un árbol al suelo.\r\n" + //
                                                 "");
                     eleccion = files.Main.elegir("Kakamora", "Boss Final", teclado);
                     //kakamora
                     if (eleccion == 1)
                     {
-                        files.printCositas.textoEfectoEscritura("Tras regresar al templo y mirar el espejo vibrante, notas que las runas en las paredes comienzan a brillar. Un sonido profundo, como un eco en las entrañas del templo, llena el aire. De repente, una puerta oculta se desliza hacia un lado, revelando un pasadizo oscuro y angosto. La curiosidad te consume, y decides avanzar. Al entrar, te encuentras en una sala circular iluminada por antorchas de fuego azul. En el centro, una mesa de piedra tiene grabado un acertijo rodeado por pequeños guerreros de oro con máscaras: los Kakamora. En la mesa, el acertijo dice: \"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?\" Los Kakamora te observan, esperando tu respuesta. Sabes que responder correctamente al acertijo podría ser la clave para avanzar… pero fallar podría significar enfrentarte a la furia de los Kakamora. Con cuidado, piensas en las palabras del acertijo. \"Abran mis alas para cruzar el cielo... si me fuerzas, dejas mi canto en silencio.\" Tras unos momentos de reflexión, murmuras la respuesta: —\"Un ave.\" Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.\r\n" + //
-                                                        "");
-                                                        files.printCositas.textoEfectoEscritura("el acertijo dice: \\\"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?");
-                        files.Ahorcado.ahorcado("Unave", player);
-                        files.printCositas.textoEfectoEscritura("Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.");
+                        siguesVivo = kakamora(player, dificultad, siguesVivo);
+                        if (!siguesVivo)
+                        {
+                            return ;
+                        }
                         finalHereje(player, dificultad);
                     }
                     //Boss final

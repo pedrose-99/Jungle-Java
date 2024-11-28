@@ -64,8 +64,6 @@ public class enemigo
             case "mambaNegra":
                 enemy = new enemigo(nombre, 25, 12, 10);
                 break;
-            //case "MagoFinal":
-            //  jugador = new bossFinal();
             default:
                 enemy = new enemigo(nombre, 30, 7, 9);
                 break ;

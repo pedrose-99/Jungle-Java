@@ -13,8 +13,8 @@ public class Main
         {
             files.printCositas.printSeparador();
             files.printCositas.textoEfectoEscritura("¿Que camino eliges?");
-            files.printCositas.textoEfectoEscritura("1- " + eleccion1);
-            files.printCositas.textoEfectoEscritura("2- " + eleccion2);
+            files.printCositas.textoEfectoEscritura("1- " + files.printCositas.blue +eleccion1 + files.printCositas.white);
+            files.printCositas.textoEfectoEscritura("2- " + files.printCositas.purple+eleccion2 + files.printCositas.white);
             System.out.print("Elegiste el camino: ");
             eleccion = files.Main.gestionNumero(teclado);
             files.printCositas.printSeparador();
@@ -103,7 +103,7 @@ public class Main
     }
     public static void main(String[] args) 
     {
-        inventario myInventario = new inventario(1, 0,0);
+        inventario myInventario = new inventario(0, 0,0);
         Scanner teclado = new Scanner(System.in);
         arma myArma;
         int eleccion;
@@ -126,5 +126,6 @@ public class Main
                 files.caminoHereje.caminoArco(player, dificil);
                 break;
         }
+        teclado.close();
     }
 }
