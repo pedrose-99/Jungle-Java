@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Ahorcado 
 {
+    //Función para transformar el el String
     public static String transformarString(String name)
     {
         String aux= "";
@@ -19,6 +20,16 @@ public class Ahorcado
         }
         return aux;
     }
+    //Función para imprimir la palabra a adivinar
+    public static void imprimirAhorcado(char[] adivinadas)
+    {
+        for (char letra : adivinadas)
+        {
+            System.out.print(files.printCositas.green + letra + " ");
+        }
+        System.out.println(files.printCositas.white + "");
+    }
+    //Función para jugar al ahorcado
     public static boolean ahorcado(String adivinanza, jugador player) 
     {
         Scanner teclado = new Scanner(System.in);
@@ -34,7 +45,8 @@ public class Ahorcado
         while (intentos > 0 && !juegoTerminado) 
         {
             files.printCositas.printSeparador();
-            System.out.println("Palabra: " +files.printCositas.green +String.valueOf(adivinadas)+ files.printCositas.white);
+            System.out.print("Palabra: ");
+            imprimirAhorcado(adivinadas);
             System.out.println(files.printCositas.red +"Intentos restantes: " + intentos);
             files.printCositas.printSeparador();
             System.out.print("Introduce una letra: ");
@@ -88,7 +100,7 @@ public class Ahorcado
             return false;
         }
     }
-
+    //Función para elegir la moneda
     public static int eleccionMoneda(Scanner teclado, int x, int y)
     {
         int eleccion;
@@ -105,6 +117,7 @@ public class Ahorcado
         }
         return eleccion;
     }
+    //Función para imprimir las monedas
     public static void printMonedas(String[][] rellenar) 
     {
         for (int i = 0; i < rellenar.length; i++)
@@ -116,6 +129,7 @@ public class Ahorcado
             System.out.println();
         }
     }
+    //Función del acertijo de monedas
     public static void acertijoMonedas(jugador player)
     {
         String[][] solucion = new String[3][4];
@@ -194,6 +208,7 @@ public class Ahorcado
         files.printCositas.printSeparador();
         acertijoMonedas(player);
     }
+    //Función para el acertijo de la estatua
     public static void acertijoEstatua(jugador player)
     {
         int intentos;
@@ -310,6 +325,7 @@ public class Ahorcado
         files.combate.curarteTrasCombate(player, teclado);
         
     }
+    //Función para el acertijo de los pilares
     public static void acertijoPilares(jugador player)
     {
         int intentos;

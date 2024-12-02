@@ -7,6 +7,7 @@ public class arma
     int dmgActual;
     int AtaqueEspecial;
 
+    //Función para crear un arma
     public arma(int eleccion)
     {
         switch (eleccion)

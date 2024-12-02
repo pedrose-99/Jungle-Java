@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class combate 
 {
+    //Función para elegir al enemigo correcto
     public static int enemigoCorrecto(enemigo[] enemigos)
     {
         int i;
@@ -23,7 +24,7 @@ public class combate
         }
         return (i);
     }
-
+    //Función para comprobar si el enemigo se ha muerto
     public static void checkVida(int vida)
     {
         if (vida <= 0)
@@ -33,14 +34,14 @@ public class combate
             files.printCositas.printSeparador();
         }
     }
-
+    //Función para el jefe final del camino del hereje
     public static void arqueroBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int dano;
 
         if (dado >= 18)
         {
-            files.printCositas.textoEfectoEscritura("Jefe Final Yax-Balam  ha hecho crítico!!!! Usa su ataque especial. Pegas 1 vez extra!!");
+            files.printCositas.textoEfectoEscritura("Jefe Final Yax-Balam  ha hecho crítico!!!! Usa su ataque especial. Pega 1 vez extra!!");
             dano = tirarDado(player.myArma.AtaqueEspecial);
             files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
             player.hp = player.hp - dano;
@@ -61,7 +62,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.red +"Ha hecho " + dano+" de daño");
         }
     }
-
+    //Función para el jefe final del camino de la magia
     public static void magiaBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int dano;
@@ -80,7 +81,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Ha hecho " + dano+" de daño");
         }
     }
-
+    //Función para el jefe final del camino de la destrucción
     public static void destruccionBoss(int dado, jugador player, bossfinal jefeFinal)
     {
         int dano;
@@ -108,7 +109,7 @@ public class combate
 
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el arquero
     public static void arqueroLucha(int dado, jugador player, enemigo[] enemigos)
     {
         int i;
@@ -147,7 +148,7 @@ public class combate
             files.printCositas.imprimirEnemigo(enemigos[i]); 
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el mago
     public static void magiaLucha(int dado, jugador player, enemigo[] enemigos)
     {
         int i;
@@ -182,7 +183,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Has hecho 2 de daño en area a todos!!");
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el guerrero
     public static void destruccionLucha(int dado, jugador player, enemigo[] enemigos)
     {
         int i;
@@ -222,10 +223,9 @@ public class combate
 
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el arquero en la batalla final
     public static void arqueroLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 18)
@@ -255,10 +255,9 @@ public class combate
             files.printCositas.printJefeFinal(jefeFinal);
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el mago en la batalla final
     public static void magiaLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 18)
@@ -280,10 +279,9 @@ public class combate
 
         }
     }
-
+    //Función para analizar analizar si tienes que hacer el ataque especial o no para el guerrero en la batalla final
     public static void destruccionLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 15)
@@ -313,7 +311,7 @@ public class combate
 
         }
     }
-
+    //Función para cuando el jugador ataca
     public static void jugadorAtaca(jugador player, enemigo[] enemigos)
     {
         int dado;
@@ -342,7 +340,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + enemigos[0].defensa + ". Fallaste!!");
         }
     }
-
+    //Función para gestionar tu turno
     public static boolean gestionTurno(jugador player, int eleccion, enemigo[] enemigos)
     {
         boolean tuTurno = false;
@@ -372,7 +370,7 @@ public class combate
         }
         return tuTurno;
     }
-
+    //Función para tirar el dado
     public static int tirarDado(int maximoDado)
     {
         int num;
@@ -381,7 +379,7 @@ public class combate
         files.printCositas.textoEfectoEscritura(files.printCositas.white + "Ha sacado " + num + " de " + maximoDado);
         return (num);
     }
-
+    //Función para gestionar el turno de los enemigos
     public static void turnoEnemigos(enemigo[] enemigos, jugador player)
     {
         int romperDefensa;
@@ -413,7 +411,7 @@ public class combate
             }
         }
     }
-
+    //Función para comprobar si los enemigos estan vivos
     public static boolean checkEnemigos(enemigo[] enemigos)
     {
         int enemigosMuertos;
@@ -432,13 +430,13 @@ public class combate
         }
         return false;
     }
-
+    //Función para resetear tus estadísticas
     public static void resetearStats(jugador player)
     {
         player.defensaActual = player.defensa;
         player.myArma.dmgActual = player.myArma.dmg;
     }
-
+    //Función para subir de nivel
     public static void subirDeNivel(jugador player)
     {
         files.printCositas.printSeparador();
@@ -452,7 +450,7 @@ public class combate
         files.printCositas.printSeparador();
         files.printCositas.printStats(player);
     }
-
+    //Función para curarte después del combate
     public static void curarteTrasCombate(jugador player, Scanner teclado)
     {
         int eleccion = 0;
@@ -497,7 +495,7 @@ public class combate
             files.printCositas.printInventario(player.myInventario);
         }
     }
-
+    //Función para cuando el jugador ataca contra el jefe final
     public static void jugadorAtacaJefeFinal(jugador player, bossfinal jefeFinal)
     {
         int dado;
@@ -526,7 +524,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.red +"La defensa del enemigo es de " + jefeFinal.defensa + ". Fallaste!!");
         }
     }
-
+    //Función para cuando el jefe final ataca
     public static void jefeFinalAtaca(jugador player, bossfinal jefeFinal)
     {
         int dado;
@@ -555,7 +553,7 @@ public class combate
             files.printCositas.textoEfectoEscritura(files.printCositas.green +"Tu defensa es de " + player.defensaActual + ". El jefe final falló!!");
         }
     }
-
+    //Función para gestionar tu turno contra el jefe final
     public static boolean gestionTurnoFinal(jugador player, int eleccion, bossfinal jefeFinal)
     {
         boolean tuTurno = false;
@@ -585,7 +583,7 @@ public class combate
         }
         return tuTurno;
     }
-
+    //Función para el combate final
     public static boolean combateFinal(jugador player, int dificultad)
     {
         Scanner teclado;
@@ -640,7 +638,7 @@ public class combate
         files.printCositas.printSeparador();
         return (true);
     }
-    
+    //Función para simular el combate
     public static boolean simularCombate(int numEnemigos, String nombreEnemigo, jugador player)
     {
         Scanner teclado;

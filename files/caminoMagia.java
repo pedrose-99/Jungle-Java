@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class caminoMagia
 {
-
+    //Función para el jefe final del camino de la magia
     public static void finalMagia(jugador player, int dificultad)
     {
         files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza:");
         files.printCositas.textoEfectoEscritura("“Aquí yacen los restos del primer rey de los mayas Yax-Balam” Seguido de un acertijo ");
         files.printCositas.textoEfectoEscritura("Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?");
-        files.Ahorcado.ahorcado("UnSecreto", player);
+        files.Ahorcado.ahorcado("Secreto", player);
         files.printCositas.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. \r\n" + //
                         "Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, para tu sorpresa la vieja estatua se ha volatilizado y ante ti se alza el fantasma del rey Yax-Balam. \r\n" + //
                         "");
@@ -24,7 +24,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("Pasas la noche en el pueblo y, a la mañana siguiente, partes hacia tu hogar. Han pasado dos meses y tus descubrimientos se han puesto en museos, los libros hablan de ti y eres considerado uno de los exploradores más importantes de tu época. Felicidades, Peter. Aún así, pasas tus noches pensando qué había en el resto de los caminos. Solo hay una manera de saberlo…");
         files.printCositas.textoEfectoEscritura("Completa el resto de caminos y de sendas para conseguir todas las reliquias y completar la historia de Peter Hill.¡Gracias por jugar!");
     }
-
+    //Función para el camino de la izquierda del camino de la magia
     public static boolean caminoIzquierda(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Andas por el camino hasta llegar a una sala con estatuas de animales salvaje. Mientras investigas las estatuas, una de ellas comienza a moverse. Te das cuenta de que es un gorila salvaje. Te bates en duelo con tan aberrante criatura");
@@ -36,7 +36,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("Tras una ardua batalla consigues deshacerte de la vil criatura. Notas que tus movimientos son más lentos, estás empezando a tener hipotermia, le quitas la piel al gorila para hacerte un abrigo. Miras a tu alrededor y ves que ante ti se han abierto dos escaleras tras las estatuas, una que sube, y la otra que baja.");
         return siguesVivo;
     }
-
+    //Función para el camino subir escaleras 
     public static boolean escaleraSube(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Subes la escalera mientras una atmósfera densa y misteriosa te envuelve. Atraviesas un pequeño sendero que da a una sala lúgubre, las paredes, cubiertas de antiguos relieves, parecen susurrar secretos olvidados. \r\n" + //
@@ -51,7 +51,7 @@ public class caminoMagia
         "En una de las estatuas visualizas un agujero donde podría encajar, pero cuando vas a meter la llave se abre una grieta en la pared.");
         return (siguesVivo);
     }
-
+    //Función para el camino de la grieta de la pared
     public static boolean grietaPared(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Optas por entrar por la grieta que se ha abierto en la pared. Te deslizas por el estrecho pasaje y llegas a una caverna oscura y fría. De repente, un rugido ensordecedor resuena en la caverna.\r\n" + //
@@ -66,6 +66,7 @@ public class caminoMagia
         "Exhausto pero victorioso, encuentras una salida al otro lado de la caverna, entras en ella sabiendo que cada batalla te hace más fuerte y sabio.");
         return siguesVivo;
     }
+    //Función para el camino de la cerradura
     public static boolean cerradura(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Decides girar la llave dorada en la cerradura de la estatua. Con un chasquido, la cerradura se abre y la estatua se desplaza lentamente, revelando una pequeña cámara oculta. En el centro de la cámara, un cofre antiguo descansa sobre un pedestal.\r\n" + //
@@ -74,7 +75,7 @@ public class caminoMagia
                                                 "Ahora, tu varita puede lanzar hechizos con mayor precisión y potencia. Con esta nueva mejora, te sientes más preparado para enfrentar los desafíos que te esperan. Al fondo de la caverna ves una puerta, en el suelo hay un texto escrito:\r\n" + //
                                                 "");
         files.printCositas.textoEfectoEscritura("Canta sin tener voz, puede volar sin alas, sin tener dientes muerde y sin boca puede hablar.");
-        siguesVivo = Ahorcado.ahorcado("ElViento", player);
+        siguesVivo = Ahorcado.ahorcado("Viento", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -82,13 +83,13 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("El viento suspiras... Te sientes preparado la puerta se abre ante ti sin hacer ningún tipo de ruido, entras sin pensarlo.");
         return siguesVivo;
     }
-
+    //Función para el camino bajar escalera
     public static boolean escaleraBaja(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Mientras bajas las escaleras sientes una sensación de paz, tu cuerpo se relaja mientras piensas en lo que te ha llevado hasta ese momento. Ya llevas un rato bajando esas escaleras interminables y empiezas a pensar si has llegado a avanzar algo, esa sensación de paz abandona tu cuerpo de golpe, ahora estás en tensión, esta maldita cueva te está volviendo loco y necesitas salir.\r\n" + //
         "Comienzas a correr subiendo las escaleras pero para tu sorpresa lo que antes estaba abierto ahora es una puerta, esta puerta tiene un texto escrito que dice lo siguiente:\r\n");
         files.printCositas.textoEfectoEscritura("Dame comida y viviré. Dame agua y moriré. ¿Qué soy?");
-        siguesVivo = files.Ahorcado.ahorcado("ElFuego", player);
+        siguesVivo = files.Ahorcado.ahorcado("Fuego", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -98,14 +99,14 @@ public class caminoMagia
                 "");
         return siguesVivo;
     }
-
+    //Función para el camino buceo
     public static boolean buceo(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Sabes que necesitas salir de allí, así que sin pensarlo dos veces empiezas a bucear buscando una salida, bajo una de las estatuas había un pasadizo que sigues, está inundado y te estás quedando sin oxígeno.\r\n" + //
         "\r\n" + //
         "Te sumerges raudamente mientras notas como el agua inunda tus pulmones, comienzas a ver una luz, llegas a una sala que desprende una luz radiante, desde el interior escuchas una voz:");
         files.printCositas.textoEfectoEscritura("Puede devorar todas las cosas: plantas, bestias, flores y aves. Roe el hierro y muerde acero, mata reyes, arruina ciudades y puede derribar las altas montañas");
-        siguesVivo = Ahorcado.ahorcado("ElTiempo", player);
+        siguesVivo = Ahorcado.ahorcado("Tiempo", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -116,7 +117,7 @@ public class caminoMagia
                 "Ante ti, una puerta de piedra antigua se ilumina, estás decidido, vas a lograr tu meta, cruzas la puerta.");
         return siguesVivo;
     }
-
+    //Función para el camino nadar
     public static boolean nadar(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("El nivel del agua no deja de subir, sabes que tarde o temprano llegará el momento en el que no podrás coger más oxígeno, el agua te tiene abrumado, la sala está completamente inundada. En el techo parece que hay una cúpula, lo ves y comienzas a golpearla, la cúpula se rompe y el agua te arrastra a presión por el agujero, caes por un precipicio.\r\n" + //
@@ -132,12 +133,12 @@ public class caminoMagia
                                                 "");
         return siguesVivo;
     }
-
+    //Función para el camino de la derecha del camino de la magia
     public static boolean caminoDerecha(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Tras caminar durante un buen rato accedes a una caverna en la que encuentras un cofre maldito, debes resolver un acertijo para acceder al contenido del mismo, el acertijo reza:");
         files.printCositas.textoEfectoEscritura("Las raíces no se pueden ver y son más altas que un árbol. Arriba, muy arriba sube; sin embargo, nunca crece."            );
-        siguesVivo = files.Ahorcado.ahorcado("LaMontana", player);
+        siguesVivo = files.Ahorcado.ahorcado("Montana", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -146,7 +147,7 @@ public class caminoMagia
                             "Tras subir a la superficie del agua te das cuenta de que no hay una salida fácil.");
         return siguesVivo;
     }
-
+    //Función para el camino de luchar
     public static boolean luchar(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Empuñas tu varita y te decides a lanzar un hechizo de fuego para deshacerte de las serpientes, a simple vista cuentas miles de ellas, lanzas tu hechizo y consigues acabar con bastantes, pero no es suficiente. \r\n" + //
@@ -161,14 +162,14 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("Has conseguido acabar con todas las serpientes, pero esto ha provocado un derrumbe. Ante ti se abre una grieta en la pared, mientras caminas por la grieta, encuentras unas escaleras, bajas y ante ti...");
         return siguesVivo;
     }
-
+    //Función para el camino de trepar
     public static boolean trepar(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Te ves abrumado ante la cantidad de serpientes que hay y decides subirte a unas rocas que hay en las paredes, mientras trepas te resbalas y te golpeas en la cabeza, te has hecho bastante daño pero no te queda otra más que seguir intentando escalar.\r\n" + //
         "\r\n" + //
         "Consigues subir a las piedras y comienzas a recordar todo lo que te ha llevado hasta ese momento, justo cuando estás perdiendo la esperanza ves un texto en la pared que reza:");
         files.printCositas.textoEfectoEscritura("¿Qué va arriba y abajo pero nunca, nunca se mueve?");
-        siguesVivo = files.Ahorcado.ahorcado("UnaEscalera", player);
+        siguesVivo = files.Ahorcado.ahorcado("Escalera", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -177,7 +178,7 @@ public class caminoMagia
             "Has conseguido salir de ese embrollo.");
         return siguesVivo;
     }
-
+    //Función para el camino de bucear
     public static boolean bucear(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Buceas para buscar una salida, pero a falta de aire debes salir a respirar continuamente. Te sumerges de nuevo en el agua. En esta segunda inmersión encuentras un pasadizo bajo el agua. \r\n" + //
@@ -190,7 +191,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("Una vez muertos ambos babuinos necesitas recuperar fuerzas e hidratarte, encuentras unas bayas que crecen de un arbusto y al fondo visualizas una especie de jabalí.");
         return siguesVivo;
     }
-
+    //Función para el camino de luchar por segunda vez
     public static boolean lucharSegundo(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Necesitas plantear bien tu estrategia ya que estás cansado, decides pelear contra el jabalí. Le llamas desde la distancia y carga contra ti, el jabalí pasa cerca de ti pero no impacta, es el momento de que lances tu ataque, consigues herirle y os metéis en una lucha encarnizada.");
@@ -202,12 +203,12 @@ public class caminoMagia
                     files.printCositas.textoEfectoEscritura("Acabas con la vida del jabalí y procedes a comerte su carne, es dura y sabe mal, pero necesitas alimentarte. Tras descansar un poco ves que tu pelea con el jabalí ha hecho una grieta en la pared por la que entra un haz de luz, decides atravesar la grieta.");
         return siguesVivo;
     }
-
+    //Función para el camino de trepar por segunda vez
     public static boolean treparSegundo(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Estás tan cansado que necesitas consumir un alimento fácil que no te suponga hacer un gran esfuerzo, te tomas las bayas sin dejar ni una en el arbusto. Tras descansar un poco ves una puerta que se ilumina con los rayos de luz solar que se cuelan por la grieta natural que hay en el techo. Al fijarte en la puerta descubres que un texto reposa sobre el marco de la misma:");
         files.printCositas.textoEfectoEscritura("No se puede ver ni se puede sentir, este ocupa todos los espacios vacíos. No se puede oler ni se puede oír, está detrás de los astros, y está al pie de las colinas, llega primero y se queda; mata risas y acaba vidas.");
-        siguesVivo = files.Ahorcado.ahorcado("LaOscuridad", player);
+        siguesVivo = files.Ahorcado.ahorcado("Oscuridad", player);
         if (!siguesVivo)
         {
             return siguesVivo;
@@ -216,7 +217,7 @@ public class caminoMagia
         files.printCositas.textoEfectoEscritura("La puerta se abre ante ti, cruzas la puerta...");
         return siguesVivo;
     }
-
+    //Función para el camino del Mago
     public static void caminoMago(jugador player, int dificultad)
     {
         int eleccion;
@@ -348,10 +349,7 @@ public class caminoMagia
                     siguesVivo = treparSegundo(player, dificultad, siguesVivo);
                     finalMagia(player,dificultad);
                 }
-
             }
-
-
         }
 
     }

@@ -2,7 +2,8 @@ package files;
 import java.util.Scanner;
 
 public class caminoDestruccion
-{  
+{
+    //Función para luchar contra el jefe final del camino destrucción
     public static void FinalDestruccion(jugador player, int dificultad, boolean finalAlternativo)
     {
          files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra.\r\n" + //
@@ -23,6 +24,7 @@ public class caminoDestruccion
             files.printCositas.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia completa del antiguo rey. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias pertenecientes a este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias. De todas formas, solo hay una manera de saberlo…");
         }
     }
+    //Función para el camino chaac
     public static boolean chaac(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Encuentras grabado un acertijo escrito en lengua Maya, por suerte, ya aprendiste este idioma en tus años como estudiante de arqueología. Tras traducir el texto entiendes que te están planteando un enigma que enuncia: “¿Qué es aquello tan frágil que cuando se dice su nombre lo rompe?”\r\n" + //
@@ -43,7 +45,7 @@ public class caminoDestruccion
                                         "La sala es pequeña y no tardará en inundarse. Hay una puerta ya bloqueada por el agua por la que no estás seguro si cabes y otra en el techo que parece tener un cerrojo.");
         return siguesVivo;    
     }
-
+    //Función para el camino puerta del suelo
     public static boolean puertaSuelo(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Te apresuras hacia la pequeña puerta en la esquina de la sala, consigues entrar en ella pero no puedes cerrarla del todo. En consecuencia, el agua está entrando por la ranura y debes aguantar la respiración.\r\n" + //
@@ -60,7 +62,7 @@ public class caminoDestruccion
                                                         "Detrás del jaguar ya derrotado visualizas un extraño nido, hay aves durmiendo y parecen inofensivas. A tu otro lado hay un panel con agujeros circulares.");
         return siguesVivo;
     }
-    
+    //Función para el camino nido
     public static boolean nido(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Te aproximas al nido donde descansan las aves y las analizas. Nunca habías visto una criatura similar, pero antes de plantearte pasar por la otra puerta comienzan a correr hacia ti. Son crías y tienen hambre, su madre no parece estar por los alrededores.\r\n" + //
@@ -82,7 +84,7 @@ public class caminoDestruccion
                                                                 "Las monedas que conseguiste son un misterio para ti. No puedes esperar para poder investigarlas, piensas que quizás pertenecen al singular panel que había cerca del nido, pero ahora no tienes tiempo para volver. Debes seguir con tu aventura.");                                         
         return siguesVivo;    
     }
-
+    //Función para el camino moneda Acertijo
     public static void monedaAcertijo(jugador player, int dificultad)
     {
         files.printCositas.textoEfectoEscritura("Hay 12 ranuras en posición de cuadrado y con forma circular. Los primeros 4 espacios (en horizontal) tienen la palabra “colores” rodeándolos, los 4 últimos, la palabra “criatura”; pero la palabra que rodea a los 4 del medio es ilegible.\r\n" + //
@@ -99,7 +101,7 @@ public class caminoDestruccion
         files.Ahorcado.acertijoMonedas(player);
         files.printCositas.textoEfectoEscritura("Has resuelto el acertijo pero…¿Qué quieren decir las letras?. El tablero se da la vuelta mostrando el siguiente mensaje: “Chaac, cuatro colores le representan, los cuatro puntos cardinales simbolizan cada uno. Ek Xib, de color negro, representado por un cuervo; Sac Xib, de color blanco, simbolizado por la paloma; Kan Xib, amarillo, encarnado por el águila; Y, por último, Chac Xib, de color rojo, personificado por el faisán. Tomas notas de la información fascinado. La puerta se ha abierto y ahora puedes seguir avanzando por el sendero.");
     }
-
+    //Función para el camino estatua acertijo
     public static void estatuaAcertijo(jugador player, int dificultad)
     {
         files.printCositas.textoEfectoEscritura("Te aterran los insectos, es algo en lo que no puedes evitar pensar cada vez que vas a explorar. Esta vez realmente estás en un apuro por lo que comienzas a pisotear y aplastar con el mango de tu mandoble todo ser que se acerque a ti. ");
@@ -111,7 +113,7 @@ public class caminoDestruccion
                                                     "El pasadizo es oscuro pero tropiezas con un objeto pesado. Enciendes el mechero que llevas en el bolsillo y examinas el objeto. Se trata de un cofre un tanto extraño, tiene unas formas curvas que crean un relieve parecido a unos tentáculos y tiene un color entre verdoso y morado, tampoco presenta ningún reflejo o brillo. Al abrirlo solo ves una tela vieja de color rojo con un estampado de triángulos. Sigues por el pasadizo y tropiezas con otros tres cofres, cada uno más extraño que el anterior. Un pendiente común y oxidado, un diente de oro viejo…una...uña? Guardas todo lo encontrado en caso de que te sea de utilidad más tarde.");
         files.Ahorcado.acertijoEstatua(player);
     }
-
+    //Función para el camino sala Oscura
     public static boolean salaOscua(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Llegas a una sala totalmente oscura y oyes un rugido, intentas buscar tu linterna pero está al fondo de tu mochila. Algo se abalanza hacia ti rápidamente. Debes luchar.");
@@ -123,7 +125,7 @@ public class caminoDestruccion
         files.printCositas.textoEfectoEscritura("Empuñas tu mandoble y cierras los ojos, el enemigo es rápido pero muy ruidoso. De esta forma sabrás dónde atacar. Notas tocar varias veces al objetivo con tu arma. De pronto, se deja de oír ruido. Lo has derrotado. Una luz tenue sale de un agujero de tu tamaño. Es una puerta.");
         return siguesVivo;
     }
-
+    //Función para el camino de los espejos
     public static boolean espejos(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Apareces en una sala repleta de espejos, ni siquiera puedes saber dónde acaba o de qué tamaño es. Tardarás en buscar una salida. Llevas un rato inspeccionando la sala y has descubierto que algunos de los espejos se giran. Uno de estos será la puerta, los demás son sin salida.\r\n" + //
@@ -137,7 +139,7 @@ public class caminoDestruccion
         files.printCositas.textoEfectoEscritura("Coges tu mandoble y comienzas a atacar de lado a lado pero pierdes la orientación debido a los espejos, que dificultan la batalla. Procuras saltar por encima de las amenazas ya que es un movimiento que no pueden realizar fácilmente. Una vez acabas con ellos, inspeccionas el agujero y encuentras la salida.");
         return siguesVivo;
     }
-
+    //Función para el camino de las rocas
     public static boolean rocas(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Estás en una sala corriente bajo tierra, pero algo te llama la atención. Avistas una mesa donde está escrito en maya: “fundir y cubrir”. Tocas la mesa, está caliente. Debes fundir un objeto sobre esta. Te será más fácil cubrirla con metal fundido, pero,¿cómo?, el calor de la mesa no es suficiente para fundir un objeto, necesitas calentarlo más.\r\n" + //
@@ -152,7 +154,7 @@ public class caminoDestruccion
         files.printCositas.textoEfectoEscritura("Dudoso, coges la moneda que recogiste junto a tu mandoble, ahora necesitas acercarlo al fuego sin quemarte la mano. Avistas a tu lado unos huesos apilados, coges uno de ellos y pones la moneda en él. Con precaución, lo acercas al fuego. Pones la moneda caliente en la mesa y en cuestión de minutos ves la moneda totalmente fundida. Te preguntas si la moneda realmente servía para eso, pero otra puerta se ha abierto ante ti, debes continuar. Mientras caminas te preguntas qué relación puede tener la moneda con la prueba superada, finalmente, recuerdas el diseño de la moneda y miras detrás tuya. Encima de la puerta está escrito “calcinar”, la moneda tenía la letra “C” en ella, lo que disipa tus dudas. Continúas tu camino tranquilamente.");
         return siguesVivo;
     }
-
+    //Función para el camino de la izquierda de la destrucción
     public static boolean izquierdaDestr(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Entras en la sala aparentemente inofensiva. El techo tiene una estructura extraña, está dividido en diferentes paneles con barras verticales, como si de una celda se tratase. La puerta por la que has entrado se cierra, pero la de salida está abierta.\r\n" + //
@@ -167,7 +169,7 @@ public class caminoDestruccion
         files.printCositas.textoEfectoEscritura(" Tras numerosos esquivos y amagos, consigues cortar a la mamba en dos. Dejan de caer las placas y, cansado, te aproximas a la puerta, ya abierta.");
         return siguesVivo;
     }
-
+    //Función del camino de la destrucción
     public static void Destruccion(jugador player, int dificultad)
     {
         int eleccion;

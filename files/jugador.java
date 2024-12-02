@@ -10,6 +10,7 @@ public class jugador
     arma myArma;
     int dificultad;
 
+    //Función para crear al jugador
     public jugador(int vida, int defense, inventario myInventary, arma myWeapon, int dificil)
     {
         maxHp = vida;
@@ -20,7 +21,7 @@ public class jugador
         myArma = myWeapon;
         dificultad = dificil;
     }
-
+    //Función para construir el jugador
     public static jugador setJugador(int eleccion, inventario myInventario, arma myArma, int dificil)
     {
         jugador player;

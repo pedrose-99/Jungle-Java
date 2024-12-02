@@ -7,6 +7,7 @@ public class enemigo
     int defensa;
     int dmg;
 
+    //Función para crear al enemigo
     public enemigo(String name, int vida, int defense, int dano)
     {
         nombre = name;
@@ -14,7 +15,7 @@ public class enemigo
         defensa = defense;
         dmg = dano;
     }
-
+    //Función para generar un conjunto de enemigos
     public static enemigo[] generacionEnemigos(int numEnemigos, String nombre)
     {
         enemigo[] enemigos = new enemigo[numEnemigos];
@@ -24,7 +25,7 @@ public class enemigo
         }
         return (enemigos);
     }
-
+    //Función para elegir el tipo de enemigo a crear con sus diferentes estadísticas
     public static enemigo setEnemigo(String nombre)
     {
         enemigo enemy;
@@ -70,5 +71,4 @@ public class enemigo
         }
         return enemy;
     }
-
 }

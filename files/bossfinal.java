@@ -6,7 +6,7 @@ public class bossfinal
     int hpMax;
     int defensa;
     arma myArma;
-
+    //Función para crear el boss final
     public bossfinal(int vida, int defense, arma myWeapon, int dificil)
     {
         hp = vida + (dificil * 10);
@@ -14,7 +14,7 @@ public class bossfinal
         defensa = defense + dificil;
         myArma = myWeapon;
     }
-
+    //Función para construir el boss final
     public static bossfinal setBossfinal(int eleccion, int dificil)
     {
         bossfinal finalBoss;

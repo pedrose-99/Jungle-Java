@@ -1,9 +1,9 @@
 package files;
-
 import java.util.Scanner;
- 
+
 public class Main 
 {
+    //Función para poder elegir entre dos caminos
     public static int elegir(String eleccion1, String eleccion2, Scanner teclado)
     {
         int eleccion;
@@ -25,7 +25,7 @@ public class Main
         }
         return eleccion;
     }
-
+    //Función para poder gestionar si te pasan algo que no sea un int
     public static int gestionNumero(Scanner teclado)
     {
         int eleccion;
@@ -43,7 +43,7 @@ public class Main
         }
         return eleccion;
     }
-
+    //Función para gestionar el uso de las pociones
     public static int gestionPotis(Scanner teclado)
     {
         int eleccion;
@@ -61,6 +61,7 @@ public class Main
         }
         return eleccion;
     }
+    //Función para elegir el camino 
     public static int elegirCamino(Scanner teclado)
     {
         int eleccion;
@@ -80,7 +81,8 @@ public class Main
         return (eleccion);
     }
 
-    public static int setDificultad(Scanner teclado)
+    //Funcion para elegir la dificultad
+    public static int elegirDificultad(Scanner teclado)
     {
         int dificil;
 
@@ -101,6 +103,8 @@ public class Main
         files.printCositas.textoEfectoEscritura("La dificultad seleccionado es: " + dificil);
         return (dificil);
     }
+
+    //Void main para poder ejecutar el código
     public static void main(String[] args) 
     {
         inventario myInventario = new inventario(0, 0,0);
@@ -111,7 +115,7 @@ public class Main
         int dificil;
     
         files.printCositas.bienvenida();
-        dificil = setDificultad(teclado);
+        dificil = elegirDificultad(teclado);
         eleccion = elegirCamino(teclado);
         myArma = new arma(eleccion);
         player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);

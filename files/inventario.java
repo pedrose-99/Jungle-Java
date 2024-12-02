@@ -8,7 +8,7 @@ public class inventario
     int pociones_defensa;
     int numPociones;
 
-
+    //Función para elegir las pociones en el combate
     public static int switchPotis(jugador player, int eleccion)
     {
         switch (eleccion) {
@@ -56,6 +56,7 @@ public class inventario
         }
         return eleccion;
     }
+    //Función para la gestión de que tipo de poción quieres usar
     public static void gestionPociones(jugador player)
     {
         int eleccion;
@@ -73,7 +74,7 @@ public class inventario
             eleccion = switchPotis(player, eleccion);
         }
     }
-
+    //Función para declarar el inventario
     public inventario(int atack_potion, int defense_potion, int heal_potion)
     {
         pociones_ataque = atack_potion;
@@ -81,7 +82,7 @@ public class inventario
         pociones_curativas = heal_potion;
         numPociones = atack_potion + defense_potion + heal_potion;
     }
-
+    //Función para cuando abres el cofre
     public static void abrirCofre(jugador player)
     {
         int pociones_curativas;
@@ -101,7 +102,7 @@ public class inventario
         files.printCositas.printSeparador();
 
     }
-
+    //Función para actualizar el inventario
     public static void actualizaInventario(inventario myInventario,int atack_potion, int defense_potion, int heal_potion)
     {
         myInventario.pociones_ataque = myInventario.pociones_ataque + atack_potion;

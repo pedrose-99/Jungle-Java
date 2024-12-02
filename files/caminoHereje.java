@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class caminoHereje
 {   
+    //Función para el jefe final del camino del hereje
     public static void finalHereje(jugador player, int dificultad)
     {
         files.printCositas.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo Cuatro paredes y un altar,\n" + //
@@ -17,7 +18,7 @@ public class caminoHereje
         files.printCositas.textoEfectoEscritura("Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar el sagrado arco del jaguar y lanzar una flecha que le haga descansar en paz. Coges el arco y , notas como poco a poco se va cargando de una energía azul y brillante, lanzas una flecha se ve claramente que es un disparo certero hiriendo de gravedad a Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie. Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias… Solo hay una manera de saberlo…\r\n" + //
                         "");
     }
-
+    //Función para el camino explorar
     public static boolean explorar(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Decides observar con detenimiento las paredes de la cámara. Están cubiertas de glifos mayas que cuentan la historia de un antiguo ritual: un guerrero fue enviado a un pozo sagrado para enfrentar pruebas de vida y muerte. Solo aquellos que demuestren fuerza y sabiduría pueden acceder al \"Camino del Cielo\", un sendero que promete llevar a un poder más allá de lo humano. Sin embargo, una advertencia destaca entre los grabados: \"No toques lo que no es tuyo, o el oro será tu perdición.\" En ese momento, un sonido profundo y reverberante llena la sala. El pedestal donde estaba el carcaj comienza a hundirse lentamente en el suelo, mientras una puerta de piedra se abre al otro extremo de la cámara.\r\n" + //
@@ -34,7 +35,7 @@ public class caminoHereje
                                 "");
         return siguesVivo;
     }
-
+    //Función para el camino kakamora
     public static boolean kakamora(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printCositas.textoEfectoEscritura("Tras regresar al templo y mirar el espejo vibrante, notas que las runas en las paredes comienzan a brillar. Un sonido profundo, como un eco en las entrañas del templo, llena el aire. De repente, una puerta oculta se desliza hacia un lado, revelando un pasadizo oscuro y angosto. La curiosidad te consume, y decides avanzar. Al entrar, te encuentras en una sala circular iluminada por antorchas de fuego azul. En el centro, una mesa de piedra tiene grabado un acertijo rodeado por pequeños guerreros de oro con máscaras: los Kakamora. En la mesa, el acertijo dice: \"Abran mis alas para cruzar el cielo, Pero si me fuerzas, dejas mi canto en silencio. ¿Qué soy?\" Los Kakamora te observan, esperando tu respuesta. Sabes que responder correctamente al acertijo podría ser la clave para avanzar… pero fallar podría significar enfrentarte a la furia de los Kakamora. Con cuidado, piensas en las palabras del acertijo. \"Abran mis alas para cruzar el cielo... si me fuerzas, dejas mi canto en silencio.\" Tras unos momentos de reflexión, murmuras la respuesta: —\"Un ave.\" Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.\r\n" + //
@@ -48,7 +49,7 @@ public class caminoHereje
         files.printCositas.textoEfectoEscritura("Por un instante temes lo peor, pero entonces asienten al unísono. Un pasaje secreto se abre al otro lado de la sala, y los Kakamora comienzan a dispersarse, saltando entre las sombras y dejándote avanzar. El nuevo camino te lleva a una cámara final.");
         return siguesVivo;
     }
-
+    //Función para el camino del Arco
     public static void caminoArco(jugador player , int dificultad)
     {
         int eleccion;

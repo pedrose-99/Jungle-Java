@@ -4,20 +4,21 @@ import java.util.Scanner;
 
 public class printCositas 
 {
-    static String black="\033[30m"; 
-    static String red="\033[31m"; //enemigos
-    static String green="\033[32m"; //Elecciones de camino
-    static String yellow="\033[33m"; //Texto
-    static String blue="\033[34m"; //Tu turno
-    static String purple="\033[35m"; //Acertijos
+    //Colores para ediar el texto
+    static String red="\033[31m"; 
+    static String green="\033[32m";
+    static String yellow="\033[33m";
+    static String blue="\033[34m"; 
+    static String purple="\033[35m"; 
     static String cyan="\033[36m"; 
     static String white="\033[37m";
-    static String gris="\033[0;90m";
     
+    //Función para imprimir separadores
     static void printSeparador()
     {
         System.out.println(white + "------------------------------------------" + white);
     }
+    //Función ?????
     static void packTexto(String[] texto)
     {
         Scanner teclado = new Scanner(System.in);
@@ -27,19 +28,19 @@ public class printCositas
         }
         teclado.close();
     }
-
+    //Función para imprimir el texto poco a poco
     public static void textoEfectoEscritura(String linea){
         for (char caracter : linea.toCharArray()){
             System.out.print(caracter);
             try {
-                Thread.sleep(0);
+                Thread.sleep(25);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
             }
         System.out.println();
     }
-
+    //Función para imprimir el menú del combate
     public static void menuCombate()
     {
         printSeparador();
@@ -50,7 +51,7 @@ public class printCositas
         textoEfectoEscritura(white + "2. " +cyan +" Usar poción de ayuda");
         textoEfectoEscritura(white + "3. " + purple +" Mirar tus estadisticas y tu inventario" + yellow);
     }
-
+    //Función para imprimir la bienvenida al templo
     public static void bienvenida()
     {
         printSeparador();
@@ -58,7 +59,7 @@ public class printCositas
         textoEfectoEscritura(green+"Bienvenido al templo");
         printSeparador();
     }
-    
+    //Función para imprimir que camino elegir
     public static void printElegirCamino()
     {
         printSeparador();
@@ -67,7 +68,7 @@ public class printCositas
         textoEfectoEscritura(white +"2."+ blue+ " Camino de la destrucción");
         textoEfectoEscritura(white + "3." +purple+" Camino de la arqueria"+ white);
     }
-
+    //Función para imprimir las estadísticas
     public static void imprimirEstadisticas(arma myArma)
     {
         printSeparador();
@@ -85,7 +86,7 @@ public class printCositas
         printSeparador();
 
     }
-
+    //Función para imprimir todos los enemigos
     public static void imprimirEnemigos(enemigo[] enemigos)
     {
         for (int i = 0; i < enemigos.length; i++)
@@ -96,7 +97,7 @@ public class printCositas
             }
         }
     }
-
+    //Función para imprimir las estadísticas de un enemigo
     public static void imprimirEnemigo(enemigo myEnemy)
     {
         printSeparador();
@@ -108,7 +109,7 @@ public class printCositas
         printSeparador();
     }
 
-
+    //Función para imprimir tus estadísticas 
     public static void printStats(jugador player)
     {
         printSeparador();
@@ -119,7 +120,7 @@ public class printCositas
         System.out.printf(blue +"Tienes %d de ataque %n", player.myArma.dmgActual);
         printSeparador();
     }
-
+    //Función para imprimir que cosa hace cada poción
     public static void elegirPoti(inventario myInventario)
     {
         printSeparador();
@@ -129,7 +130,7 @@ public class printCositas
         printSeparador();
 
     }
-
+    //Función para imprimir tu inventario
     public static void printInventario(inventario myInventario)
     {
         printSeparador();
@@ -141,7 +142,7 @@ public class printCositas
         printSeparador();
     }
 
-    //Yax-Balam armas: anillo de las bestias, baston de las fieras y arco del juaguar
+    //Función para imprimir las estadísticas dle jefe final
     public static void printJefeFinal(bossfinal jefeFinal)
     {
         printSeparador();
