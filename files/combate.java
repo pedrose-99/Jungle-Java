@@ -36,7 +36,6 @@ public class combate
 
     public static void arqueroBoss(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 18)
@@ -65,7 +64,6 @@ public class combate
 
     public static void magiaBoss(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 18)
@@ -85,7 +83,6 @@ public class combate
 
     public static void destruccionBoss(int dado, jugador player, bossfinal jefeFinal)
     {
-        int i;
         int dano;
 
         if (dado >= 15)
@@ -111,7 +108,6 @@ public class combate
 
         }
     }
-
 
     public static void arqueroLucha(int dado, jugador player, enemigo[] enemigos)
     {

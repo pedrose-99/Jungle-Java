@@ -64,5 +64,4 @@ Tiras un dado de 20.
 
 Tengo que:
 colocar bien las letras de todos los caminos + colores
-arreglar que si no tienes potis que no te cmabie de turno
 Quitar a los acertijos los prefijos y poner un espacio entre letras

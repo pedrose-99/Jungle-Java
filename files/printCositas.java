@@ -32,7 +32,7 @@ public class printCositas
         for (char caracter : linea.toCharArray()){
             System.out.print(caracter);
             try {
-                Thread.sleep(20);
+                Thread.sleep(0);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
