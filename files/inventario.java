@@ -82,6 +82,23 @@ public class inventario
         pociones_curativas = heal_potion;
         numPociones = atack_potion + defense_potion + heal_potion;
     }
+    //Función para crear el inventario
+    public static inventario setInventario(int dificil)
+    {
+        inventario myInventario;
+        switch (dificil) {
+            case 1:
+                myInventario = new inventario(1, 1, 1);
+                break ;
+            case 2:
+                myInventario = new inventario(2, 2, 2);
+                break ;
+            default:
+                myInventario = new inventario(3, 3, 3);
+                break;
+        }
+        return myInventario;
+    }
     //Función para cuando abres el cofre
     public static void abrirCofre(jugador player)
     {
@@ -110,5 +127,4 @@ public class inventario
         myInventario.pociones_curativas = myInventario.pociones_curativas + heal_potion;
         myInventario.numPociones = myInventario.pociones_curativas + myInventario.pociones_defensa + myInventario.pociones_ataque;
     }
-
 }

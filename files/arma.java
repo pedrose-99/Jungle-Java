@@ -32,5 +32,10 @@ public class arma
                 break;
         }                
     }
+    static public arma setArma(int eleccion)
+    {
+        arma myArma = new arma(eleccion);
+        return myArma;
+    }
 }
 

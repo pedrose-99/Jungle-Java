@@ -20,6 +20,14 @@ public class Ahorcado
         }
         return aux;
     }
+    //Función para transformar el string en un array de String
+    public static String[] stringToArray(String texto)
+    {
+        String[] textoArray = new String[1];
+
+        textoArray[0] = texto;
+        return textoArray;
+    }
     //Función para imprimir la palabra a adivinar
     public static void imprimirAhorcado(char[] adivinadas)
     {
@@ -65,12 +73,10 @@ public class Ahorcado
                     acierto = true;
                 }
             }
-
             if (!acierto) 
             {
                 intentos--;
             }
-
             juegoTerminado = true;
             for (char c : adivinadas) 
             {

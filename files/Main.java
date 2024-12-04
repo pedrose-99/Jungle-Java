@@ -80,7 +80,6 @@ public class Main
         }
         return (eleccion);
     }
-
     //Funcion para elegir la dificultad
     public static int elegirDificultad(Scanner teclado)
     {
@@ -103,33 +102,56 @@ public class Main
         files.printCositas.textoEfectoEscritura("La dificultad seleccionado es: " + dificil);
         return (dificil);
     }
-
     //Void main para poder ejecutar el código
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-        inventario myInventario = new inventario(0, 0,0);
         Scanner teclado = new Scanner(System.in);
+        inventario myInventario;
         arma myArma;
         int eleccion;
         jugador player;
         int dificil;
-    
-        files.printCositas.bienvenida();
-        dificil = elegirDificultad(teclado);
-        eleccion = elegirCamino(teclado);
-        myArma = new arma(eleccion);
-        player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
-        switch (eleccion) {
-            case 1:
-                files.caminoMagia.caminoMago(player, dificil);
-                break;
-            case 2:
-                files.caminoDestruccion.Destruccion(player, dificil);
-                break;
-            default:
-                files.caminoHereje.caminoArco(player, dificil);
-                break;
+        String respuesta;
+
+        while (true)
+        {
+            respuesta = "";
+            files.printCositas.bienvenida();
+            dificil = elegirDificultad(teclado);
+            myInventario = files.inventario.setInventario(dificil);
+            eleccion = elegirCamino(teclado);
+            myArma = files.arma.setArma(eleccion);
+            player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
+            switch (eleccion) 
+            {
+                case 1:
+                    files.caminoMagia.caminoMago(player, dificil);
+                    break;
+                case 2:
+                    files.caminoDestruccion.Destruccion(player, dificil);
+                    break;
+                default:
+                    files.caminoHereje.caminoArco(player, dificil);
+                    break;
+            }
+            while (respuesta.isEmpty())
+            {
+                files.printCositas.printSeparador();
+                System.out.print("¿Quieres probar otros caminos? si/no: " );
+                respuesta = teclado.next();
+                if (!respuesta.equals("si") && !respuesta.equals("no") && !respuesta.equals("SI") && !respuesta.equals("NO"))
+                {
+                    respuesta = "";
+                    System.out.println("La respuesta no es valida. Escribe si o no.");
+                }
+            }
+            if (respuesta.equals("no") || respuesta.equals("NO"))
+            {
+                break ;
+            }
         }
+        files.printCositas.printSeparador();
+        files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Gracias por jugar.");
         teclado.close();
     }
 }

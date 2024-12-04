@@ -1,7 +1,5 @@
 package files;
 
-import java.util.Scanner;
-
 public class printCositas 
 {
     //Colores para ediar el texto
@@ -18,27 +16,25 @@ public class printCositas
     {
         System.out.println(white + "------------------------------------------" + white);
     }
-    //Función ?????
-    static void packTexto(String[] texto)
-    {
-        Scanner teclado = new Scanner(System.in);
-        for(String linea : texto){
-            teclado.nextLine();
-            textoEfectoEscritura(linea);
-        }
-        teclado.close();
-    }
+
     //Función para imprimir el texto poco a poco
-    public static void textoEfectoEscritura(String linea){
-        for (char caracter : linea.toCharArray()){
-            System.out.print(caracter);
-            try {
-                Thread.sleep(25);
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        System.out.println();
+    public static void textoEfectoEscritura(String linea) 
+    {
+        long delay = 25; // Tiempo inicial de espera en milisegundos 
+        try { 
+            for (char caracter : linea.toCharArray()) { 
+
+                System.out.print(caracter); 
+
+                if (System.in.available() > 0 && System.in.read() == '\n') { 
+                    delay = 0; // Cambia el tiempo de espera a 0 ms si se pulsa "Enter" 
+                } 
+                Thread.sleep(delay); 
+            } 
+        } catch (Exception e) { 
+            e.printStackTrace();
+        }
+        System.out.println("");
     }
     //Función para imprimir el menú del combate
     public static void menuCombate()
@@ -57,6 +53,9 @@ public class printCositas
         printSeparador();
         printSeparador();
         textoEfectoEscritura(green+"Bienvenido al templo");
+        printSeparador();
+        printSeparador();
+        textoEfectoEscritura(yellow+"*Puedes pulsar intro para pasar el texto más rápido*");
         printSeparador();
     }
     //Función para imprimir que camino elegir
@@ -142,7 +141,7 @@ public class printCositas
         printSeparador();
     }
 
-    //Función para imprimir las estadísticas dle jefe final
+    //Función para imprimir las estadísticas del jefe final
     public static void printJefeFinal(bossfinal jefeFinal)
     {
         printSeparador();
