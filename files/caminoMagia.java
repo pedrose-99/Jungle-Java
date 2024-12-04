@@ -7,7 +7,7 @@ public class caminoMagia
     public static void finalMagia(jugador player, int dificultad)
     {
         files.printTexto.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra. Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza:");
-        files.printTexto.textoEfectoEscritura("“Aquí yacen los restos del primer rey de los mayas Yax-Balam” Seguido de un acertijo ");
+        files.printTexto.textoEfectoEscritura("\"Aquí yacen los restos del primer rey de los mayas Yax-Balam\" Seguido de un acertijo ");
         files.printTexto.textoEfectoEscritura("Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?");
         files.Ahorcado.ahorcado("Secreto", player);
         files.printTexto.textoEfectoEscritura("Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto. \r\n" + //
@@ -19,10 +19,13 @@ public class caminoMagia
         files.combate.simularCombate(2*dificultad, "gorila",player); 
         files.printTexto.textoEfectoEscritura("Luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya.");
         files.combate.combateFinal(player, dificultad);
-        files.printTexto.textoEfectoEscritura("Durante batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar su anillo y lanzar un hechizo que le haga descansar en paz. Coges el anillo y te lo pones, notas como poco a poco se va cargando de una energía mística, lanzas un hechizo de volatilización provocando un torbellino de polvo que se desvanece, dejando en el suelo el anillo de las bestias de Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie.");   
-        files.printTexto.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura.");
-        files.printTexto.textoEfectoEscritura("Pasas la noche en el pueblo y, a la mañana siguiente, partes hacia tu hogar. Han pasado dos meses y tus descubrimientos se han puesto en museos, los libros hablan de ti y eres considerado uno de los exploradores más importantes de tu época. Felicidades, Peter. Aún así, pasas tus noches pensando qué había en el resto de los caminos. Solo hay una manera de saberlo…");
-        files.printTexto.textoEfectoEscritura("Completa el resto de caminos y de sendas para conseguir todas las reliquias y completar la historia de Peter Hill.¡Gracias por jugar!");
+        if (player.hp > 0)
+        {
+            files.printTexto.textoEfectoEscritura("Durante batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar su anillo y lanzar un hechizo que le haga descansar en paz. Coges el anillo y te lo pones, notas como poco a poco se va cargando de una energía mística, lanzas un hechizo de volatilización provocando un torbellino de polvo que se desvanece, dejando en el suelo el anillo de las bestias de Yax-Balam. Recoges la reliquia y ante ti se abren unas escaleras que te llevan a la superficie.");   
+            files.printTexto.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia de Yax-Balam. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias perdidas de este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura.");
+            files.printTexto.textoEfectoEscritura("Pasas la noche en el pueblo y, a la mañana siguiente, partes hacia tu hogar. Han pasado dos meses y tus descubrimientos se han puesto en museos, los libros hablan de ti y eres considerado uno de los exploradores más importantes de tu época. Felicidades, Peter. Aún así, pasas tus noches pensando qué había en el resto de los caminos. Solo hay una manera de saberlo…");
+            files.printTexto.textoEfectoEscritura("Completa el resto de caminos y de sendas para conseguir todas las reliquias y completar la historia de Peter Hill.¡Gracias por jugar!");
+        }
     }
     //Función para el camino de la izquierda del camino de la magia
     public static boolean caminoIzquierda(jugador player, int dificultad, boolean siguesVivo)
@@ -111,9 +114,9 @@ public class caminoMagia
         {
             return siguesVivo;
         }
-        files.printTexto.textoEfectoEscritura("Comienzas a pensar que los ángeles te reclaman para darte muerte, respondes suspirando: “El tiempo”. \r\n" + //
+        files.printTexto.textoEfectoEscritura("Comienzas a pensar que los ángeles te reclaman para darte muerte, respondes suspirando: \"El tiempo\". \r\n" + //
                 "La luz desaparece dejando ante ti un altar, un mango de hueso está posado sobre este, al lado, una nota que decides leer:");
-        files.printTexto.textoEfectoEscritura("“Lucha por nosotros, salva nuestras almas, queremos descansar y que la pesadilla acabe”. \r\n" + //
+        files.printTexto.textoEfectoEscritura("\"Lucha por nosotros, salva nuestras almas, queremos descansar y que la pesadilla acabe\". \r\n" + //
                 "Ante ti, una puerta de piedra antigua se ilumina, estás decidido, vas a lograr tu meta, cruzas la puerta.");
         return siguesVivo;
     }
@@ -152,7 +155,7 @@ public class caminoMagia
     {
         files.printTexto.textoEfectoEscritura("Empuñas tu varita y te decides a lanzar un hechizo de fuego para deshacerte de las serpientes, a simple vista cuentas miles de ellas, lanzas tu hechizo y consigues acabar con bastantes, pero no es suficiente. \r\n" + //
                                             "\r\n" + //
-                                            "Comienzas a pensar que no va a ser posible eliminarlas a todas, pero recuerdas que en el libro que leíste antes de viajar en busca de las reliquias había un antiguo hechizo, rezaba algo como “en la peor de las situaciones solo el coraje te puede guiar”. Empiezas a pensar en todo lo que has pasado para llegar a ese momento y te cargas de una energía vibrante, antes nunca habías sentido ese poder, cargas tu hechizo y ,¡boom!, lo lanzas.\r\n" + //
+                                            "Comienzas a pensar que no va a ser posible eliminarlas a todas, pero recuerdas que en el libro que leíste antes de viajar en busca de las reliquias había un antiguo hechizo, rezaba algo como \"en la peor de las situaciones solo el coraje te puede guiar\". Empiezas a pensar en todo lo que has pasado para llegar a ese momento y te cargas de una energía vibrante, antes nunca habías sentido ese poder, cargas tu hechizo y ,¡boom!, lo lanzas.\r\n" + //
                                             "");
         siguesVivo = files.combate.simularCombate(10*dificultad, "serpiente", player);
         if (!siguesVivo)
@@ -174,7 +177,7 @@ public class caminoMagia
         {
             return siguesVivo;
         }
-        files.printTexto.textoEfectoEscritura("Comienzas a darle vueltas al acertijo, “una escalera”, gritas, ¿esto en que me va a ayudar?, te dices a ti mismo, estás frustrado, pero ante ti se abren unos escalones de piedra que decides seguir, estás emocionado. \r\n" + //
+        files.printTexto.textoEfectoEscritura("Comienzas a darle vueltas al acertijo, \"una escalera\", gritas, ¿esto en que me va a ayudar?, te dices a ti mismo, estás frustrado, pero ante ti se abren unos escalones de piedra que decides seguir, estás emocionado. \r\n" + //
             "Has conseguido salir de ese embrollo.");
         return siguesVivo;
     }

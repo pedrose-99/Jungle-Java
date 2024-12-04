@@ -19,7 +19,7 @@ public class printTexto
     //Función para imprimir el texto poco a poco
     public static void textoEfectoEscritura(String linea) 
     {
-        long delay = 20; // Tiempo inicial de espera en milisegundos 
+        long delay = 15; // Tiempo inicial de espera en milisegundos 
         try { 
             for (char caracter : linea.toCharArray()) { 
 
@@ -61,9 +61,9 @@ public class printTexto
     public static void printElegirCamino()
     {
         printSeparador();
-        files.printTexto.textoEfectoEscritura("Peter Hill, un gran explorador, sin duda. ¿Quién iría, incluso se plantearía buscar las reliquias de un antiguo rey Maya escondidas en una jungla jamás visitada por algún humano que pueda contarlo? Exactamente esto hizo nuestro protagonista.  \n" + //
+        files.printTexto.textoEfectoEscritura("Peter Hill, un gran explorador, sin duda. ¿Quién iría, incluso se plantearía buscar las reliquias de un antiguo rey Maya escondidas en una jungla jamás visitada por algún humano que pueda contarlo? Exactamente esto hizo nuestro protagonista. \n" + //
                                 "\n" + 
-                                "Como un apasionado arqueólogo, Peter pasaba sus tardes en la biblioteca leyendo sobre antigüedades y planteando sus próximas expediciones. Al fondo de una estantería sin categoría definida encontró un libro viejo, el cual contaba la historia de “Yax-Balam”, un rey maya que desapareció junto a su pueblo en una enorme hecatombe, o eso dicen. \n" + //
+                                "Como un apasionado arqueólogo, Peter pasaba sus tardes en la biblioteca leyendo sobre antigüedades y planteando sus próximas expediciones. Al fondo de una estantería sin categoría definida encontró un libro viejo, el cual contaba la historia de \"Yax-Balam\", un rey maya que desapareció junto a su pueblo en una enorme hecatombe, o eso dicen. \n" + //
                                 "\n" + 
                                 "Al día siguiente, Peter partió rumbo hacia la selva, dispuesto a encontrar lo que había leído en el libro. \n" + 
                                 "\n" + 

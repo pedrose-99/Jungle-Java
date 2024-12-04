@@ -8,39 +8,39 @@ public class caminoDestruccion
     {
          files.printTexto.textoEfectoEscritura("Te encuentras ante el mayor templo subterráneo que has visto en tus cientos de exploraciones, pero hay algo raro en el ambiente, sientes que te cuesta respirar y empiezas a oír voces, no hay nadie más en la mazmorra.\r\n" + //
                           "\r\n" + //
-                          "Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, “aquí yacen los restos del primer rey de los mayas Yax-Balam” seguido de un acertijo “ Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?”. Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto.\r\n" + //
+                          "Ante ti se erige una estatua oxidada y llena de enredaderas, a los pies de la estatua lees un texto que reza, \"aquí yacen los restos del primer rey de los mayas Yax-Balam\" seguido de un acertijo \" Si me tienes, me quieres compartir. Si me compartes, ya no me tienes. ¿Qué soy?\". Sabes perfectamente la respuesta y sin pensártelo la dices en alto… Un secreto.\r\n" + //
                           "\r\n" + //
                           "Todo empieza a temblar y a llenarse de una niebla densa que no te deja ver, Para tu sorpresa, la vieja estatua se ha volatilizado y ante ti se alza un guerrero, representa al rey Yax-Balam y su espíritu. Yax-Balam se abalanza contra ti portando su mítica vestimenta de guerra y su reliquia, el Bastón de las Fieras. Consigue alcanzarte con su arma, pero te revuelves y consigues zafarte. El rey manda a sus esbirros a atacarte, son una representación de ambos dioses Chaac y Kauil. Luchas contra ellos y tras una ardua batalla consigues eliminarlos y enfrentarte cara a cara con el gran rey maya.\r\n");
         files.combate.combateFinal(player, dificultad);
         files.printTexto.textoEfectoEscritura("Tras la batalla consigues hacer caer a Yax-Balam, tu arma está quebrada y la única salida que tienes es portar su bastón y golpear su cabeza mientras intenta reincorporarse a la batalla.\r\n" + //
                           "\r\n" + //
                           "Empuñas el arma, notas como poco a poco se va cargando de una energía poderosa, lanzas un ataque descendente provocando que el daño de tu bastón sea mayor. Golpeas al gran Yax-Balam, ahora inconsciente en el suelo del campo de batalla. Rápidamente, recoges la reliquia con la que has atacado al rey y ante ti se abren unas escaleras que te llevan a la superficie");
-        if (finalAlternativo)
+        if (finalAlternativo && player.hp > 0)
         {
             files.printTexto.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia completa del antiguo rey. A pesar de todas las dificultades que has tenido, has conseguido no una, sino dos reliquias. Miras el bastón y el medallón que conseguiste, no puedes esperar a investigarlos. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias pertenecientes a este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo y, a la mañana siguiente, partes hacia tu hogar. Han pasado dos meses y tus descubrimientos se han puesto en museos, los libros hablan de ti y eres considerado uno de los exploradores más importantes de tu época. Felicidades, Peter. Aún así, pasas tus noches pensando qué había en el resto de los caminos. Solo hay una manera de saberlo...");
         }
-        else
+        else if (player.hp > 0)
         {
-            files.printTexto.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia completa del antiguo rey. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias pertenecientes a este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias. De todas formas, solo hay una manera de saberlo…");
+            files.printTexto.textoEfectoEscritura("Te ves en la jungla sin nada a tu alrededor, solo ves árboles, un río y monos. Decides seguir el río y encuentras un poblado en el que te cuentan la historia completa del antiguo rey. Los nativos destacan una información que te llama la atención. Parece ser que hay otras dos reliquias pertenecientes a este rey, las cuales se encuentran en las otras dos rutas que dejaste atrás en tu aventura. Pasas la noche en el pueblo, cuestionándote qué podrían ser esas otras dos reliquias. De todas formas, solo hay una manera de saberlo...");
         }
     }
     //Función para el camino chaac
     public static boolean chaac(jugador player, int dificultad, boolean siguesVivo)
     {
-        files.printTexto.textoEfectoEscritura("Encuentras grabado un acertijo escrito en lengua Maya, por suerte, ya aprendiste este idioma en tus años como estudiante de arqueología. Tras traducir el texto entiendes que te están planteando un enigma que enuncia: “¿Qué es aquello tan frágil que cuando se dice su nombre lo rompe?”\r\n" + //
+        files.printTexto.textoEfectoEscritura("Encuentras grabado un acertijo escrito en lengua Maya, por suerte, ya aprendiste este idioma en tus años como estudiante de arqueología. Tras traducir el texto entiendes que te están planteando un enigma que enuncia: \"¿Qué es aquello tan frágil que cuando se dice su nombre lo rompe?\"\r\n" + //
                                         "\r\n" + //
-                                        "A la derecha del enunciado hay una superficie saliente con arena, y encima de esta lo que parece un grifo. Confundido, sigues buscando textos en la pesada puerta. Tras largos minutos de búsqueda desvelas un escrito tras unas ramas: “Traza en la arena, desvela el mensaje. Por cada respuesta se borrará el lienzo”.\r\n");
+                                        "A la derecha del enunciado hay una superficie saliente con arena, y encima de esta lo que parece un grifo. Confundido, sigues buscando textos en la pesada puerta. Tras largos minutos de búsqueda desvelas un escrito tras unas ramas: \"Traza en la arena, desvela el mensaje. Por cada respuesta se borrará el lienzo\".\r\n");
         siguesVivo = files.Ahorcado.ahorcado("silencio", player);
         if (!siguesVivo)
         {
             return siguesVivo;
         }
-         files.printTexto.textoEfectoEscritura("Habiendo leído esta información comienzas a trazar la respuesta al acertijo en la arena: ”S”,”I”,”L”,”E”.... Cada letra que escribes se acompaña de un chorro de arena cayendo sobre ella. Finalmente escribes “silencio”. Esta vez el grifo ha escupido otra moneda, esta es blanca y tiene la letra “S” grabada.\r\n" + //
+         files.printTexto.textoEfectoEscritura("Habiendo leído esta información comienzas a trazar la respuesta al acertijo en la arena: \"S\",\"I\",\"L\",\"E\".... Cada letra que escribes se acompaña de un chorro de arena cayendo sobre ella. Finalmente escribes \"silencio\". Esta vez el grifo ha escupido otra moneda, esta es blanca y tiene la letra \"S\" grabada.\r\n" + //
                                         "\r\n" + //
                                         "La puerta se abre ante ti y ves unas escaleras que parecen conducir hacia una mazmorra.");
         files.printTexto.textoEfectoEscritura("Una vez dentro encuentras un cofre en el centro de la sala, desconfiado te acercas y, sorprendentemente, lo abres sin dificultad.\r\n" + //
                                         "\r\n" + //
-                                        "Contiene una especie de poción de un color rojizo, en la base del envase hay una moneda de color amarillo con la letra “K” grabada. Pero no podía ser tan fácil. De pronto se abre un agujero en el techo de la mazmorra y comienza a caer una abundante cascada de agua.\r\n" + //
+                                        "Contiene una especie de poción de un color rojizo, en la base del envase hay una moneda de color amarillo con la letra \"K\" grabada. Pero no podía ser tan fácil. De pronto se abre un agujero en el techo de la mazmorra y comienza a caer una abundante cascada de agua.\r\n" + //
                                         "\r\n" + //
                                         "La sala es pequeña y no tardará en inundarse. Hay una puerta ya bloqueada por el agua por la que no estás seguro si cabes y otra en el techo que parece tener un cerrojo.");
         return siguesVivo;    
@@ -57,7 +57,7 @@ public class caminoDestruccion
         {
             return siguesVivo;
         }
-        files.printTexto.textoEfectoEscritura("Luchas contra él y consigues la victoria. Coges el medallón de su cuello, es una moneda como las anteriores, negra, con la letra “E” grabada en ella.\r\n" + //
+        files.printTexto.textoEfectoEscritura("Luchas contra él y consigues la victoria. Coges el medallón de su cuello, es una moneda como las anteriores, negra, con la letra \"E\" grabada en ella.\r\n" + //
                                                         "\r\n" + //
                                                         "Detrás del jaguar ya derrotado visualizas un extraño nido, hay aves durmiendo y parecen inofensivas. A tu otro lado hay un panel con agujeros circulares.");
         return siguesVivo;
@@ -87,19 +87,19 @@ public class caminoDestruccion
     //Función para el camino moneda Acertijo
     public static void monedaAcertijo(jugador player, int dificultad)
     {
-        files.printTexto.textoEfectoEscritura("Hay 12 ranuras en posición de cuadrado y con forma circular. Los primeros 4 espacios (en horizontal) tienen la palabra “colores” rodeándolos, los 4 últimos, la palabra “criatura”; pero la palabra que rodea a los 4 del medio es ilegible.\r\n" + //
+        files.printTexto.textoEfectoEscritura("Hay 12 ranuras en posición de cuadrado y con forma circular. Los primeros 4 espacios (en horizontal) tienen la palabra \"colores\" rodeándolos, los 4 últimos, la palabra \"criatura\"; pero la palabra que rodea a los 4 del medio es ilegible.\r\n" + //
         "\r\n" + //
         "Has visualizado miles de paneles parecidos en museos, por desgracia, ninguno tenía este conjunto de palabras por lo que no puedes saber qué está escrito alrededor de las ranuras en posición central.\r\n" + //
         "\r\n" + //
-        "Recuerdas haber visto las formas que describen las ranuras recientemente. Sacas las monedas que habías recogido anteriormente en los cofres y compruebas, efectivamente, pertenecen a las ranuras. Sin embargo, solo posees 4 monedas y no son suficientes para abrir la puerta, además, no sabes qué relación pueden tener con la ranura. Te preguntas si pertenecen al grupo de “colores” pero las letras no tendrían sentido en ese caso. De todas formas, aún debes encontrar las monedas restantes, te faltan 8.\r\n" + //
+        "Recuerdas haber visto las formas que describen las ranuras recientemente. Sacas las monedas que habías recogido anteriormente en los cofres y compruebas, efectivamente, pertenecen a las ranuras. Sin embargo, solo posees 4 monedas y no son suficientes para abrir la puerta, además, no sabes qué relación pueden tener con la ranura. Te preguntas si pertenecen al grupo de \"colores\" pero las letras no tendrían sentido en ese caso. De todas formas, aún debes encontrar las monedas restantes, te faltan 8.\r\n" + //
         "\r\n" + //
-        "Intuyes que las monedas que necesitas están en la sala contigo. Decides mirar entre los escombros. Tras una larga búsqueda encuentras 4 monedas con las palabras “negro”, “blanco”, “amarillo” y “rojo” en ellas y otras 4 monedas con las palabras “cuervo”, “paloma”, “águila” y “faisán”. Por primera vez estás completamente perdido ante un acertijo. Miras de nuevo las monedas que habías cogido anteriormente a lo largo de tu recorrido y buscas pistas. Al mirar el costado de las monedas consigues leer “Xib” escrito solo en las que aparece una sola letra grabada.");
+        "Intuyes que las monedas que necesitas están en la sala contigo. Decides mirar entre los escombros. Tras una larga búsqueda encuentras 4 monedas con las palabras \"negro\", \"blanco\", \"amarillo\" y \"rojo\" en ellas y otras 4 monedas con las palabras \"cuervo\", \"paloma\", \"águila\" y \"faisán\". Por primera vez estás completamente perdido ante un acertijo. Miras de nuevo las monedas que habías cogido anteriormente a lo largo de tu recorrido y buscas pistas. Al mirar el costado de las monedas consigues leer \"Xib\" escrito solo en las que aparece una sola letra grabada.");
         files.printTexto.textoEfectoEscritura(
                 "Inspeccionas el pedestal y encuentras un mensaje:\r\n" + //
                 "\r\n" + //
                 "\"Se juntaron los dos primeros, se compenetran perfectamente, viven en armonía e indiferencia. Sin embargo, algo debe destacar, es desnatural tal entendimiento y normalidad en este lugar. Vino el cuarto, destacando sobre los demás, ambos primero y segundo están ahora opacados por su esplendor y belleza. Por último, llegó el tercero. No era tan llamativo como el cuarto, de hecho, era realmente parecido a los dos primeros, pero su gran tamaño creó una necesidad de poder sobre él. Este era imponente y sometió a los demás de manera no tan sofisticada y pacífica como el cuarto. Devoró al segundo como muestra de poder y creó de este lugar un sitio injusto\".");
         files.Ahorcado.acertijoMonedas(player);
-        files.printTexto.textoEfectoEscritura("Has resuelto el acertijo pero…¿Qué quieren decir las letras?. El tablero se da la vuelta mostrando el siguiente mensaje: “Chaac, cuatro colores le representan, los cuatro puntos cardinales simbolizan cada uno. Ek Xib, de color negro, representado por un cuervo; Sac Xib, de color blanco, simbolizado por la paloma; Kan Xib, amarillo, encarnado por el águila; Y, por último, Chac Xib, de color rojo, personificado por el faisán. Tomas notas de la información fascinado. La puerta se ha abierto y ahora puedes seguir avanzando por el sendero.");
+        files.printTexto.textoEfectoEscritura("Has resuelto el acertijo pero...¿Qué quieren decir las letras?. El tablero se da la vuelta mostrando el siguiente mensaje: \"Chaac, cuatro colores le representan, los cuatro puntos cardinales simbolizan cada uno. Ek Xib, de color negro, representado por un cuervo; Sac Xib, de color blanco, simbolizado por la paloma; Kan Xib, amarillo, encarnado por el águila; Y, por último, Chac Xib, de color rojo, personificado por el faisán. Tomas notas de la información fascinado. La puerta se ha abierto y ahora puedes seguir avanzando por el sendero.");
     }
     //Función para el camino estatua acertijo
     public static void estatuaAcertijo(jugador player, int dificultad)
@@ -142,7 +142,7 @@ public class caminoDestruccion
     //Función para el camino de las rocas
     public static boolean rocas(jugador player, int dificultad, boolean siguesVivo)
     {
-        files.printTexto.textoEfectoEscritura("Estás en una sala corriente bajo tierra, pero algo te llama la atención. Avistas una mesa donde está escrito en maya: “fundir y cubrir”. Tocas la mesa, está caliente. Debes fundir un objeto sobre esta. Te será más fácil cubrirla con metal fundido, pero,¿cómo?, el calor de la mesa no es suficiente para fundir un objeto, necesitas calentarlo más.\r\n" + //
+        files.printTexto.textoEfectoEscritura("Estás en una sala corriente bajo tierra, pero algo te llama la atención. Avistas una mesa donde está escrito en maya: \"fundir y cubrir\". Tocas la mesa, está caliente. Debes fundir un objeto sobre esta. Te será más fácil cubrirla con metal fundido, pero,¿cómo?, el calor de la mesa no es suficiente para fundir un objeto, necesitas calentarlo más.\r\n" + //
                                                         "\r\n" + //
                                                         "Buscando pistas descubres una puerta tras la mesa. La abres y ves un abundante fuego que te hace retroceder instantáneamente. La sala donde te encuentras está conectada a la anterior habitación invadida por las llamas. Esto te ayuda a resolver el acertijo. Sin embargo, debes fundir un objeto metálico que tengas en propiedad. La mesa tiene una forma circular y el objeto tiene que ser suficientemente grande para cubrirla de metal fundido.");
                         files.printTexto.textoEfectoEscritura("¿Qué objeto pondrás sobre la mesa?");
@@ -151,7 +151,7 @@ public class caminoDestruccion
         {
             return siguesVivo;
         }
-        files.printTexto.textoEfectoEscritura("Dudoso, coges la moneda que recogiste junto a tu mandoble, ahora necesitas acercarlo al fuego sin quemarte la mano. Avistas a tu lado unos huesos apilados, coges uno de ellos y pones la moneda en él. Con precaución, lo acercas al fuego. Pones la moneda caliente en la mesa y en cuestión de minutos ves la moneda totalmente fundida. Te preguntas si la moneda realmente servía para eso, pero otra puerta se ha abierto ante ti, debes continuar. Mientras caminas te preguntas qué relación puede tener la moneda con la prueba superada, finalmente, recuerdas el diseño de la moneda y miras detrás tuya. Encima de la puerta está escrito “calcinar”, la moneda tenía la letra “C” en ella, lo que disipa tus dudas. Continúas tu camino tranquilamente.");
+        files.printTexto.textoEfectoEscritura("Dudoso, coges la moneda que recogiste junto a tu mandoble, ahora necesitas acercarlo al fuego sin quemarte la mano. Avistas a tu lado unos huesos apilados, coges uno de ellos y pones la moneda en él. Con precaución, lo acercas al fuego. Pones la moneda caliente en la mesa y en cuestión de minutos ves la moneda totalmente fundida. Te preguntas si la moneda realmente servía para eso, pero otra puerta se ha abierto ante ti, debes continuar. Mientras caminas te preguntas qué relación puede tener la moneda con la prueba superada, finalmente, recuerdas el diseño de la moneda y miras detrás tuya. Encima de la puerta está escrito \"calcinar\", la moneda tenía la letra \"C\" en ella, lo que disipa tus dudas. Continúas tu camino tranquilamente.");
         return siguesVivo;
     }
     //Función para el camino de la izquierda de la destrucción
@@ -180,7 +180,7 @@ public class caminoDestruccion
                         "\r\n" + //
                         "En el centro del monumento se encuentra un mandoble clavado en el suelo, con sorprendente facilidad lo sacas del lugar donde descansaba, como si estuviera ahí especialmente para ti.\r\n" + //
                         "\r\n" + //
-                        "Este mandoble es realmente pesado y afilado,incluso podrías herirte al usarlo, sin embargo, te servirá de defensa personal. Al lado encuentras una moneda roja con la letra “C” detrás.\r\n" + //
+                        "Este mandoble es realmente pesado y afilado,incluso podrías herirte al usarlo, sin embargo, te servirá de defensa personal. Al lado encuentras una moneda roja con la letra \"C\" detrás.\r\n" + //
                         "\r\n" + //
                         "Hay dos puertas inmensas de piedra a los lados, ambas tienen grabados dibujos de antiguos dioses de la cultura maya. Conoces esos dibujos: a tu derecha, Chaac, el Dios del agua,los relámpagos y la lluvia; a tu izquierda, Kauil, el Dios del fuego");
 
@@ -313,7 +313,7 @@ public class caminoDestruccion
                 {
                     files.printTexto.textoEfectoEscritura("Apareces en una sala rocosa con cinco grandes pilares, en frente tuya se encuentran cinco rocas con una letra grabada cada una. En los pilares que tienes delante, 5 espacios.");
                     files.Ahorcado.acertijoPilares(player);
-                    files.printTexto.textoEfectoEscritura("Ordenas las letras en tu mente y, sin pensarlo, las introduces de forma que en la pared se vea “KAUIL”, el nombre del Dios en el que esta ruta está basada.\r\n" + //
+                    files.printTexto.textoEfectoEscritura("Ordenas las letras en tu mente y, sin pensarlo, las introduces de forma que en la pared se vea \"KAUIL\", el nombre del Dios en el que esta ruta está basada.\r\n" + //
                                                     "La puerta se abre ante ti y continuas tu camino.");
                     FinalDestruccion(player, dificultad, false);
                 }
