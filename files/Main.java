@@ -112,47 +112,49 @@ public class Main
         jugador player;
         int dificil;
         String respuesta;
-
-        while (true)
-        {
-            respuesta = "";
-            files.printTexto.bienvenida();
-            dificil = elegirDificultad(teclado);
-            myInventario = files.inventario.setInventario(dificil);
-            eleccion = elegirCamino(teclado);
-            myArma = files.arma.setArma(eleccion);
-            player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
-            switch (eleccion) 
+        try {
+            while (true)
             {
-                case 1:
-                    files.caminoMagia.caminoMago(player, dificil);
-                    break;
-                case 2:
-                    files.caminoDestruccion.Destruccion(player, dificil);
-                    break;
-                default:
-                    files.caminoHereje.caminoArco(player, dificil);
-                    break;
-            }
-            while (respuesta.isEmpty())
-            {
-                files.printTexto.printSeparador();
-                System.out.print("¿Quieres probar otros caminos? si/no: " );
-                respuesta = teclado.next();
-                if (!respuesta.equals("si") && !respuesta.equals("no") && !respuesta.equals("SI") && !respuesta.equals("NO"))
+                respuesta = "";
+                files.printTexto.bienvenida();
+                dificil = elegirDificultad(teclado);
+                myInventario = files.inventario.setInventario(dificil);
+                eleccion = elegirCamino(teclado);
+                myArma = files.arma.setArma(eleccion);
+                player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
+                switch (eleccion) 
                 {
-                    respuesta = "";
-                    System.out.println("La respuesta no es valida. Escribe si o no.");
+                    case 1:
+                        files.caminoMagia.caminoMago(player, dificil);
+                        break;
+                    case 2:
+                        files.caminoDestruccion.Destruccion(player, dificil);
+                        break;
+                    default:
+                        files.caminoHereje.caminoArco(player, dificil);
+                        break;
+                }
+                while (respuesta.isEmpty())
+                {
+                    files.printTexto.printSeparador();
+                    System.out.print("¿Quieres probar otros caminos? si/no: " );
+                    respuesta = teclado.next();
+                    if (!respuesta.equals("si") && !respuesta.equals("no") && !respuesta.equals("SI") && !respuesta.equals("NO"))
+                    {
+                        respuesta = "";
+                        System.out.println("La respuesta no es valida. Escribe si o no.");
+                    }
+                }
+                if (respuesta.equals("no") || respuesta.equals("NO"))
+                {
+                    break ;
                 }
             }
-            if (respuesta.equals("no") || respuesta.equals("NO"))
-            {
-                break ;
-            }
+            files.printTexto.printSeparador();
+            files.printTexto.textoEfectoEscritura(files.printTexto.yellow +"Gracias por jugar.");
+            files.printTexto.printSeparador();
+            teclado.close();
+        } catch (Exception e) {
         }
-        files.printTexto.printSeparador();
-        files.printTexto.textoEfectoEscritura(files.printTexto.yellow +"Gracias por jugar.");
-        files.printTexto.printSeparador();
-        teclado.close();
     }
 }
