@@ -11,16 +11,16 @@ public class Main
         eleccion = 0;
         while (eleccion != 1 && eleccion != 2)
         {
-            files.printCositas.printSeparador();
-            files.printCositas.textoEfectoEscritura("¿Que camino eliges?");
-            files.printCositas.textoEfectoEscritura("1- " + files.printCositas.blue +eleccion1 + files.printCositas.white);
-            files.printCositas.textoEfectoEscritura("2- " + files.printCositas.purple+eleccion2 + files.printCositas.white);
+            files.printTexto.printSeparador();
+            files.printTexto.textoEfectoEscritura("¿Que camino eliges?");
+            files.printTexto.textoEfectoEscritura("1- " + files.printTexto.blue +eleccion1 + files.printTexto.white);
+            files.printTexto.textoEfectoEscritura("2- " + files.printTexto.purple+eleccion2 + files.printTexto.white);
             System.out.print("Elegiste el camino: ");
             eleccion = files.Main.gestionNumero(teclado);
-            files.printCositas.printSeparador();
+            files.printTexto.printSeparador();
             if (eleccion != 1 && eleccion != 2)
             {
-                files.printCositas.textoEfectoEscritura("Ese camino no existe.");
+                files.printTexto.textoEfectoEscritura("Ese camino no existe.");
             }
         }
         return eleccion;
@@ -37,8 +37,8 @@ public class Main
         } 
         catch (NumberFormatException nfe) 
         {
-            files.printCositas.printSeparador();
-            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Eleccion incorrecta!!!"+ files.printCositas.white);
+            files.printTexto.printSeparador();
+            files.printTexto.textoEfectoEscritura(files.printTexto.red +"Eleccion incorrecta!!!"+ files.printTexto.white);
             return (0); 
         }
         return eleccion;
@@ -55,8 +55,8 @@ public class Main
         } 
         catch (NumberFormatException nfe) 
         {
-            files.printCositas.printSeparador();
-            files.printCositas.textoEfectoEscritura(files.printCositas.red +"Eleccion incorrecta!!!"+ files.printCositas.white);
+            files.printTexto.printSeparador();
+            files.printTexto.textoEfectoEscritura(files.printTexto.red +"Eleccion incorrecta!!!"+ files.printTexto.white);
             return (-1); 
         }
         return eleccion;
@@ -69,13 +69,13 @@ public class Main
         eleccion = 0;
         while (eleccion != 1 && eleccion != 2 && eleccion != 3)
         {
-            files.printCositas.printElegirCamino();
+            files.printTexto.printElegirCamino();
             System.out.print("Elegiste el camino: ");
             eleccion = gestionNumero(teclado);
-            files.printCositas.printSeparador();
+            files.printTexto.printSeparador();
             if (eleccion != 1 && eleccion != 2 && eleccion != 3)
             {
-                files.printCositas.textoEfectoEscritura("Ese camino no existe.");
+                files.printTexto.textoEfectoEscritura("Ese camino no existe.");
             }
         }
         return (eleccion);
@@ -88,18 +88,18 @@ public class Main
         dificil = 0;
         while (dificil != 1 && dificil != 2 && dificil != 3)
         {
-            files.printCositas.printSeparador();
-            System.out.print("Seleccione la dificultad entre "+ files.printCositas.yellow+"1 "+files.printCositas.blue+ "2 " +files.printCositas.red+ "3: "+ files.printCositas.white);
+            files.printTexto.printSeparador();
+            System.out.print("Seleccione la dificultad entre "+ files.printTexto.yellow+"1 "+files.printTexto.blue+ "2 " +files.printTexto.red+ "3: "+ files.printTexto.white);
             dificil = gestionNumero(teclado);
-            files.printCositas.printSeparador();
+            files.printTexto.printSeparador();
             if (dificil != 1 && dificil != 2 && dificil != 3)
             {
-                files.printCositas.printSeparador();
-                files.printCositas.textoEfectoEscritura(files.printCositas.red + "Esa dificultad no existe!!!.");
-                files.printCositas.printSeparador();
+                files.printTexto.printSeparador();
+                files.printTexto.textoEfectoEscritura(files.printTexto.red + "Esa dificultad no existe!!!.");
+                files.printTexto.printSeparador();
             }
         }
-        files.printCositas.textoEfectoEscritura("La dificultad seleccionado es: " + dificil);
+        files.printTexto.textoEfectoEscritura("La dificultad seleccionado es: " + dificil);
         return (dificil);
     }
     //Void main para poder ejecutar el código
@@ -116,7 +116,7 @@ public class Main
         while (true)
         {
             respuesta = "";
-            files.printCositas.bienvenida();
+            files.printTexto.bienvenida();
             dificil = elegirDificultad(teclado);
             myInventario = files.inventario.setInventario(dificil);
             eleccion = elegirCamino(teclado);
@@ -136,7 +136,7 @@ public class Main
             }
             while (respuesta.isEmpty())
             {
-                files.printCositas.printSeparador();
+                files.printTexto.printSeparador();
                 System.out.print("¿Quieres probar otros caminos? si/no: " );
                 respuesta = teclado.next();
                 if (!respuesta.equals("si") && !respuesta.equals("no") && !respuesta.equals("SI") && !respuesta.equals("NO"))
@@ -150,8 +150,9 @@ public class Main
                 break ;
             }
         }
-        files.printCositas.printSeparador();
-        files.printCositas.textoEfectoEscritura(files.printCositas.yellow +"Gracias por jugar.");
+        files.printTexto.printSeparador();
+        files.printTexto.textoEfectoEscritura(files.printTexto.yellow +"Gracias por jugar.");
+        files.printTexto.printSeparador();
         teclado.close();
     }
 }

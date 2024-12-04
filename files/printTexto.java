@@ -1,6 +1,6 @@
 package files;
 
-public class printCositas 
+public class printTexto 
 {
     //Colores para ediar el texto
     static String red="\033[31m"; 
@@ -10,13 +10,12 @@ public class printCositas
     static String purple="\033[35m"; 
     static String cyan="\033[36m"; 
     static String white="\033[37m";
-    
+
     //Función para imprimir separadores
     static void printSeparador()
     {
         System.out.println(white + "------------------------------------------" + white);
     }
-
     //Función para imprimir el texto poco a poco
     public static void textoEfectoEscritura(String linea) 
     {
@@ -52,7 +51,7 @@ public class printCositas
     {
         printSeparador();
         printSeparador();
-        textoEfectoEscritura(green+"Bienvenido al templo");
+        textoEfectoEscritura(green+"Bienvenido a la jungla");
         printSeparador();
         printSeparador();
         textoEfectoEscritura(yellow+"*Puedes pulsar intro para pasar el texto más rápido*");
@@ -61,6 +60,15 @@ public class printCositas
     //Función para imprimir que camino elegir
     public static void printElegirCamino()
     {
+        printSeparador();
+        files.printTexto.textoEfectoEscritura("Peter Hill, un gran explorador, sin duda. ¿Quién iría, incluso se plantearía buscar las reliquias de un antiguo rey Maya escondidas en una jungla jamás visitada por algún humano que pueda contarlo? Exactamente esto hizo nuestro protagonista.  \n" + //
+                                "\n" + 
+                                "Como un apasionado arqueólogo, Peter pasaba sus tardes en la biblioteca leyendo sobre antigüedades y planteando sus próximas expediciones. Al fondo de una estantería sin categoría definida encontró un libro viejo, el cual contaba la historia de “Yax-Balam”, un rey maya que desapareció junto a su pueblo en una enorme hecatombe, o eso dicen. \n" + //
+                                "\n" + 
+                                "Al día siguiente, Peter partió rumbo hacia la selva, dispuesto a encontrar lo que había leído en el libro. \n" + 
+                                "\n" + 
+                                "*A partir de ahora, cada decisión que hagas cambiará el rumbo de la historia, elige bien, y buena suerte, Peter.* \n" + 
+                                "Una vez en la jungla, avanzas y ves tres caminos ante ti, los tres caminos no se diferencian mucho entre sí, por lo que realmente no sabes cual elegir. Sin pensarlo, continúas andando por uno de ellos... ");
         printSeparador();
         textoEfectoEscritura("Que camino eliges:");
         textoEfectoEscritura("1."+ red +" Camino de la magia");
@@ -92,7 +100,7 @@ public class printCositas
         {
             if (enemigos[i].hp > 0)
             {
-                files.printCositas.imprimirEnemigo(enemigos[i]);
+                files.printTexto.imprimirEnemigo(enemigos[i]);
             }
         }
     }
@@ -107,7 +115,6 @@ public class printCositas
         textoEfectoEscritura(blue +"Tiene " + myEnemy.dmg + " de ataque.");
         printSeparador();
     }
-
     //Función para imprimir tus estadísticas 
     public static void printStats(jugador player)
     {
@@ -140,7 +147,6 @@ public class printCositas
         textoEfectoEscritura(red +"Tienes "+myInventario.pociones_curativas+ red+" pociones curativas");
         printSeparador();
     }
-
     //Función para imprimir las estadísticas del jefe final
     public static void printJefeFinal(bossfinal jefeFinal)
     {

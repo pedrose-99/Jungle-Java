@@ -15,7 +15,7 @@ public class inventario
             case 1:
                 if (player.myInventario.pociones_ataque <= 0)
                 {
-                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
+                    files.printTexto.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -27,7 +27,7 @@ public class inventario
             case 2:
                 if (player.myInventario.pociones_defensa <= 0)
                 {
-                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
+                    files.printTexto.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -40,7 +40,7 @@ public class inventario
             default:
                 if (player.myInventario.pociones_curativas <= 0)
                 {
-                    files.printCositas.textoEfectoEscritura("No tienes esa poción. Elige otra.");
+                    files.printTexto.textoEfectoEscritura("No tienes esa poción. Elige otra.");
                     eleccion = 0;
                 }
                 else
@@ -64,12 +64,12 @@ public class inventario
 
         eleccion = 0;
         teclado = new Scanner(System.in);
-        files.printCositas.printInventario(player.myInventario);
+        files.printTexto.printInventario(player.myInventario);
         while (eleccion != 1 && eleccion != 2 && eleccion != 3)
         {
-            files.printCositas.printSeparador();
-            files.printCositas.textoEfectoEscritura("Que poción quieres usar??");
-            files.printCositas.elegirPoti(player.myInventario);
+            files.printTexto.printSeparador();
+            files.printTexto.textoEfectoEscritura("Que poción quieres usar??");
+            files.printTexto.elegirPoti(player.myInventario);
             eleccion = files.Main.gestionNumero(teclado);
             eleccion = switchPotis(player, eleccion);
         }
@@ -106,17 +106,17 @@ public class inventario
         int pociones_ataque;
         int pociones_defensa;
 
-        files.printCositas.printSeparador();
-        files.printCositas.textoEfectoEscritura(files.printCositas.green + "Enhorabuena!!! Has encontrado un cofre!!!");
+        files.printTexto.printSeparador();
+        files.printTexto.textoEfectoEscritura(files.printTexto.green + "Enhorabuena!!! Has encontrado un cofre!!!");
         pociones_curativas = files.combate.tirarDado(5);
-        files.printCositas.textoEfectoEscritura(files.printCositas.red + "Has encontrado " + pociones_curativas + " curativas!!");
+        files.printTexto.textoEfectoEscritura(files.printTexto.red + "Has encontrado " + pociones_curativas + " curativas!!");
         pociones_ataque = files.combate.tirarDado(5);
-        files.printCositas.textoEfectoEscritura(files.printCositas.blue + "Has encontrado " + pociones_ataque + " de ataque!!");
+        files.printTexto.textoEfectoEscritura(files.printTexto.blue + "Has encontrado " + pociones_ataque + " de ataque!!");
         pociones_defensa = files.combate.tirarDado(5);
-        files.printCositas.textoEfectoEscritura(files.printCositas.yellow + "Has encontrado " + pociones_defensa + " de defensa!!");
+        files.printTexto.textoEfectoEscritura(files.printTexto.yellow + "Has encontrado " + pociones_defensa + " de defensa!!");
         actualizaInventario(player.myInventario, pociones_ataque, pociones_defensa, pociones_curativas);
-        files.printCositas.printInventario(player.myInventario);
-        files.printCositas.printSeparador();
+        files.printTexto.printInventario(player.myInventario);
+        files.printTexto.printSeparador();
 
     }
     //Función para actualizar el inventario
