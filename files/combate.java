@@ -35,7 +35,7 @@ public class combate
         }
     }
     //Función para el jefe final del camino del hereje
-    public static void arqueroBoss(int dado, jugador player, bossfinal jefeFinal)
+    public static void arqueroBoss(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -63,7 +63,7 @@ public class combate
         }
     }
     //Función para el jefe final del camino de la magia
-    public static void magiaBoss(int dado, jugador player, bossfinal jefeFinal)
+    public static void magiaBoss(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -82,7 +82,7 @@ public class combate
         }
     }
     //Función para el jefe final del camino de la destrucción
-    public static void destruccionBoss(int dado, jugador player, bossfinal jefeFinal)
+    public static void destruccionBoss(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -224,7 +224,7 @@ public class combate
         }
     }
     //Función para analizar analizar si tienes que hacer el ataque especial o no para el arquero en la batalla final
-    public static void arqueroLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    public static void arqueroLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -256,7 +256,7 @@ public class combate
         }
     }
     //Función para analizar analizar si tienes que hacer el ataque especial o no para el mago en la batalla final
-    public static void magiaLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    public static void magiaLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -280,7 +280,7 @@ public class combate
         }
     }
     //Función para analizar analizar si tienes que hacer el ataque especial o no para el guerrero en la batalla final
-    public static void destruccionLuchaFinal(int dado, jugador player, bossfinal jefeFinal)
+    public static void destruccionLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
     {
         int dano;
 
@@ -496,7 +496,7 @@ public class combate
         }
     }
     //Función para cuando el jugador ataca contra el jefe final
-    public static void jugadorAtacaJefeFinal(jugador player, bossfinal jefeFinal)
+    public static void jugadorAtacaJefeFinal(jugador player, enemigoFinal jefeFinal)
     {
         int dado;
 
@@ -525,7 +525,7 @@ public class combate
         }
     }
     //Función para cuando el jefe final ataca
-    public static void jefeFinalAtaca(jugador player, bossfinal jefeFinal)
+    public static void jefeFinalAtaca(jugador player, enemigoFinal jefeFinal)
     {
         int dado;
 
@@ -554,7 +554,7 @@ public class combate
         }
     }
     //Función para gestionar tu turno contra el jefe final
-    public static boolean gestionTurnoFinal(jugador player, int eleccion, bossfinal jefeFinal)
+    public static boolean gestionTurnoFinal(jugador player, int eleccion, enemigoFinal jefeFinal)
     {
         boolean tuTurno = false;
         switch (eleccion)
@@ -590,10 +590,10 @@ public class combate
         int eleccion;
         boolean tuTurno;
         boolean enemigosDerrotados = false;
-        bossfinal jefeFinal;
+        enemigoFinal jefeFinal;
         
         teclado = new Scanner(System.in);
-        jefeFinal = files.bossfinal.setBossfinal(player.myArma.tipo, dificultad);
+        jefeFinal = files.enemigoFinal.setenemigoFinal(player.myArma.tipo, dificultad);
         files.printTexto.printSeparador();
         files.printTexto.textoEfectoEscritura(files.printTexto.green+"Bienvenido a la fase de combate!!!!");
         files.printTexto.printSeparador();

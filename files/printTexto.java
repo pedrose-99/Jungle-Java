@@ -19,7 +19,7 @@ public class printTexto
     //Función para imprimir el texto poco a poco
     public static void textoEfectoEscritura(String linea) 
     {
-        long delay = 25; // Tiempo inicial de espera en milisegundos 
+        long delay = 20; // Tiempo inicial de espera en milisegundos 
         try { 
             for (char caracter : linea.toCharArray()) { 
 
@@ -148,7 +148,7 @@ public class printTexto
         printSeparador();
     }
     //Función para imprimir las estadísticas del jefe final
-    public static void printJefeFinal(bossfinal jefeFinal)
+    public static void printJefeFinal(enemigoFinal jefeFinal)
     {
         printSeparador();
         textoEfectoEscritura(red+ "Jefe Final Yax-Balam ");
