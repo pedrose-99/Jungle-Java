@@ -3,13 +3,18 @@ clases:
     jugador.
     enemigo.
     arma.
-    boss final
+    enemigoFinal
 
 arma
 {
     int tipo;
     int dmg;
+    int dmgActual;
     String AtaqueEspecial;
+
+    Funciones:
+    arma(int eleccion)
+    setArma(int eleccion)
 }
 
 enemigo
@@ -18,14 +23,25 @@ enemigo
     int hp;
     int defensa;
     int dmg;
+
+    Funciones:
+    enemigo(String name, int vida, int defense, int dano)
+    generacionEnemigos(int numEnemigos, String nombre)
+    setEnemigo(String nombre)
 }
 
 jugador 
 {
     int hp;
+    int maxHp;
+    int defensaActual;
     int defensa;
     ClaseArma arma;
     ClaseInventario;
+    int dificultad;
+    
+    Funciones:
+    jugador(int vida, int defensa, )
 }
 
  boss final
