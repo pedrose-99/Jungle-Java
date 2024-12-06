@@ -1,9 +1,4 @@
 clases:
-    inventario.
-    jugador.
-    enemigo.
-    arma.
-    enemigoFinal
 
 arma
 {
@@ -41,15 +36,20 @@ jugador
     int dificultad;
     
     Funciones:
-    jugador(int vida, int defensa, )
+    jugador(int vida, int defensa, inventario myInventario, arma myWeapon)
+    setJugador(int eleccion, inventario myInventario, arma myArma)
 }
 
- boss final
+enemigoFinal
 {
     int hp;
+    int hpMax;
     int defensa;
-    ClaseArma arma;
-    ClaseInventario;
+    arma myArma;
+
+    Funciones:
+    enemigoFinal(int vida, int defense, Arma myWeapon, int dificil)
+    setenemigoFinal(int eleccion, int dificil)
 }
 
 inventario
@@ -57,26 +57,128 @@ inventario
     int pociones_curacion;
     int pociones_defensa;
     int pociones_ataque;
+    int numPociones;
+
+    Funciones:
+    switchPotis(jugador player, int eleccion)
+    gestionPociones(jugador player)
+    inventario(int atack_potion, int defense_potion, int heal_potion)
+    setInventario(int dificil)
+    abrirCofre(jugador player)
+    actualizaInventario(inventario myInventario, int atack_potion, int defense_potion, int heal_potion)
 }
 
-Formato lucha:
-Lucha por turnos.
-Eliges si atacar o curarte
-Tiras un dado de 20. 
+print texto
 {
-    Si sacas mas de la defensa del enemigo/tu defensa
-    {
-        tiras un dado del daño maximo que tengas y con eso haces daño. Dependiendo del tipo de arma que tengas tienes una consecuencia u otra.
-    }
-    Si no sacas mas de la defensa del enemigo/tu defensa
-    {
-        No haces daño/no te hacen daño
-    }
-    Si sacas un 18 o mas
-    {
-        Ataque definitivo
-    }
+    String red="\033[31m"; 
+    String green="\033[32m";
+    String yellow="\033[33m";
+    String blue="\033[34m"; 
+    String purple="\033[35m"; 
+    String cyan="\033[36m"; 
+    String white="\033[37m";
+    
+    Funciones:
+    printSeparador()
+    textoEfectoEscritura(String linea) 
+    menuCombate()
+    bienvenida()
+    printElegirCamino()
+    imprimirEstadisticas(arma myArma)
+    imprimirEnemigos(enemigo[] enemigos)
+    imprimirEnemigo(enemigo myEnemy)
+    printStats(jugador player)
+    elegirPoti(inventario myInventario)
+    printInventario(inventario myInventario)
 }
 
-Tengo que:
-colocar bien las letras de todos los caminos + colores
+caminoDestruccion
+{
+    FinalDestruccion(jugador player, int dificultad, boolean finalAlternativo)
+    chaac(jugador player, int dificultad, boolean siguesVivo)
+    puertaSuelo(jugador player, int dificultad, boolean siguesVivo)
+    nido(jugador player, int dificultad, boolean siguesVivo)
+    monedaAcertijo(jugador player, int dificultad)
+    estatuaAcertijo(jugador player, int dificultad)
+    salaOscua(jugador player, int dificultad, boolean siguesVivo)
+    espejos(jugador player, int dificultad, boolean siguesVivo)
+    rocas(jugador player, int dificultad, boolean siguesVivo)
+    izquierdaDestr(jugador player, int dificultad, boolean siguesVivo)
+    Destruccion(jugador player, int dificultad)
+}
+
+caminoHereje
+{
+    finalHereje(jugador player, int dificultad)
+    explorar(jugador player, int dificultad, boolean siguesVivo)
+    kakamora(jugador player, int dificultad, boolean siguesVivo)
+    caminoArco(jugador player , int dificultad)
+}
+caminoMagia
+{
+    finalMagia(jugador player, int dificultad)
+    caminoIzquierda(jugador player, int dificultad, boolean siguesVivo)
+    escaleraSube(jugador player, int dificultad, boolean siguesVivo)
+    grietaPared(jugador player, int dificultad, boolean siguesVivo)
+    cerradura(jugador player, int dificultad, boolean siguesVivo)
+    escaleraBaja(jugador player, int dificultad, boolean siguesVivo)
+    buceo(jugador player, int dificultad, boolean siguesVivo)
+    nadar(jugador player, int dificultad, boolean siguesVivo)
+    caminoDerecha(jugador player, int dificultad, boolean siguesVivo)
+    luchar(jugador player, int dificultad, boolean siguesVivo)
+    trepar(jugador player, int dificultad, boolean siguesVivo)
+    bucear(jugador player, int dificultad, boolean siguesVivo)
+    lucharSegundo(jugador player, int dificultad, boolean siguesVivo)
+    treparSegundo(jugador player, int dificultad, boolean siguesVivo)
+    caminoMago(jugador player, int dificultad)
+}
+
+combate
+{
+    enemigoCorrecto(enemigo[] enemigos)
+    checkVida(int vida)
+    arqueroBoss(int dado, jugador player, enemigoFinal jefeFinal)
+    magiaBoss(int dado, jugador player, enemigoFinal jefeFinal)
+    destruccionBoss(int dado, jugador player, enemigoFinal jefeFinal)
+    arqueroLucha(int dado, jugador player, enemigo[] enemigos)
+    magiaLucha(int dado, jugador player, enemigo[] enemigos)
+    destruccionLucha(int dado, jugador player, enemigo[] enemigos)
+    arqueroLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
+    magiaLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
+    destruccionLuchaFinal(int dado, jugador player, enemigoFinal jefeFinal)
+    jugadorAtaca(jugador player, enemigo[] enemigos)
+    gestionTurno(jugador player, int eleccion, enemigo[] enemigos)
+    tirarDado(int maximoDado)
+    turnoEnemigos(enemigo[] enemigos, jugador player)
+    checkEnemigos(enemigo[] enemigos)
+    subirDeNivel(jugador player)
+    curarteTrasCombate(jugador player, Scanner teclado)
+    jugadorAtacaJefeFinal(jugador player, enemigoFinal jefeFinal)
+    jefeFinalAtaca(jugador player, enemigoFinal jefeFinal)
+    gestionTurnoFinal(jugador player, int eleccion, enemigoFinal jefeFinal)
+    combateFinal(jugador player, int dificultad)
+    simularCombate(int numEnemigos, String nombreEnemigo, jugador player)
+}
+
+Ahorcado
+{
+    transformarString(String name)
+    stringToArray(String texto)
+    imprimirAhorcado(char[] adivinadas)
+    ahorcado(String adivinanza, jugador player)
+    eleccionMoneda(Scanner teclado, int x, int y)
+    printMonedas(String[][] rellenar) 
+    acertijoMonedas(jugador player)
+    acertijoEstatua(jugador player)
+    acertijoPilares(jugador player)
+}
+
+Main
+{
+    elegir(String eleccion1, String eleccion2, Scanner teclado)
+    gestionNumero(Scanner teclado)
+    gestionPotis(Scanner teclado)
+    elegirCamino(Scanner teclado)
+    elegirDificultad(Scanner teclado)
+    main(String[] args)
+}
