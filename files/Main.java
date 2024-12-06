@@ -121,7 +121,7 @@ public class Main
                 myInventario = files.inventario.setInventario(dificil);
                 eleccion = elegirCamino(teclado);
                 myArma = files.arma.setArma(eleccion);
-                player = files.jugador.setJugador(eleccion, myInventario, myArma, dificil);
+                player = files.jugador.setJugador(eleccion, myInventario, myArma);
                 switch (eleccion) 
                 {
                     case 1:

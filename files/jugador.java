@@ -8,10 +8,9 @@ public class jugador
     int defensaActual;
     inventario myInventario;
     arma myArma;
-    int dificultad;
 
     //Función para crear al jugador
-    public jugador(int vida, int defense, inventario myInventary, arma myWeapon, int dificil)
+    public jugador(int vida, int defense, inventario myInventary, arma myWeapon)
     {
         maxHp = vida;
         hp = vida;
@@ -19,23 +18,22 @@ public class jugador
         defensaActual = defense;
         myInventario = myInventary;
         myArma = myWeapon;
-        dificultad = dificil;
     }
     //Función para construir el jugador
-    public static jugador setJugador(int eleccion, inventario myInventario, arma myArma, int dificil)
+    public static jugador setJugador(int eleccion, inventario myInventario, arma myArma)
     {
         jugador player;
 
         switch (eleccion)
         {
             case 1:
-                player = new jugador(80, 8, myInventario, myArma, dificil);
+                player = new jugador(80, 8, myInventario, myArma);
                 break ;
             case 2:
-                player = new jugador(100, 10, myInventario, myArma, dificil);
+                player = new jugador(100, 10, myInventario, myArma);
                 break ;
             default:
-                player = new jugador(70, 7, myInventario, myArma, dificil);
+                player = new jugador(70, 7, myInventario, myArma);
                 break ;
         }
         return player;
