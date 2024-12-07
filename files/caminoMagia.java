@@ -157,7 +157,7 @@ public class caminoMagia
                                             "\r\n" + //
                                             "Comienzas a pensar que no va a ser posible eliminarlas a todas, pero recuerdas que en el libro que leíste antes de viajar en busca de las reliquias había un antiguo hechizo, rezaba algo como \"en la peor de las situaciones solo el coraje te puede guiar\". Empiezas a pensar en todo lo que has pasado para llegar a ese momento y te cargas de una energía vibrante, antes nunca habías sentido ese poder, cargas tu hechizo y ,¡boom!, lo lanzas.\r\n" + //
                                             "");
-        siguesVivo = files.combate.simularCombate(10*dificultad, "serpiente", player);
+        siguesVivo = files.combate.simularCombate(5*dificultad, "serpiente", player);
         if (!siguesVivo)
         {
             return siguesVivo;
