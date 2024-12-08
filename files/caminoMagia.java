@@ -140,13 +140,13 @@ public class caminoMagia
     public static boolean caminoDerecha(jugador player, int dificultad, boolean siguesVivo)
     {
         files.printTexto.textoEfectoEscritura("Tras caminar durante un buen rato accedes a una caverna en la que encuentras un cofre maldito, debes resolver un acertijo para acceder al contenido del mismo, el acertijo reza:");
-        files.printTexto.textoEfectoEscritura("Las raíces no se pueden ver y son más altas que un árbol. Arriba, muy arriba sube; sin embargo, nunca crece."            );
-        siguesVivo = files.Ahorcado.ahorcado("Montana", player);
+        files.printTexto.textoEfectoEscritura("Treinta caballos de color blanco. En una sierra colorada, que cuando cabalgan machacan y trituran pero luego descansan. "            );
+        siguesVivo = files.Ahorcado.ahorcado("Dientes", player);
         if (!siguesVivo)
         {
             return siguesVivo;
         }
-        files.printTexto.textoEfectoEscritura("El cofre se abre solo y arroja su contenido, encuentras una empuñadura para tu varita, una poción de vida y 200 monedas de oro. Tras recoger las recompensas continúas por el pasadizo ayudándote del mechero para ver en la oscuridad, de pronto notas un temblor en el suelo y al echar la vista atrás ves una marabunta de serpientes que reptan hacia ti. Sales corriendo y no ves el acantilado delante tuya que da a una poza subterránea , caes inevitablemente…. \r\n" + //
+        files.printTexto.textoEfectoEscritura("El cofre se abre solo y arroja su contenido, encuentras una empuñadura para tu varita. Tras recoger las recompensas continúas por el pasadizo ayudándote del mechero para ver en la oscuridad, de pronto notas un temblor en el suelo y al echar la vista atrás ves una marabunta de serpientes que reptan hacia ti. Sales corriendo y no ves el acantilado delante tuya que da a una poza subterránea , caes inevitablemente…. \r\n" + //
                             "Tras subir a la superficie del agua te das cuenta de que no hay una salida fácil.");
         return siguesVivo;
     }
