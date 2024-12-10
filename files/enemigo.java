@@ -45,16 +45,16 @@ public class enemigo
                 enemy = new enemigo(nombre, 15, 6, 3);
                 break ;
             case "gorila":
-                enemy = new enemigo(nombre, 35, 10, 10);
+                enemy = new enemigo(nombre, 60, 10, 9);
                 break ;
             case "serpiente":
-                enemy = new enemigo(nombre, 20, 9, 13);
+                enemy = new enemigo(nombre, 15, 7, 10);
                 break ;
             case "jaguar":
                 enemy = new enemigo(nombre, 40, 10, 13);
                 break ;
             case "jabali":
-                enemy = new enemigo(nombre, 60, 14, 14);
+                enemy = new enemigo(nombre, 60, 12, 14);
                 break ;
             case "Guarlock":
                 enemy = new enemigo(nombre, 80, 12, 10);
